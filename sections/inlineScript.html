@@ -36,15 +36,15 @@
     var timer;
     var timer2;
     let shownPassword = false;
-    $(".projectLink").on('click', function (event) {
-        if (shownPassword == false) {
-            alert('PLEASE NOTE: Username: portfolio, password: portfolio');
-            shownPassword = true;
-        }
-        else {
-            return;
-        }
-    });
+    // $(".projectLink").on('click', function (event) {
+    //     if (shownPassword == false) {
+    //         alert('PLEASE NOTE: Username: portfolio, password: portfolio');
+    //         shownPassword = true;
+    //     }
+    //     else {
+    //         return;
+    //     }
+    // });
     function frameLooper() {
         if (array.length > 0) {
             document.getElementById("title").innerHTML += array.shift();

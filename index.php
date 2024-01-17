@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Please refer to github for the php source code, it's not all in one file :) -->
+    <!-- Hello there!
+    Please refer to github:
+    https://github.com/AleidS/webPortfolio
+    for the php source code, 
+    it's not all in one large file as it seems on the inspection pane :) -->
 
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">

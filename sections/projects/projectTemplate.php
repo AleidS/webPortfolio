@@ -3,14 +3,14 @@
 <div id=<?php echo ($projectID . "-bound") ?> class="project">
     <h2 class="projectTitle">
         <?php if (isset($prev)) : ?>
-        <a class="skipButton" href=<?php echo $prev ?>>
+            <a class="skipButton" href=<?php echo $prev ?>>
 
-            <i class="fas fa-fast-backward"></i>
+                <i class="fas fa-fast-backward"></i>
 
-        </a>
+            </a>
 
         <?php else : ?>
-        <span> &nbsp; </span>
+            <span> &nbsp; </span>
         <?php endif ?>
         <?php echo $projectName ?>
 
@@ -31,8 +31,7 @@
 
     <!-- Skip to bottom of the project -->
 
-    <a class="projectFooter" href="" <?php echo $link ?> target="_blank"
-        style=" word-wrap: break-word !important;"><?php echo $link ?>
+    <a class="projectFooter" href=" <?php echo $link ?>" target="_blank" style=" word-wrap: break-word !important;"><?php echo $link ?>
         <i class='fa-solid fa-globe'></i>
     </a>
     <div class="explanationsContainer">

@@ -29,7 +29,10 @@
 (function () {
     $text = 'you can try it out 
                 <a href="https://www.aleidsuzan.com/portfolio"
-                class="projectLink" target="_blank"> here </a>.';
+                class="projectLink" target="_blank"> here </a>.
+                and view the source code 
+                <a href="https://github.com/AleidS/artportfolio"
+                class="projectLink" target="_blank"> here </a>';
     $icon = 'fa-solid fa-globe';
     include("explanationTemplate.php");
 })();
