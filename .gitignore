@@ -1,0 +1,7 @@
+*.zip
+*.7z
+old/
+recipeOutput
+Old/.blend
+./*.webm
+./*.mp4

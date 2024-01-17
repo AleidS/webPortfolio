@@ -1,0 +1,46 @@
+<nav id="menuContainer" class="navbar navbar-dark navbar-expand-sm bg-dark fixed-top">
+
+    <div class="container" id="menu">
+        <a href="#welcome" class="navbar-brand">
+            <i class="fa-solid fa-home"></i>
+        </a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Projects
+        </a>
+        <div id="expandMenu"
+            style="position:absolute;width:100%; border-radius:0px;flex-direction:column;background-image:url(Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg.png);background-attachment:fixed;background-size:cover;padding:10px;"
+            class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#savingAid"> Saving Aid</a>
+            <a class="dropdown-item" href="#recipeApp" onclick="showMenu()"> Recipe App</a>
+            <a class="dropdown-item" href="#drawingApp" onclick="showMenu()"> Drawing App</a>
+            <a class="dropdown-item" href="#artPortfolio" onclick="showMenu()"> Art Portfolio</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#edu" class="nav-link active"> Education
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#tools"> Tools </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link active"> Contact </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#info" class="nav-link active">
+                        <i class="fa-solid fa-info-circle"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#workflow" class="nav-link active">
+                        Workflow
+                    </a>
+                </li>
+            </ul>
+        </div>
+</nav>

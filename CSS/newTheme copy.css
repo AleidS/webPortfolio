@@ -1,0 +1,149 @@
+/* .sectionTitle, */
+#menuContainer,
+#arrow {
+    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darker.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    /* background: linear-gradient(45deg, rgb(23, 3, 14), rgb(16, 29, 34)); */
+    background: linear-gradient(45deg, rgb(133, 53, 99), rgb(44, 128, 161));
+}
+
+body,
+.sectionContainer,
+.video,
+.project,
+.projectFooter,
+.projectTitle,
+.sectionText,
+.imgAndText,
+.wipe {
+    background: rgb(10, 13, 19);
+    border: none;
+    /* background: linear-gradient(90deg, rgb(8, 12, 12), rgb(20, 17, 24)); */
+}
+
+.imgAndText {
+    background: rgb(32, 35, 43);
+}
+
+#menu {
+    background: rgba(16, 23, 29, 0.211) !important;
+    backdrop-filter: brightness(100%)blur(10px);
+    /* border: 1px solid rgba(79, 44, 77, 0.331); */
+    border: 2px solid rgba(67, 80, 83, 0.184);
+    /* box-shadow: 0px 0px 20px 4px rgba(14, 18, 21, 0.413) !important; */
+    box-shadow: none;
+
+}
+
+
+.sectionTitle,
+.explanation {
+    box-shadow: none;
+    background: linear-gradient(45deg, rgb(50, 22, 38), rgb(26, 51, 61));
+    background: linear-gradient(45deg, rgb(78, 38, 61), rgb(29, 77, 96));
+    /* border: 1px solid rgba(255, 255, 255, 0.576); */
+    border: none;
+    background: rgb(32, 35, 43);
+    /* background: rgb(14, 18, 19); */
+    /* border-image: linear-gradient(90deg, rgb(50, 22, 38), rgb(26, 51, 61)) 5; */
+}
+
+.imgAndText {
+    border-radius: 50px;
+}
+
+.imgAndText::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    /*1*/
+    border: 5px solid transparent;
+    /*2*/
+    background: linear-gradient(45deg,
+            rgb(133, 53, 99),
+            rgb(44, 128, 161)) border-box;
+    /*3*/
+    -webkit-mask:
+        /*4*/
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    /*5'*/
+    mask-composite: exclude;
+    /*5*/
+    z-index: 9000;
+}
+
+.explanation::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    /*1*/
+    border: 5px solid transparent;
+    /*2*/
+    background: linear-gradient(45deg,
+            rgb(133, 53, 99),
+            rgb(44, 128, 161)) border-box;
+    /*3*/
+    -webkit-mask:
+        /*4*/
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    /*5'*/
+    mask-composite: exclude;
+    /*5*/
+    z-index: 9000;
+}
+
+.sectionTitle::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    /*1*/
+    border: 5px solid transparent;
+    /*2*/
+    background: linear-gradient(45deg,
+            rgb(133, 53, 99),
+            rgb(44, 128, 161)) border-box;
+    /*3*/
+    -webkit-mask:
+        /*4*/
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    /*5'*/
+    mask-composite: exclude;
+    /*5*/
+    z-index: 9000;
+}
+
+.explanation {
+    /* box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.665); */
+}
+
+
+.sectionText {
+    border: none;
+    /* box-shadow: 0px 0px 10px 5px rgba(215, 215, 215, 0.665); */
+    border: 5px solid;
+    border-radius: 10px;
+    border-image: linear-gradient(90deg, rgb(50, 22, 38), rgb(26, 51, 61)) 5;
+}
+
+#dottedLine {
+    z-index: -1;
+}
+
+#menuContainer,
+#menu {
+    border: none;
+}
+
+.imgAndtext {
+    background: white !important;
+}

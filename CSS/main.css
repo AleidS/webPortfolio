@@ -1,0 +1,97 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Itim&family=Julius+Sans+One&family=Karla:wght@100;300;400&family=Nothing+You+Could+Do&family=Overlock:ital@0;1&family=Roboto+Mono:wght@100;400;700&display=swap'); */
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: wrap !important;
+    text-wrap: wrap !important;
+    max-width: 100% !important
+}
+
+html {
+    font-size: 2;
+    /* overflow-x: hidden; */
+    scroll-behavior: smooth;
+    -webkit-transition-duration: 2s;
+    -o-transition-duration: 2s;
+    transition-duration: 2s;
+    word-wrap: break-word;
+}
+
+body {
+    -webkit-text-size-adjust: 100%;
+    background-color: black;
+    margin: 0px;
+    top: 0px;
+    color: white;
+    font-family: tahoma;
+    max-width: 100%;
+    padding: 0px;
+    overflow-x: hidden;
+    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png");
+    background-attachment: fixed;
+    background-size: cover;
+    /* position:absolute; */
+}
+
+.mainArea {
+    backdrop-filter: none;
+}
+
+
+h1 {
+    font-family: 'roboto mono';
+    font-weight: 100;
+    font-size: 4rem;
+}
+
+h2 {
+    font-family: 'roboto mono';
+    font-weight: 900;
+    text-align: center;
+    margin-top: 0px;
+}
+
+h3 {
+    margin: auto !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+    font-size: 1.4rem !important;
+}
+
+p {
+    font-size: 20pt;
+    font-family: 'roboto mono';
+    font-weight: 100;
+    font-family: helvetica;
+    font-size: 24px;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #1a012500;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #2d414f;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ffecec;
+}

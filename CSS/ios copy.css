@@ -1,0 +1,99 @@
+/* Make safari all black as mp4 will have black background (webm with transparency does not work on IOS) */
+/* @supports (-webkit-touch-callout: none) { */
+
+.projectsContainer,
+.project,
+.projectTitle,
+.scroll-bound,
+.content,
+.projectFooter,
+body,
+#project,
+#projectsContainer,
+.project,
+#mainarea,
+.section,
+video,
+.wipe {
+    background: rgb(21, 21, 21) !important;
+}
+
+.projectFooter {
+    box-shadow: 0px 0px 20px 10px rgb(21, 21, 21) !important;
+}
+
+video {
+    background-color: black !important;
+    box-shadow: 0px 0px 50px 30px black;
+}
+
+.sectionText {
+    box-shadow: none !important;
+}
+
+#menu,
+#menu a,
+#menu div,
+#menu li {
+    background: rgb(49, 75, 86) !important;
+    border-radius: 0px;
+    color: white;
+    box-shadow: none !important;
+}
+
+.imgAndText,
+.imgAndText *,
+.sectionTitle,
+.explanation,
+.explanation *,
+.sectionTitle i,
+.sectionText button {
+    background: rgb(20, 31, 36) !important;
+    border-radius: 10px;
+    color: white;
+    box-shadow: none !important;
+}
+
+.explanation * {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.explanation {
+    border: 1px solid rgba(190, 190, 190, 0.278);
+    background: rgba(20, 31, 36, 0.478) !important;
+    backdrop-filter: blur(20px)brightness(20%) !important;
+}
+
+
+
+#hello,
+.projectTitle {
+    background: none !important;
+}
+
+
+#infoLinks a {
+    color: rgb(255, 255, 255) !important;
+    text-decoration: underline;
+}
+
+
+#menuContainer {
+    box-shadow: none !important;
+    border-bottom: 0px solid rgba(255, 255, 255, 0.417);
+}
+
+
+
+.sectionText {
+    border: 1px solid white !important;
+}
+
+/* Ensure that loading page arrow stays white */
+#arrow {
+    background-color: #ffffff;
+}
+
+/* } */
+
+/* @supports not (-webkit-touch-callout: none) {} */

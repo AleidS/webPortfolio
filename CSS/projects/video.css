@@ -1,0 +1,26 @@
+video {
+    width: 100%;
+    width: calc(min(100%, 100vh));
+    max-width: calc(min(120vh, 100vw));
+    /* min-width:calc(min(100%,400px)); */
+    margin: auto;
+    position: -webkit-sticky;
+    position: sticky;
+    display: block;
+    top: 30vh;
+
+
+}
+
+
+@media (max-device-aspect-ratio: 5/8) {
+    video {
+        display: block;
+        top: 60vh !important;
+        z-index: 99999 !important;
+        background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min-graded-opacity.png");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: auto;
+    }
+}

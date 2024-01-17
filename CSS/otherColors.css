@@ -1,0 +1,202 @@
+/* Make safari all black as mp4 will have black background (webm with transparency does not work on IOS) */
+:root {
+    --accent: rgb(203, 118, 76);
+    --accentDark: rgb(103, 59, 36);
+    --background: rgb(224, 224, 224);
+}
+
+#menu,
+#menu a,
+#menu div,
+#menu li {
+    background: var(--accent) !important;
+    border-radius: 0px;
+    color: white;
+    box-shadow: none !important;
+}
+
+.projectsContainer,
+.project,
+.projectTitle,
+.scroll-bound,
+.content,
+.projectFooter,
+body,
+#project,
+#projectsContainer,
+.project,
+#mainarea,
+.section,
+video,
+.wipe {
+    background: var(--background);
+    color: white;
+}
+
+.projectFooter {
+    color: var(--accentDark);
+}
+
+/* video {
+    background-color: black !important;
+    box-shadow: 0px 0px 50px 30px black;
+} */
+
+.sectionText {
+    box-shadow: none !important;
+}
+
+.explanation * {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.imgAndText,
+.imgAndText *,
+.sectionText {
+    background: rgb(231, 231, 231) !important;
+    color: black !important;
+    box-shadow: none !important;
+}
+
+.toolSection {
+    background-color: var(--accent) !important;
+}
+
+.imgAndText {
+    border: 2px solid var(--accent) !important;
+}
+
+#hello {
+    color: var(--accent) !important;
+}
+
+
+#portraitHolder {
+
+    /* border: 2px solid var(--accent) !important; */
+    border-radius: 0px;
+    background-color: white;
+    -webkit-clip-path: circle(43% at 49% 50%);
+    clip-path: circle(43% at 49% 50%);
+    padding: 10px;
+}
+
+/* #portraitHolder::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: green;
+    position: absolute;
+    display: block;
+    top: 0%;
+    left: 0%;
+    clip-path: circle(50% 50%, 50% 50%);
+    border-radius: 100% !important;
+} */
+
+
+.sectionTitle,
+.sectionTitle i,
+.sectionText button,
+#arrow {
+    background: var(--accent) !important;
+    border-radius: 10px;
+    color: white;
+    box-shadow: none !important;
+}
+
+
+.projectTitle {
+    height: fit-content !important;
+    min-height: 0px !important;
+    padding: 20px !important;
+    /* background-color: rgba(255, 255, 255, 0.493) !important; */
+    /* border-top: 1px solid orange !important;*/
+    border-bottom: 1px solid var(--accent);
+    color: var(--accent) !important;
+    font-weight: 500 !important;
+    border-radius: 0px;
+    top: 75px;
+    /* box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.376); */
+}
+
+.skipButton {
+    color: var(--accent) !important;
+}
+
+.title {
+    color: var(--accent) !important;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-left: 20px;
+    border-radius: 10px !important;
+}
+
+#dottedLine {
+    border-color: var(--accent);
+    border-width: 5px;
+}
+
+.projectTitle {
+    color: white;
+}
+
+.projectFooter {
+    box-shadow: none !important;
+}
+
+
+.explanation {
+    border: 1px solid rgba(190, 190, 190, 0.278);
+    backdrop-filter: blur(20px)brightness(20%) !important;
+    background: rgba(255, 255, 255, 0.674) !important;
+    backdrop-filter: blur(20px)brightness(110%) !important;
+    color: rgb(4, 3, 3) !important;
+    border: 1px solid var(--accent);
+}
+
+.explanation .text {
+    background-color: rgba(255, 255, 255, 0.416) !important;
+    box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.455);
+    font-weight: 300;
+}
+
+.text strong {
+    color: rgb(132, 50, 15) !important;
+    font-weight: 900 !important;
+}
+
+
+.exImg {
+    border: 1px solid var(--accent) !important;
+    overflow: hidden;
+}
+
+
+
+#hello {
+    background: none !important;
+}
+
+
+#infoLinks a {
+    color: rgb(255, 255, 255) !important;
+    text-decoration: underline;
+}
+
+
+#menuContainer {
+    box-shadow: none !important;
+    border-bottom: 0px solid rgba(255, 255, 255, 0.417);
+}
+
+
+
+.sectionText {
+    border: 1px solid white !important;
+}
+
+/* Ensure that loading page arrow stays white */
+#arrow {
+    background-color: #ffffff;
+}

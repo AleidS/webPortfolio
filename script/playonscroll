@@ -1,0 +1,198 @@
+  //Play videos on scroll (from a codepen)
+    const registerVideo = (bound, video) => {
+        bound = document.querySelector(bound);
+        video = document.querySelector(video);
+        const scrollVideo = () => {
+            if (video.duration) {
+                const distanceFromTop = window.scrollY + bound.getBoundingClientRect().top;
+                const rawPercentScrolled = (window.scrollY - distanceFromTop) / (bound.scrollHeight - window.innerHeight);
+                const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 1);
+
+                video.currentTime = video.duration * percentScrolled;
+            }
+            requestAnimationFrame(scrollVideo);
+        }
+        requestAnimationFrame(scrollVideo);
+    }
+
+
+    registerVideo("#bound-one", "#bound-one video");
+
+    registerVideo("#bound-two", "#bound-two video")
+
+    registerVideo("#bound-three", "#bound-three video")
+
+    registerVideo("#bound-four", "#bound-four video")
+
+});
+
+
+// var frameNumber = 0, // start video at frame 0
+//     // lower numbers = faster playback
+//     playbackConst = 500,
+//     // get page height from video duration
+//     setHeight = document.getElementById("set-height"),
+//     // select video element
+//     vid = document.getElementById('v0');
+
+// // dynamically set the page height according to video length
+// vid.addEventListener('loadedmetadata', function () {
+//     setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
+// });
+
+// // Use requestAnimationFrame for smooth playback
+// function scrollPlay() {
+//     var frameNumber = window.pageYOffset / playbackConst;
+//     vid.currentTime = frameNumber;
+//     window.requestAnimationFrame(scrollPlay);
+// }
+
+// window.requestAnimationFrame(scrollPlay);
+
+
+
+// $(document).ready(function () {
+//     $(function () {
+//         $("#welcome_placeholder").load("welcome.html");
+//     });
+//     $(function () {
+//         $("#saving_aid_placeholder").load("savingAid.html");
+//     });
+//     $(function () {
+//         $("#recipe_placeholder").load("recipes.html");
+//     });
+
+// });
+
+// https://codepen.io/j-v-w/pen/ZEbGzyv
+// const html = document.documentElement;
+// const canvas = document.getElementById("hero-lightpass");
+// const context = canvas.getContext("2d");
+
+// const frameCount = 148;
+// const currentFrame = index => (
+//     `videos/saving_aid_sequence/${index.toString().padStart(4, '0')}.png`
+// )
+
+// const preloadImages = () => {
+//     for (let i = 1; i < frameCount; i++) {
+//         const img = new Image();
+//         img.src = currentFrame(i);
+//     }
+// };
+
+// const img = new Image()
+// img.src = currentFrame(1);
+// canvas.width = 1158;
+// canvas.height = 770;
+// img.onload = function () {
+//     context.drawImage(img, 0, 0);
+// }
+
+// const updateImage = index => {
+//     img.src = currentFrame(index);
+//     // context.fillStyle = "rgba(0, 0, 0, 0)";
+//     // context.clearRect(0, 0, width, height);
+//     // context.beginPath();
+//     context.clearRect(0, 0, canvas.width, canvas.height);
+//     context.drawImage(img, 0, 0);
+
+// }
+
+// window.addEventListener('scroll', () => {
+//     const scrollTop = html.scrollTop;
+//     const maxScrollTop = html.scrollHeight - window.innerHeight;
+//     const scrollFraction = scrollTop / maxScrollTop;
+//     const frameIndex = Math.min(
+//         frameCount - 1,
+//         Math.ceil(scrollFraction * frameCount)
+//     );
+//     if (frameIndex % 2 == 0) {
+//         requestAnimationFrame(() => updateImage(frameIndex + 1))
+//     }
+// });
+// window.addEventListener('touchmove', () => {
+//     const scrollTop = html.scrollTop;
+//     const maxScrollTop = html.scrollHeight - window.innerHeight;
+//     const scrollFraction = scrollTop / maxScrollTop;
+//     const frameIndex = Math.min(
+//         frameCount - 1,
+//         Math.ceil(scrollFraction * frameCount)
+//     );
+//     if (frameIndex % 2 == 0) {
+//         requestAnimationFrame(() => updateImage(frameIndex + 1))
+//     }
+// });
+
+// preloadImages()
+
+// // A second canvas behind the first one, to avoid flickering
+
+// const canvas2 = document.getElementById("hero-lightpass2");
+// const context2 = canvas2.getContext("2d");
+
+// const img2 = new Image()
+// img2.src = currentFrame(1);
+// canvas2.width = 1158;
+// canvas2.height = 770;
+// img.onload = function () {
+//     context2.drawImage(img, 0, 0);
+// }
+
+
+// const currentFrame2 = index => (
+//     `videos/saving_aid_sequence/${index.toString().padStart(4, '0')}.png`
+// )
+
+// const updateImage2 = index => {
+//     img2.src = currentFrame(index);
+//     // context.fillStyle = "rgba(0, 0, 0, 0)";
+//     // context.clearRect(0, 0, width, height);
+//     // context.beginPath();
+//     context2.clearRect(0, 0, canvas2.width, canvas2.height);
+//     context2.drawImage(img2, 0, 0);
+
+// }
+
+// window.addEventListener('scroll', () => {
+//     const scrollTop = html.scrollTop;
+//     const maxScrollTop = html.scrollHeight - window.innerHeight;
+//     const scrollFraction = scrollTop / maxScrollTop;
+//     const frameIndex = Math.min(
+//         frameCount - 1,
+//         Math.ceil(scrollFraction * frameCount)
+//     );
+//     if (frameIndex % 2 != 0) {
+//         requestAnimationFrame(() => updateImage2(frameIndex + 2))
+//     }
+// });
+
+// preloadImages()
+
+
+
+
+// load a different video for mobile https://stackoverflow.com/questions/76142819/loading-different-videos-based-on-mobile-or-desktop
+// var drawingAppVideo = $('#drawingAppVideo2');
+// var recipeAppVideo = $('#recipeAppVideo');
+// var videoSrc3 = $('#savingAidVideo');
+// var videoSrc4 = $('#artPortfolioVideo');
+// alert("Screen Width is: " + screen.width);
+
+// Intersection observer
+// const observer = new IntersectionObserver(entries => {
+//     console.log(entries);
+// })
+
+
+// let callback = function () {
+//     return (true);
+// }
+
+// const options = {
+//     root: document.getElementById('savingAidVideo'),
+//     rootMargin: '0px',
+//     threshold: 1.0,
+// };
+
+// const observer = new IntersectionObserver(callback, options);

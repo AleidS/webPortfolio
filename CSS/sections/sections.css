@@ -1,0 +1,163 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+.sectionContainer {
+    z-index: 300;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* max-height: fit-content;
+    overflow: hidden; */
+
+}
+
+.test {
+    backdrop-filter: brightness(80%);
+
+}
+
+.sectionTitle {
+    font-family: 'roboto mono';
+    font-weight: 500 !important;
+    /* background-color:rgba(10, 1, 10, 0.467); */
+    padding: 20px;
+    margin-top: 0px;
+    margin-bottom: 00px;
+    /* min-height: 100px; */
+    height: fit-content;
+    height: calc(min(fit-content, 100px));
+    height: clamp(100px, -webkit-fit-content, 400px);
+    height: clamp(100px, -moz-fit-content, 400px);
+    height: clamp(100px, fit-content, 400px);
+    width: 95%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 2rem;
+    margin: auto;
+    z-index: 290;
+    border-radius: 10px;
+    text-decoration-thickness: 2%;
+    border: 1px solid rgba(255, 255, 255, 0.202);
+    /* background-color: rgba(0, 0, 0, 0.163); */
+    /* background-image: url("../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darker.jpg"); */
+    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darker.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 1;
+    backdrop-filter: brightness(90%);
+}
+
+.smallTitle {
+    font-size: 1rem;
+    min-height: 0px;
+    margin-top: 100px;
+    height: fit-content !important;
+    padding: 6px;
+    margin-bottom: 200px;
+    width: fit-content;
+    font-weight: 300 !important;
+    font-family: roboto;
+    color: rgba(255, 255, 255, 0.862);
+    transition-duration: 0.5s;
+    /* background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-semtransparent-min.png"); */
+}
+
+.smallTitle:hover {
+    box-shadow: 0px 0px 20px 5px rgba(158, 128, 136, 0.248);
+    color: white;
+    text-decoration: none;
+    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darker.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.smallTitle a {
+    color: white;
+}
+
+#edu,
+#tools,
+#contact {
+    scroll-margin-top: 50px !important;
+}
+
+.section {
+
+    /* border:20px solid rgb(252, 202, 202); */
+    margin-top: 100px;
+    z-index: 1;
+    /* somehow ensures that dashes are not visible */
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    padding: 0px;
+    word-wrap: break-word;
+
+    .sectionTitle {
+        margin-bottom: 40px;
+        width: calc(min(100%, 600px));
+    }
+}
+
+.section:first-child() {
+    margin-top: 0px;
+}
+
+.section:last-child {
+    margin-bottom: 200px !important;
+}
+
+a {
+    color: rgb(253, 125, 159);
+    text-decoration: none;
+}
+
+.sectionText {
+    margin-top: 0px;
+    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png");
+    background-position: auto;
+    background-attachment: fixed;
+    background-size: cover;
+    /* background-image:url("..Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png"); */
+    background-position: auto;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-backdrop-filter: brightness(100%);
+    backdrop-filter: brightness(80%);
+    background-color: rgba(0, 0, 0, 0.317);
+    width: calc(min(100%, 600px));
+    margin: auto;
+    border: 1px solid rgba(255, 255, 255, 0.216);
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+
+    -webkit-box-shadow: 0px 0px 40px 10px rgba(48, 14, 35, 0.398);
+    box-shadow: 0px 0px 40px 10px rgba(48, 14, 35, 0.398);
+    border-radius: 10px;
+    padding: calc(min(30px, 5vw));
+    padding-bottom: 70px;
+    padding-top: 40px;
+    text-align: justify;
+    font-size: 1.1rem;
+    color: rgba(245, 245, 245, 0.799);
+    font-family: 'roboto';
+    font-weight: 300;
+    /* line-height: 1.3rem; */
+
+}
+
+.sectionText strong {
+    font-weight: 600;
+}

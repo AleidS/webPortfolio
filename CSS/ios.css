@@ -1,0 +1,37 @@
+/* Make safari all black as mp4 will have black background (webm with transparency does not work on IOS) */
+@supports (-webkit-touch-callout: none) {
+
+    /* Image background doesn't work well on IOS 
+and with black video bg, dark gre looks better */
+    .projectsContainer,
+    .project,
+    .projectTitle,
+    .scroll-bound,
+    .content,
+    .projectFooter,
+    body,
+    #project,
+    #projectsContainer,
+    .project,
+    #mainarea,
+    .section,
+    video,
+    .wipe {
+        background: rgb(9, 12, 14) !important;
+    }
+
+    .imgAndText {
+        background-color: rgb(12, 17, 24) !important;
+    }
+
+
+    .projectTitle {
+        border-radius: 0px;
+    }
+
+    /* Video bg is black on IOS, this simulates what it will look like */
+    video {
+        background-color: black !important;
+        box-shadow: 0px 0px 50px 30px black;
+    }
+}

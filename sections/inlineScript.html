@@ -1,0 +1,98 @@
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="script/script.js">
+</script>
+<!-- Font awesome -->
+<script src="https://kit.fontawesome.com/e7c36fd275.js" crossorigin="anonymous"></script>
+
+<!-- Lazy image loading  -->
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"></script>
+
+<script>
+    $(".navbar-collapse a").click(function () {
+        $("#navbarCollapse").collapse("hide");
+    });
+    $("#navbarDropdownMenuLink").click(function () {
+        $("#navbarCollapse").collapse("hide");
+    });
+    $('document').ready(function () {
+        $(window).scrollTop(-400);
+        AOS.init({
+            duration: 800,
+        });
+    });
+    var string = `Portfolio`;
+    var array = string.split("");
+    var string2 = `Web development by Aleid`;
+    var array2 = string2.split("");
+    var timer;
+    var timer2;
+    let shownPassword = false;
+    $(".projectLink").on('click', function (event) {
+        if (shownPassword == false) {
+            alert('PLEASE NOTE: Username: portfolio, password: portfolio');
+            shownPassword = true;
+        }
+        else {
+            return;
+        }
+    });
+    function frameLooper() {
+        if (array.length > 0) {
+            document.getElementById("title").innerHTML += array.shift();
+        } else {
+            clearTimeout(timer);
+            frameLooper2();
+        }
+        loopTimer = setTimeout('frameLooper()', 70);
+    }
+    function frameLooper2() {
+        if (array2.length > 0) {
+            document.getElementById("subtitle").innerHTML += array2.shift();
+        } else {
+            clearTimeout(timer2);
+        }
+        loopTimer = setTimeout('frameLooper2()', 70);
+    }
+    function showMenu() {
+        var x = document.getElementById("expandMenu");
+        if (x.style.display === "none") {
+            x.style.display = "flex";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    function showElement(element2, id) {
+        var x2 = document.getElementById(element2);
+        if (x2.style.display != "block") {
+            x2.style.display = "block";
+            document.getElementById(id).classList.remove('fa-plus-circle')
+            document.getElementById(id).classList.add('fa-minus-circle')
+        } else {
+            x2.style.display = "none";
+            if (id) {
+                document.getElementById(id).classList.remove('fa-minus-circle')
+                document.getElementById(id).classList.add('fa-plus-circle')
+            }
+        }
+        $("nav").find("li").on("click", "a", function () {
+            $('.navbarCollapse').collapse('hide');
+        });
+    }
+    $(document).ready(function () {
+    });
+    frameLooper();
+
+
+    // Lazy image loader
+    var lazyLoadInstance = new LazyLoad({
+    });
+</script>
