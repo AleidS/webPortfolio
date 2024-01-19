@@ -32,10 +32,9 @@
 (function () {
     $text = " The recommender logic was done with 
             <strong> Javascript</strong>, and <strong>React</strong> 
-            allowed for easily styling the 135 measures, 
-            all at once";
-    $logo = "JavaScript-Logo.png";
-    $logo2 = "React-icon.png";
+            allowed for easily styling the 135 measures";
+    // $logo = "JavaScript-Logo.png";
+    $logo = "React-icon.png";
     include("explanationTemplate.php");
 })();
 

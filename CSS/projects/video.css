@@ -16,8 +16,8 @@ video {
 @media (max-device-aspect-ratio: 5/8) {
     video {
         display: block;
-        top: 60vh !important;
-        z-index: 99999 !important;
+        top: 57vh !important;
+        z-index: 9999 !important;
         background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min-graded-opacity.png");
         background-size: cover;
         background-attachment: fixed;

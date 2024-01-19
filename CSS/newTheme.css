@@ -1,19 +1,30 @@
 #menuContainer {
-    background: linear-gradient(110deg, rgb(45, 8, 29), rgb(14, 26, 37), rgb(15, 32, 39));
+    /* background: linear-gradient(110deg, rgb(45, 8, 29), rgb(14, 26, 37), rgb(15, 32, 39));
     margin-bottom: 0px !important;
     background: linear-gradient(45deg,
-            rgb(75, 34, 57),
-            rgb(29, 83, 104)) border-box;
+            rgb(70, 23, 50),
+            rgb(16, 71, 94)) border-box;
     max-width: 100vw;
+    border: 0px !Important; */
+    box-shadow: none;
+    border: none !important;
 }
 
 #menu {
-    border: 2px solid rgba(67, 80, 83, 0.184);
-    box-shadow: none;
+    border: 0px solid rgba(67, 80, 83, 0.184) !important;
+    box-shadow: none !important;
 }
 
-#dottedLine {
-    height: 800px !important;
+#mainArea {
+    max-width: 100vw;
+}
+
+.sectionTitle {
+    border: 1px solid rgba(150, 135, 138, 0.339);
+}
+
+.project {
+    max-width: 900px !important;
 }
 
 
@@ -29,31 +40,20 @@
 }
 
 
-.imgAndText,
-.explanation {
+.imgAndText {
     border: none;
-    /* background: rgb(14, 17, 22); */
-    background: linear-gradient(45deg, rgb(23, 3, 14), rgb(16, 29, 34));
-    background: rgb(15, 17, 23);
-    /* background: rgb(7, 10, 16) !important; */
     box-shadow: none;
+    /* background: rgb(7, 10, 16) !important; */
+    /* background: rgb(14, 17, 22); */
+    /* background: linear-gradient(45deg, rgb(23, 3, 14), rgb(16, 29, 34)); */
 }
 
-.sectionText,
-.sectionTitle {
+.sectionText {
     background: rgb(7, 10, 16) !important;
     backdrop-filter: blur(20px) !important;
     box-shadow: none;
     border-top: 2px solid rgba(255, 255, 255, 0.535);
     border-bottom: 2px solid rgba(255, 255, 255, 0.554);
-}
-
-.sectionTitle {
-    max-width: 800px !important;
-}
-
-.project {
-    max-width: 1000px !important;
 }
 
 .wipe {
@@ -63,26 +63,20 @@
     border-width: 0px;
 }
 
-
-.sectionTitle,
-.explanation {
-    box-shadow: none;
-    border: none;
+@media screen and (min-device-aspect-ratio: 5/8) {
+    .explanation {
+        /* background: rgb(18, 33, 43); */
+        border: 1px solid rgba(160, 23, 23, 0.122);
+        /* box-shadow: 0px 0px 10px 5px rgba(57, 37, 59, 0.218); */
+    }
 }
 
 .imgAndText {
     border-radius: 50px;
 }
 
-.mainArea {
-    max-width: 100vw;
-
-}
-
-/* Curved gradient border */
-.sectionTitle::before,
-.explanation::before,
-.imgAndText::after {
+.imgAndText::after,
+.workflowtext h4::after {
     content: "";
     position: absolute;
     inset: 0px;
@@ -93,39 +87,29 @@
     border: 2px solid transparent;
     /*2*/
     background: linear-gradient(45deg,
-            rgb(133, 53, 99),
-            rgb(44, 128, 161)) border-box;
+            rgb(133, 53, 85),
+            rgb(44, 143, 161)) border-box;
     /*3*/
     -webkit-mask:
         /*4*/
         linear-gradient(#fff 0 0) padding-box,
         linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
+    /* -webkit-mask-composite: xor; */
+    -webkit-mask-composite: source-out;
     /*5'*/
     mask-composite: exclude;
     pointer-events: none;
     /*5*/
 }
 
-/* change curved gradient border */
-.explanation::before {
-
-    border-radius: 20px;
-    border-width: 2px;
-
+.workflowtext h4 {
+    /* background: rgba(0, 0, 0, 0.543); */
 }
 
-/* No side gradient borders on mobile */
-@media (max-device-aspect-ratio: 5/8) {
-
-    .sectionText::before,
-    .explanation::before,
-    .imgAndText::after {
-        border-radius: 0px;
-        border: none;
-        border-top: 2px solid transparent;
-        border-bottom: 2px solid transparent;
-    }
+.workflowtext h4::after {
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px;
 }
 
 .imgAndText::after {

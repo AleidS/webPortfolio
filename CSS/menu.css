@@ -63,8 +63,9 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     /* background-image:urlImages/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darker.jpg");
-   background-size:cover; */
-    border-bottom: 0px solid rgba(255, 255, 255, 0.479);
+   /* background-size:cover; */
+    /* border-bottom: 0px solid rgba(255, 255, 255, 0.479); */
+    border: none;
     height: 100% !important;
     min-height: calc(max(55px, fit-content)) !important;
 }

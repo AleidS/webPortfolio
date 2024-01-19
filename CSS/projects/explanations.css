@@ -18,28 +18,30 @@
     min-height: 550px;
     max-width: 900px !important;
     position: relative;
+
 }
 
 /* Show some of the video before first explanation balloon */
 .exc:first-child {
-    padding-top: 00px;
+    min-height: 850px !important;
 }
 
 @media (max-device-aspect-ratio: 5/8) {
 
     .exc {
-        min-height: 80vh !important;
-        z-index: 90000 !important;
-        z-index: -1;
+        min-height: 120vh !important;
+        -webkit-mask-image: -webkit-gradient(linear, left top, left bottom,
+                from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 2)));
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 63%);
+        z-index: 9999;
+        /* z-index: -1; */
     }
 
     .exc:first-child {
-        padding-top: 0px !important;
-        margin-top: 00px !important;
+        /* padding-top: 150vh !important; */
+        min-height: 180vh !important;
     }
-
 }
-
 
 /* Alternate left/right position of explanations */
 .exc:nth-child(odd) {
@@ -111,20 +113,20 @@
 
 @media (max-device-aspect-ratio: 5/8) {
     .explanation {
-        z-index: -20 !important;
-        width: 99% !important;
-        width: 98vw !important;
+        /* z-index: -20 !important; */
+        width: 100% !important;
+        width: 100vw !important;
         margin: auto;
-        border-radius: 0px !important;
-        /* border: 1px solid white; */
+        border: none;
         max-width: 99% !important;
-        top: 30vh;
+        top: 28vh;
         font-size: 16pt;
-        border-top: 0px solid rgba(255, 255, 255, 0.386);
-        border-bottom: 0px solid rgba(255, 255, 255, 0.386);
-        /* border: 1px solid rgba(255, 255, 255, 0.437) !important; */
-        border-radius: 10px !important;
-        box-shadow: 0px 0px 5px 4px rgba(68, 51, 60, 0.319);
+        /* border-top: 0px solid rgba(255, 255, 255, 0.386);
+        border-bottom: 0px solid rgba(255, 255, 255, 0.386); */
+        border-top: 1px solid rgba(255, 255, 255, 0.555) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.538) !important;
+        border-radius: 0px !important;
+        /* box-shadow: 0px 0px 5px 4px rgba(68, 51, 60, 0.319); */
         background-image: none;
         background-color: rgba(73, 35, 62, 0.045);
         backdrop-filter: blur(10px)brightness(50%) !important;
@@ -132,6 +134,7 @@
         background-size: cover;
         background-attachment: fixed;
         background-position: auto;
+        z-index: 9999 !important;
     }
 }
 
@@ -152,6 +155,6 @@
 }
 
 .explanation a {
-    color: rgb(139, 226, 179);
+    color: rgb(255, 103, 146);
     font-weight: 500;
 }
