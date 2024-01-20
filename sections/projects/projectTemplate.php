@@ -1,7 +1,9 @@
 <!-- Saving aid -->
 <!-- Play on scroll - https://codepen.io/Maltsbier/pen/dyYmGGq -->
 <div id=<?php echo ($projectID . "-bound") ?> class="project">
+
     <h2 class="projectTitle">
+
         <?php if (isset($prev)) : ?>
         <a class="skipButton" href=<?php echo $prev ?>>
 
@@ -12,7 +14,9 @@
         <?php else : ?>
         <span> &nbsp; </span>
         <?php endif ?>
-        <?php echo $projectName ?>
+        <a href="<?php echo '#' . $projectID ?>">
+            <?php echo $projectName ?>
+        </a>
 
         <a class="skipButton" href=<?php echo $next ?>>
             <i class="fas fa-fast-forward"></i>

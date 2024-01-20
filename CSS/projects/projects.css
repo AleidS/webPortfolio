@@ -131,6 +131,10 @@
     border-radius: 20px;
 }
 
+.projectTitle a {
+    color: white !important;
+}
+
 .skipButton {
     color: white !important;
     opacity: 0.5;

@@ -86,7 +86,7 @@
     /*1*/
     border: 2px solid transparent;
     /*2*/
-    background: linear-gradient(45deg,
+    background: linear-gradient(80deg,
             rgb(133, 53, 85),
             rgb(44, 143, 161)) border-box;
     /*3*/
@@ -103,10 +103,17 @@
 }
 
 @media screen and (max-aspect-ratio:5/8) {
-    .sectionTitle:not(.smallTitle)::after {
-        border-radius: 0px !important;
+
+    .sectionTitle:not(.smallTitle)::after,
+    .imgAndText::after {
+        border-radius: 1px !important;
         border-left: none !important;
         border-right: none !important;
+    }
+
+    .imgAndText::after {
+        border-width: 10px;
+        border-radius: 20px !important;
     }
 }
 

@@ -78,9 +78,10 @@
         include "sections/education.html";
         include "sections/tools.html";
         include "sections/contact.html";
-        include "sections/info.html";
         include "sections/workflow.html";
+    include "sections/info.html";
         include "sections/coursesTaken.html";
+ 
         ?>
         </div>
         <?php
