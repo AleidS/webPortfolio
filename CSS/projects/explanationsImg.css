@@ -24,15 +24,25 @@
 
 }
 
+.caption {
+    font-size: 0.6rem;
+    padding: 0px;
+    margin: 0px;
+}
+
 
 @media (max-device-aspect-ratio: 5/8) {
 
+    .exImg {
+        max-height: 100px;
+    }
 
     .imgAndCaption {
         max-width: 30%;
         flex-basis: 0.5;
         max-height: 100px !important;
         max-width: 150px !important;
+        overflow-x: visible;
         width: auto;
         height: auto;
         flex-grow: 1;

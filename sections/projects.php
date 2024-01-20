@@ -2,7 +2,7 @@
 </div>
 <div id="projectsContainer">
     <div class="sectionContainer">
-        <div class="sectionTitle">
+        <div class="sectionTitle projects">
             Projects
         </div>
     </div>
@@ -46,7 +46,7 @@ include("projects/wipe.php");
 $projectName = "Art portfolio";
 $projectID = "artPortfolio";
 $videoName = "artPortfolioVideo";
-$link = "https://www.aleidsuzan.com/artPortfolio";
+$link = "https://www.aleidsuzan.com/artportfolio";
 $prev = '#drawingApp';
 $next = "#edu";
 

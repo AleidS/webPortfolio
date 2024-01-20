@@ -1,4 +1,4 @@
-video {
+.videoContainer {
     width: 100%;
     width: calc(min(100%, 100vh));
     max-width: calc(min(120vh, 100vw));
@@ -7,20 +7,42 @@ video {
     position: -webkit-sticky;
     position: sticky;
     display: block;
-    top: 30vh;
+    top: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    height: 80vh !important;
+}
 
-
+video {
+    scale: 1.4;
 }
 
 
+
 @media (max-device-aspect-ratio: 5/8) {
-    video {
+    .videoContainer {
         display: block;
-        top: 57vh !important;
+        top: 30vh !important;
         z-index: 9999 !important;
         background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min-graded-opacity.png");
         background-size: cover;
         background-attachment: fixed;
         background-position: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+        height: 80vh !important;
+        /* background: white; */
+    }
+
+    video {
+        /* If you make the scale too large it stops working on smaller screens, no idea why */
+        scale: 1.5;
+        position: absolute;
+        top: 200px;
+
     }
 }

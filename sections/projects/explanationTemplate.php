@@ -16,10 +16,10 @@
                  alt='screenshot' />
 
              <?php if (isset($imgCaption)) : ?>
-             <small><small>
-                     <?php echo $imgCaption ?>
-                 </small></small>
-             <br />
+             <div class='caption'>
+                 <?php echo $imgCaption ?>
+             </div>
+
              <?php endif ?>
          </div>
          <!-- Logo on mobile (e.g. javascript/react-->

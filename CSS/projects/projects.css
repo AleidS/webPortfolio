@@ -41,7 +41,7 @@
 
 .project {
     /* Determines length of video / space for explanations */
-    height: 4000px;
+    height: 5000px;
 
     box-sizing: border-box;
     padding-bottom: 30px;
@@ -60,7 +60,7 @@
 
     .project {
         padding: 0px !important;
-        height: 820vh !important;
+        height: 500vh !important;
     }
 
     /* So that explanation balloons dont show under the video */
@@ -134,6 +134,7 @@
 .skipButton {
     color: white !important;
     opacity: 0.5;
+    font-size: 1.2rem;
 }
 
 

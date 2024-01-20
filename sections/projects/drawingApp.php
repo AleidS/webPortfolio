@@ -26,8 +26,8 @@
 
 (function () {
     $imgName = "brushcolor.png";
-    $text = " You could <strong>change the brush size/color, 
-            bg color</strong>, undo/redo
+    $text = "or <strong>change the brush size/color, 
+            background color</strong>, undo/redo
             , and save the image.";
     include("explanationTemplate.php");
 })();

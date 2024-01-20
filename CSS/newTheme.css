@@ -19,8 +19,8 @@
     max-width: 100vw;
 }
 
-.sectionTitle {
-    border: 1px solid rgba(150, 135, 138, 0.339);
+.sectionTitle:not(.projects) {
+    border: none !important;
 }
 
 .project {
@@ -48,12 +48,19 @@
     /* background: linear-gradient(45deg, rgb(23, 3, 14), rgb(16, 29, 34)); */
 }
 
-.sectionText {
-    background: rgb(7, 10, 16) !important;
-    backdrop-filter: blur(20px) !important;
+.sectionText,
+.sectionTitle:not(.projects) {
+    background: rgb(7, 10, 16);
+    backdrop-filter: blur(20px);
     box-shadow: none;
+    border: 1px solid rgba(216, 112, 147, 0.177);
     border-top: 2px solid rgba(255, 255, 255, 0.535);
     border-bottom: 2px solid rgba(255, 255, 255, 0.554);
+
+}
+
+.sectionText {
+    /* box-shadow: 0px 0px 30px 00px rgba(14, 26, 33, 0.38); */
 }
 
 .wipe {
@@ -63,20 +70,13 @@
     border-width: 0px;
 }
 
-@media screen and (min-device-aspect-ratio: 5/8) {
-    .explanation {
-        /* background: rgb(18, 33, 43); */
-        border: 1px solid rgba(160, 23, 23, 0.122);
-        /* box-shadow: 0px 0px 10px 5px rgba(57, 37, 59, 0.218); */
-    }
-}
-
 .imgAndText {
     border-radius: 50px;
 }
 
 .imgAndText::after,
-.workflowtext h4::after {
+.workflowtext h4::after,
+.sectionTitle:not(.projects)::after {
     content: "";
     position: absolute;
     inset: 0px;
@@ -100,6 +100,14 @@
     mask-composite: exclude;
     pointer-events: none;
     /*5*/
+}
+
+@media screen and (max-aspect-ratio:5/8) {
+    .sectionTitle:not(.smallTitle)::after {
+        border-radius: 0px !important;
+        border-left: none !important;
+        border-right: none !important;
+    }
 }
 
 .workflowtext h4 {

@@ -3,14 +3,14 @@
 <div id=<?php echo ($projectID . "-bound") ?> class="project">
     <h2 class="projectTitle">
         <?php if (isset($prev)) : ?>
-            <a class="skipButton" href=<?php echo $prev ?>>
+        <a class="skipButton" href=<?php echo $prev ?>>
 
-                <i class="fas fa-fast-backward"></i>
+            <i class="fas fa-fast-backward"></i>
 
-            </a>
+        </a>
 
         <?php else : ?>
-            <span> &nbsp; </span>
+        <span> &nbsp; </span>
         <?php endif ?>
         <?php echo $projectName ?>
 
@@ -22,16 +22,19 @@
     <div id=<?php echo ($projectID) ?>></div>
 
     <!-- Video needs autoplay tag, otherwise won't work on mobile Safari (autoplay is immediately disabled again on scroll)-->
-    <video id=<?php echo $videoName ?> width="100%" muted autoplay preload playsinline>
-        <!-- Videos in script/script.js under innerHTML (changes file based on screen dimensions) -->
-        <p>Your user agent does not support the HTML5 Video element.</p>
-    </video>
+    <div class="videoContainer">
+        <video id=<?php echo $videoName ?> width="100%" muted autoplay preload playsinline>
+            <!-- Videos in script/script.js under innerHTML (changes file based on screen dimensions) -->
+            <p>Your user agent does not support the HTML5 Video element.</p>
+        </video>
+    </div>
     <!-- Covers text bubbles under the video -->
     <div class="mobileCover"></div>
 
     <!-- Skip to bottom of the project -->
 
-    <a class="projectFooter" href=" <?php echo $link ?>" target="_blank" style=" word-wrap: break-word !important;"><?php echo $link ?>
+    <a class="projectFooter" href=" <?php echo $link ?>" target="_blank"
+        style=" word-wrap: break-word !important;"><?php echo $link ?>
         <i class='fa-solid fa-globe'></i>
     </a>
     <div class="explanationsContainer">

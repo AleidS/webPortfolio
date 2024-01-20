@@ -16,7 +16,7 @@
 
 /* Because users will otherwise scroll right past it */
 #edu {
-    margin-top: 100vh;
+    margin-top: 90vh;
 }
 
 .test {
@@ -59,12 +59,19 @@
     border: 1px solid rgba(255, 255, 255, 0.202);
     /* background-color: rgba(0, 0, 0, 0.163); */
     /* background-image: url("../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darker.jpg"); */
-    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darker.jpg");
-    background-attachment: fixed;
-    background-size: cover;
+    background: rgb(7, 8, 9);
     opacity: 1;
     backdrop-filter: brightness(90%);
     max-width: 800px !important;
+    margin-bottom: 40px;
+    width: calc(min(100%, 600px));
+}
+
+
+.projects {
+    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darker.jpg");
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .smallTitle {
@@ -79,7 +86,7 @@
     font-family: roboto;
     color: rgba(255, 255, 255, 0.862);
     transition-duration: 0.5s;
-    background: rgb(18, 26, 30);
+    background: rgb(14, 17, 19) !important;
     /* background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-semtransparent-min.png"); */
 }
 
@@ -110,11 +117,8 @@
     padding: 0px;
     word-wrap: break-word;
 
-    .sectionTitle {
-        margin-bottom: 40px;
-        width: calc(min(100%, 600px));
-    }
 }
+
 
 .section:first-child() {
     margin-top: 0px;
@@ -166,4 +170,10 @@ a {
 
 .sectionText strong {
     font-weight: 600;
+}
+
+@media screen and (max-aspect-ratio:5/8) {
+    .sectionText {
+        border-radius: 0px;
+    }
 }

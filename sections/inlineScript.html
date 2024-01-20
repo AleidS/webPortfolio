@@ -95,4 +95,49 @@
     // Lazy image loader
     var lazyLoadInstance = new LazyLoad({
     });
+
+    // increase opacity/size of explanations when scrolling (mobile view)
+    // https://alvarotrigo.com/blog/css-animations-scroll/
+    window.addEventListener('load', function () {
+        function reveal() {
+            var explanations = document.querySelectorAll(".explanation");
+            for (var i = 0; i < explanations.length; i++) {
+                var windowHeight = window.innerHeight;
+                var windowWidth = window.innerWidth;
+                var elementTop = explanations[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                // if (elementTop < windowHeight - elementVisible) {
+                //     explanations[i].classList.add("active");
+                // } else {
+                //     explanations[i].classList.remove("active");
+                // }
+                if ((windowWidth / windowHeight) < (5 / 8)) {
+                    explanations[i].style.opacity = `${1 - ((elementTop - 200) / (windowHeight - 500))}`;
+                    explanations[i].style.scale = `${Math.cos((elementTop * 1.4 - 300) / 500)}`;
+                }
+                // If someone is resizing window from narrow->large, reset (otherwise they're all invisible)
+                else {
+                    explanations[i].style.opacity = `${1}`;
+                    explanations[i].style.scale = `${1}`;
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        window.addEventListener("resize", reveal);
+        let loaded = 0;
+        let smallestSize = false
+        window.addEventListener("resize", () => {
+            if (loaded == 3) {
+                console.log("👋yes, it's very responsive indeed. ")
+            }
+            if (window.innerWidth < 250 && smallestSize == false) {
+                console.log("😅now, let's not get ridiculous here")
+                smallestSize = true
+            }
+            loaded += 1;
+        })
+
+        reveal();
+    })
+
 </script>

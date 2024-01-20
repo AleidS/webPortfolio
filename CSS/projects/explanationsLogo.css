@@ -47,7 +47,9 @@
 
 @media (max-device-aspect-ratio: 5/8) {
 
-    .explanationLogosContainer {}
+    .explanationLogosContainer {
+        max-height: 100px;
+    }
 
     .explanationLogo {
         max-width: 70px;
