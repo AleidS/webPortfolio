@@ -49,7 +49,7 @@
     font-size: calc(min(1.1rem, 3.4vw));
     font-size: clamp(10pt, 1.1rem, 3.4vw);
     font-weight: 100;
-    font-family: 'karla';
+    font-family: 'roboto';
     font-stretch: condensed;
     text-transform: uppercase;
 
@@ -107,9 +107,6 @@
     margin-top: -1px;
 }
 
-#expandMenu * {
-    background: none !important;
-}
 
 .dropdown-item {
     width: 100% !important;

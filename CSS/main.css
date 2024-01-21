@@ -19,9 +19,9 @@ html {
     font-size: 2;
     /* overflow-x: hidden; */
     scroll-behavior: smooth;
-    -webkit-transition-duration: 2s;
-    -o-transition-duration: 2s;
-    transition-duration: 2s;
+    -webkit-transition-duration: 4s;
+    -o-transition-duration: 4s;
+    transition-duration: 4s;
     word-wrap: break-word;
 }
 
@@ -43,6 +43,7 @@ body {
 
 .mainArea {
     backdrop-filter: none;
+    transition-duration: 4s;
 }
 
 
