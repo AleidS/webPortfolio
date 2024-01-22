@@ -1,11 +1,17 @@
 <div id="projects">
 </div>
 <div id="projectsContainer">
-    <div class="sectionContainer">
-        <div class="sectionTitle projects">
-            Projects
+    <div class='transparentArrowContainer'>
+        <div class='transparentArrow'>
+        </div>
+        <div class='arrowBackground'>
         </div>
     </div>
+
+    <div class="sectionTitle projectsTitle">
+        Projects
+    </div>
+
     <div class="sectionContainer">
         <a href="#tools" class="sectionTitle smallTitle">
             <span>
@@ -21,6 +27,7 @@ $projectName = "Saving Aid ";
 $projectID = "savingAid";
 $videoName = "savingAidVideo";
 $link = "https://www.besparingshulp.nl/";
+$prev = "#projects";
 $next = "#recipeApp";
 include("projects/projectTemplate.php");
 include("projects/wipe.php");

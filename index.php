@@ -15,10 +15,10 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <!-- Fonts -->
         <link
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Itim&family=Julius+Sans+One&family=Karla:wght@100;300;400&family=Nothing+You+Could+Do&family=Overlock:ital@0;1&family=Roboto+Mono:wght@100;400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Itim&family=Julius+Sans+One&family=Karla:wght@100;300;400&family=Nothing+You+Could+Do&family=Overlock:ital@0;1&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap"
             rel="stylesheet">
         <link
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Itim&family=Julius+Sans+One&family=Karla:wght@200;300;400&family=Lato:wght@300&family=Nothing+You+Could+Do&family=Overlock:ital@0;1&family=Roboto+Mono:wght@100;400;700&family=Roboto:wght@100;300&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Itim&family=Julius+Sans+One&family=Karla:wght@200;300;400&family=Lato:wght@300&family=Nothing+You+Could+Do&family=Overlock:ital@0;1&family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;200;300;400;500;600;700&display=swap"
             rel="stylesheet">
 
         <!-- Own stylesheets -->
@@ -79,9 +79,9 @@
         include "sections/tools.html";
         include "sections/contact.html";
         include "sections/workflow.html";
-    include "sections/info.html";
+        include "sections/info.html";
         include "sections/coursesTaken.html";
- 
+
         ?>
         </div>
         <?php
