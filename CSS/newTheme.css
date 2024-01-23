@@ -19,7 +19,7 @@
     max-width: 100vw;
 }
 
-.sectionTitle:not(.projects) {
+.sectionTitle:not(.projects, .smallTitle) {
     border: none !important;
 }
 
@@ -49,18 +49,24 @@
 }
 
 .sectionText,
-.sectionTitle:not(.projects) {
-    background: rgb(7, 10, 16);
+.sectionTitle {
+    background: rgb(7, 10, 16) !important;
+}
+
+.sectionText {
     backdrop-filter: blur(20px);
     box-shadow: none;
     border: 1px solid rgba(216, 112, 147, 0.177);
     border-top: 2px solid rgba(255, 255, 255, 0.535);
     border-bottom: 2px solid rgba(255, 255, 255, 0.554);
-
 }
 
 .sectionText {
     /* box-shadow: 0px 0px 30px 00px rgba(14, 26, 33, 0.38); */
+}
+
+.projectTitle {
+    border-radius: 0px;
 }
 
 .wipe {
@@ -76,7 +82,7 @@
 
 .imgAndText::after,
 .workflowtext h4::after,
-.sectionTitle:not(.projects)::after {
+.sectionTitle:not(.smallTitle)::before {
     content: "";
     position: absolute;
     inset: 0px;
@@ -104,7 +110,7 @@
 
 @media screen and (max-aspect-ratio:5/8) {
 
-    .sectionTitle:not(.smallTitle)::after,
+    .sectionTitle:not(.smallTitle)::before,
     .imgAndText::after {
         border-radius: 1px !important;
         border-left: none !important;
