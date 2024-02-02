@@ -50,13 +50,13 @@ $next = "#artPortfolio";
 include("projects/projectTemplate.php");
 include("projects/wipe.php");
 
-$projectName = "Art portfolio";
-$projectID = "artPortfolio";
-$videoName = "artPortfolioVideo";
-$link = "https://www.aleidsuzan.com/artportfolio";
-$prev = '#drawingApp';
-$next = "#edu";
+// $projectName = "Art portfolio";
+// $projectID = "artPortfolio";
+// $videoName = "artPortfolioVideo";
+// $link = "https://www.aleidsuzan.com/artportfolio";
+// $prev = '#drawingApp';
+// $next = "#edu";
 
-include("projects/projectTemplate.php");
+// include("projects/projectTemplate.php");
 include("projects/wipe.php");
 ?>
