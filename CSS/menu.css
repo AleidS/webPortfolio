@@ -1,5 +1,5 @@
 #menuContainer {
-    background-image: url("../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png");
+    background-image: url("../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
     background-size: cover;
     background-attachment: fixed;
     background-position: auto;
@@ -99,7 +99,7 @@
 /* dropdownmenu with inline style because of bootstrap issues */
 #expandMenu {
     flex-direction: column;
-    background-image: url(Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg.png);
+    background-image: url(Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg2.png);
     background-attachment: fixed;
     background-size: cover;
     padding: 10px;

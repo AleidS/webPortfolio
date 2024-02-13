@@ -22,7 +22,7 @@
 
 #projectsContainer {
     /* Create a parallax effect */
-    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png");
+    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
     background-attachment: fixed;
     background-position: auto;
     background-size: cover;
@@ -51,7 +51,7 @@
     z-index: 1;
     position: relative;
     -webkit-box-sizing: border-box;
-    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png");
+    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
     background-size: cover;
     background-attachment: fixed;
     background-position: auto;
@@ -72,7 +72,7 @@
         top: 80vh;
         height: 20vh;
         width: 100%;
-        background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png");
+        background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
         background-size: cover;
         background-attachment: fixed;
         background-position: auto;
@@ -82,7 +82,7 @@
 }
 
 
-.projectTitle {
+.projectsSectionTitle {
     position: -webkit-sticky;
     position: sticky;
     display: block;
@@ -118,7 +118,7 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: space-evenly;
-    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png");
+    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darker.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: auto;
@@ -131,6 +131,8 @@
     -webkit-text-emphasis-color: white;
     text-emphasis-color: white;
     border-radius: 20px;
+    margin-bottom: 300px;
+    min-height: 100px !important;
 }
 
 .projectTitle a {
@@ -155,7 +157,9 @@
     min-height: -webkit-fit-content;
     min-height: -moz-fit-content;
     min-height: fit-content;
-    width: 100%;
+    width: 100vw;
+    left: 0px !important;
+    margin: 0px !important;
     -ms-flex-preferred-size: 1;
     flex-basis: 1;
     padding: 10px;
@@ -168,7 +172,7 @@
     opacity: 1;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png");
+    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
     background-attachment: fixed;
     background-size: cover;
     background-position: auto;
@@ -198,15 +202,15 @@
     z-index: 2000;
     position: relative;
     box-sizing: border-box;
-    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darker.jpg");
+    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
     background-attachment: fixed;
     background-size: cover;
     background-position: auto;
     border: none;
     display: flex;
     justify-content: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.236);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.235);
+    /* border-top: 1px solid rgba(255, 255, 255, 0.236); */
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.235); */
 }
 
 .wipe:last-child {

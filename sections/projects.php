@@ -8,21 +8,128 @@
         </div>
     </div>
 
-    <div class="sectionTitle projectsTitle">
+    <div class="sectionTitle projectsSectionTitle">
         Projects
     </div>
 
-    <div class="sectionContainer">
+    <!-- <div class="sectionContainer">
         <a href="#tools" class="sectionTitle smallTitle">
             <span>
                 (Or skip to overview of tools)
             </span>
         </a>
-    </div>
+    </div> -->
 </div>
 
 
 <?php
+$projectName = "Saving Aid ";
+$projectID = "savingAidCard";
+$projectLink = "https://www.besparingshulp.nl/";
+$toolsObj = array(
+    array(
+        'name' => 'HTML/CSS',
+    ),
+    array(
+        'name' => 'JavaScript',
+    ),
+    array(
+        'name' => 'React',
+    ),
+    array(
+        'name' => 'PHP/SQL',
+    ),
+    array(
+        'name' => 'Framer Motion',
+    ),
+
+);
+$slideObj = array(
+    array(
+        'vidName' => "saving_aid_1.mp4",
+        'imgName' => "saving_aid.png",
+        'text' => 'Energy saving recommender system, in which study participants could obtain personalized saving advice',
+    ),
+    array(
+        'imgName' => "savingAid2.png",
+        'text' => 'abcdefg',
+    ),
+    array(
+        'imgName' => "savingAid3.png",
+        'text' => 'abcdefg',
+    )
+);
+include("projects/projectCardTemplate.php");
+
+
+
+$projectName = "Recipe Website ";
+$projectID = "recipeCard";
+$projectLink = "https://www.aleidsuzan.com/recipes/";
+$toolsObj = array(
+    array(
+        'name' => 'HTML/CSS',
+    ),
+    array(
+        'name' => 'JavaScript',
+    ),
+    array(
+        'name' => 'React',
+    ),
+);
+$slideObj = array(
+    array(
+        'imgName' => "recipes.png",
+        'text' => 'Recipe website, made to learn React',
+    ),
+    array(
+        'imgName' => "recipes_2.png",
+        'text' => 'abcdefg',
+    ),
+    array(
+        'imgName' => "recipes_3.png",
+        'text' => 'abcdefg',
+    ),
+    array(
+        'imgName' => "recipes_4.png",
+        'text' => 'abcdefg',
+    )
+);
+include("projects/projectCardTemplate.php");
+
+
+$projectName = "Drawing App";
+$projectID = "drawingAppCard";
+$projectLink = "https://www.aleidsuzan.com/canvas/";
+$toolsObj = array(
+    array(
+        'name' => 'HTML/CSS',
+    ),
+    array(
+        'name' => 'JavaScript',
+    )
+);
+$slideObj = array(
+    array(
+        'imgName' => "canvas.png",
+        'text' => 'Energy saving recommender system, in which study participants could obtain personalized saving advice',
+    ),
+    array(
+        'imgName' => "canvas_3.png",
+        'text' => 'abcdefg',
+    ),
+    array(
+        'imgName' => "canvas_4.png",
+        'text' => 'abcdefg',
+    )
+);
+include("projects/projectCardTemplate.php");
+
+
+include("projects/wipe.php");
+
+
+
 $projectName = "Saving Aid ";
 $projectID = "savingAid";
 $videoName = "savingAidVideo";

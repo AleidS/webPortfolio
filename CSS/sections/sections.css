@@ -66,6 +66,7 @@
     margin-bottom: 40px;
     width: calc(min(100%, 600px));
 
+
 }
 
 /* Section title of projects */
@@ -123,6 +124,7 @@
 .projectsTitle {
     margin-top: 300px;
     position: relative;
+
 }
 
 .smallTitle {

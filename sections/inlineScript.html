@@ -9,12 +9,17 @@
     crossorigin="anonymous"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="script/script.js">
+
 </script>
+<!-- Swiper image gallery -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 <!-- Font awesome -->
 <script src="https://kit.fontawesome.com/e7c36fd275.js" crossorigin="anonymous"></script>
 
 <!-- Lazy image loading  -->
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"></script>
+
 
 <script>
     $(".navbar-collapse a").click(function () {
@@ -29,6 +34,7 @@
             duration: 800,
         });
     });
+
     var string = `Portfolio`;
     var array = string.split("");
     var string2 = `Web development by Aleid`;
@@ -36,6 +42,8 @@
     var timer;
     var timer2;
     let shownPassword = false;
+
+    // If there's websites with passwords, use this to show how to access
     // $(".projectLink").on('click', function (event) {
     //     if (shownPassword == false) {
     //         alert('PLEASE NOTE: Username: portfolio, password: portfolio');
@@ -45,15 +53,19 @@
     //         return;
     //     }
     // });
+
+    // Typing effect
     function frameLooper() {
         if (array.length > 0) {
             document.getElementById("title").innerHTML += array.shift();
         } else {
             clearTimeout(timer);
+            // When finished, type subtitle
             frameLooper2();
         }
         loopTimer = setTimeout('frameLooper()', 70);
     }
+    // Subtitle typing effect
     function frameLooper2() {
         if (array2.length > 0) {
             document.getElementById("subtitle").innerHTML += array2.shift();
@@ -91,7 +103,20 @@
     });
     frameLooper();
 
+    // var string3 = `This is testing`;
+    // var array3 = string3.split("");
 
+    let arrayGlobal = []
+    function typingEffect3(arrayX, card) {
+        if (arrayGlobal.length > 0) {
+            card.innerHTML += arrayGlobal.shift();
+
+        }
+    }
+
+
+
+    // frameLooper3()
     // Lazy image loader
     var lazyLoadInstance = new LazyLoad({
     });
@@ -101,9 +126,56 @@
     window.addEventListener('load', function () {
         function reveal() {
             var explanations = document.querySelectorAll(".explanation");
-            for (var i = 0; i < explanations.length; i++) {
+            var projectCards = document.querySelectorAll(".projectCard");
+            var projectTools = document.querySelectorAll(".projectCard li");
+            var windowHeight = window.innerHeight;
+            var windowWidth = window.innerWidth;
+
+            for (var i = 0; i < projectTools.length; i++) {
+                var elementTop = projectTools[i].getBoundingClientRect().top;
+                var elementVisible = 10;
                 var windowHeight = window.innerHeight;
                 var windowWidth = window.innerWidth;
+                // var percentage = Math.min(((windowHeight - elementTop) / (windowHeight * 0.4)), 1)
+                if (elementTop < windowHeight - elementVisible) {
+                    projectTools[i].classList.add("active");
+                    // projectTools[i].innerHTML = i
+                } else {
+                    projectTools[i].classList.remove("active");
+                }
+                // console.log(elementTop);
+                // projectTools[i].style.transform = `translateX(${(-200 + (percentage * 200))}px)`;
+                // console.log(percentage)
+
+                // projectCards[i].style.transform = `scaleY(calc(min(${percentage},1)))rotateX(${percentage * 90}deg)`;
+                // projectCards[i].style.scale = `${Math.cos((elementTop * 1.4 - 300) / 500)}`;
+            }
+            for (var i = 0; i < projectCards.length; i++) {
+                var projectTool = projectCards[i].querySelectorAll("li");
+                for (var i = 0; i < projectTool.length; i++) {
+                    projectTool[i].style.transitionDelay = (`${(i / 3)}s`);
+                }
+            }
+
+
+            // for (var i = 0; i < projectCards.length; i++) {
+            //     var elementTop = projectCards[i].getBoundingClientRect().top;
+            //     var elementVisible = 150;
+            //     var percentage = Math.min(((windowHeight - elementTop) / (windowHeight * 0.7)), 1)
+            //     // if (elementTop < windowHeight - elementVisible) {
+            //     //     explanations[i].classList.add("active");
+            //     // } else {
+            //     //     explanations[i].classList.remove("active");
+            //     // }
+            //     projectCards[i].style.transformOrigin = '0% 50%';
+            //     projectCards[i].style.transform = `rotateY(${(90 - (percentage * 90))}deg)`;
+            //     console.log(percentage)
+
+            //     // projectCards[i].style.transform = `scaleY(calc(min(${percentage},1)))rotateX(${percentage * 90}deg)`;
+            //     // projectCards[i].style.scale = `${Math.cos((elementTop * 1.4 - 300) / 500)}`;
+            // }
+
+            for (var i = 0; i < explanations.length; i++) {
                 var elementTop = explanations[i].getBoundingClientRect().top;
                 var elementVisible = 150;
                 // if (elementTop < windowHeight - elementVisible) {
@@ -121,23 +193,167 @@
                     explanations[i].style.scale = `${1}`;
                 }
             }
+
         }
         window.addEventListener("scroll", reveal);
         window.addEventListener("resize", reveal);
         let loaded = 0;
         let smallestSize = false
-        window.addEventListener("resize", () => {
-            if (loaded == 3) {
-                console.log("👋yes, it's very responsive indeed. ")
-            }
-            if (window.innerWidth < 250 && smallestSize == false) {
-                console.log("😅now, let's not get ridiculous here")
-                smallestSize = true
-            }
-            loaded += 1;
-        })
+        // window.addEventListener("resize", () => {
+        //     if (loaded == 3) {
+        //         console.log("👋yes, it's very responsive indeed. ")
+        //     }
+        //     if (window.innerWidth < 250 && smallestSize == false) {
+        //         console.log("😅now, let's not get ridiculous here")
+        //         smallestSize = true
+        //     }
+        //     loaded += 1;
+        // })
 
         reveal();
+        // <!-- Initialize swiper -->
+
+        const swiper = new Swiper('.swiperImg', {
+            // Optional parameters
+            direction: 'horizontal',
+            // loop: true,
+            effect: 'coverflow',
+            parallax: true,
+
+            delay: 5000,
+
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+
+            on: {
+                init: function () {
+                    var activeSlide = document.getElementsByClassName('swiper-slide')[0];
+                    var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
+                    activeSlideVideo.play();
+                },
+                transitionStart: function () {
+
+                    var videos = document.querySelectorAll('video');
+
+                    Array.prototype.forEach.call(videos, function (video) {
+                        video.pause();
+                    });
+                },
+
+                transitionEnd: function () {
+
+                    var activeIndex = this.activeIndex;
+                    var activeSlide = document.getElementsByClassName('swiper-slide')[activeIndex];
+                    var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
+                    activeSlideVideo.play();
+
+                },
+
+            }
+        });
+        const swiper2 = new Swiper('.swiperText', {
+            // Optional parameters
+            direction: 'horizontal',
+            // loop: true,
+            effect: 'slide',
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            }
+        });
+        var cardTexts = document.querySelectorAll(".pCard");
+
+        // Original texts stored 
+        var cardContents = []
+        var strings = []
+        var typing = []
+        var typed = []
+        var newTimeout = []
+
+
+        // Typing effect projectCard
+        // function frameLooper3() {
+        //     console.log(swiper.activeIndex)
+        //     let active = swiper.activeIndex
+        //     // Store original inner html once
+        //     if (cardContents[active] == undefined) {
+        //         cardContents[active] = cardTexts[active].textContent
+        //     }
+        //     // Previous typing should have finished
+        //     if (cardTexts[active].textContent.length == cardContents[active].length && typed[active] != true) {
+        //         // Original 
+        //         if (newTimeout[active]) {
+        //             // If there's an existing timeout, clear it
+        //             clearTimeout(newTimeout[active]);
+        //         }
+        //         let string3 = cardContents[active]
+        //         let array3 = string3.split("");
+        //         cardTexts[active].textContent = ''
+        //         function inner(card, j) {
+        //             if (array3.length > 0) {
+        //                 card.textContent += array3.shift();
+        //                 console.log('.')
+        //                 newTimeout[j] = setTimeout(inner, 20, card, j);
+        //                 console.log(newTimeout[j])
+        //             }
+        //             else {
+        //                 clearTimeout(newTimeout[j])
+        //                 typed[j] = true
+        //             }
+        //         }
+        //         inner(cardTexts[active], active);
+        //     }
+        // }
+
+
+
+        // document.getElementById("nextButton").onclick = frameLooper3;
+        // document.getElementById("backButton").onclick = frameLooper3;
+
+
     })
 
 </script>
+
+<!-- for (var i = 0; i < cardTexts.length; i++) { // Previous typing should have finished // Store original inner html once
+    if (cardContents[i]==undefined) { // alert('yay') cardContents[i]=cardTexts[i].innerHTML } if
+    (cardTexts[i].innerHTML.length==cardContents[i].length) { // Original let string3=cardContents[i] let
+    array3=string3.split(""); cardTexts[i].innerHTML='' console.log(array3) if (typing[i]=='ongoing' ) {
+    card.innerHTML='' } function inner(card, j) { if (array3.length> 0) {
+    card.innerHTML += array3.shift();
+    typing[j] == 'ongoing'
+    setTimeout(inner, 30, card, j);
+    }
+    else {
+    // alert('done')
+    typing[j] = 'finished'
+    // console.log(typing)
+    }
+    }
+    inner(cardTexts[i], i); -->

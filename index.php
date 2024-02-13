@@ -35,6 +35,8 @@
     <link href="CSS/sections/contact.css" rel="stylesheet">
 
     <link href="CSS/projects/projects.css" rel="stylesheet">
+    <link href="CSS/projects/projectCard.css" rel="stylesheet">
+
 
     <link href="CSS/projects/explanations.css" rel="stylesheet">
     <link href="CSS/projects/explanationsText.css" rel="stylesheet">
@@ -58,6 +60,8 @@
     <meta charset="UTF-8">
     <!-- Motion library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
 <body>
