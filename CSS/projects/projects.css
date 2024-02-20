@@ -43,7 +43,6 @@
 .project {
     /* Determines length of video / space for explanations */
     height: 5000px;
-
     box-sizing: border-box;
     padding-bottom: 30px;
     max-width: 800px !important;
@@ -174,4 +173,9 @@
     height: 100px;
     opacity: 0.5;
     display: none;
+}
+
+#savingAid-bound {
+    height: 0px;
+    opacity: 0;
 }

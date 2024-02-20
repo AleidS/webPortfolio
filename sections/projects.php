@@ -28,7 +28,8 @@
 $projectName = "Saving Aid";
 $year = '2023';
 $icon = 'seedling';
-$projectID = "savingAidCard";
+$projectID = "savingAid";
+$showElement = "savingAid";
 $projectLink = "https://www.besparingshulp.nl/";
 $githubLink = null;
 $toolsObj = array(
@@ -63,19 +64,29 @@ $slideObj = array(
     ),
     array(
         'imgName' => "savingAid2.png",
-        'text' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Accusantium voluptatem quas, eligendi repellendus quis harum maxime officia, 
-        totam cum neque sed veniam consectetur. Modi totam quae a neque, libero rem.
+        'text' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+Accusantium voluptatem quas, eligendi repellendus quis harum maxime officia,
+totam cum neque sed veniam consectetur. Modi totam quae a neque, libero rem.
 ',
     ),
     array(
         'imgName' => "savingAid3.png",
-        'text' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Accusantium voluptatem quas, eligendi repellendus quis harum maxime officia, 
-        totam cum neque sed veniam consectetur. Modi totam quae a neque, libero rem.',
+        'text' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+Accusantium voluptatem quas, eligendi repellendus quis harum maxime officia,
+totam cum neque sed veniam consectetur. Modi totam quae a neque, libero rem.',
     )
 );
 include("projects/projectCardTemplate.php");
+
+
+$projectName = "Saving Aid ";
+$projectID = "savingAid";
+$videoName = "savingAidVideo";
+$link = "https://www.besparingshulp.nl/";
+$prev = "#projects";
+$next = "#recipeApp";
+include("projects/projectTemplate.php");
+include("projects/wipe.php");
 
 
 
@@ -160,14 +171,6 @@ include("projects/wipe.php");
 
 
 
-$projectName = "Saving Aid ";
-$projectID = "savingAid";
-$videoName = "savingAidVideo";
-$link = "https://www.besparingshulp.nl/";
-$prev = "#projects";
-$next = "#recipeApp";
-include("projects/projectTemplate.php");
-include("projects/wipe.php");
 
 $projectName = "Recipe app";
 $projectID = "recipeApp";

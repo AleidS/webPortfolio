@@ -92,15 +92,14 @@
     box-shadow: none !important;
     backdrop-filter: none !important;
     border: none !important;
-    font-size: clamp(20pt, 10rem, 18vw);
+    font-size: clamp(20pt, 5rem, 10vw);
     text-align: right !important;
     width: 100%;
     font-family: 'roboto mono';
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: -0.2rem;
-    font-weight: 300 !important;
-    margin-bottom: 300px;
-    transform: scaleY(1.2);
+    font-weight: 200 !important;
+    margin-bottom: 200px;
 }
 
 .ml10 .letter {

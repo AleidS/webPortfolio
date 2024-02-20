@@ -148,8 +148,29 @@
             $('.navbarCollapse').collapse('hide');
         });
     }
-    $(document).ready(function () {
-    });
+
+    function show3D(id) {
+        const bound = document.getElementById(`${id}-bound`)
+        // document.getElementById(`${id}-bound`).style.display = 'block';
+        const contents = document.getElementById(`${id}-card`).getElementsByClassName('contents')[0]
+        // document.getElementById(`${id}-card`).getElementsByClassName('contents')[0].style.height = '0px';
+        anime.timeline({ loop: false })
+            .add({
+                targets: contents,
+                height: 0,
+                opacity: 0,
+                duration: 500,
+                easing: 'easeInOutSine'
+            })
+        anime.timeline({ loop: false })
+            .add({
+                targets: bound,
+                height: 5000,
+                opacity: 1,
+                duration: 500,
+                easing: 'easeInOutSine'
+            })
+    }
     frameLooper();
 
     // var string3 = `This is testing`;
@@ -178,7 +199,9 @@
         let tltshown = []
         var txts = document.getElementsByClassName('txt');
         for (var i = 0; i < txts.length; i++) {
-            txts[i].innerHTML = txts[i].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            // Wraps each word, rather than each character (otherwise get stange word-breaks)
+            txts[i].innerHTML = txts[i].textContent.replace(/\S+/g, "<span class='letter'>$&</span>");
+            // txts[i].innerHTML = txts[i].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
         }
         function reveal() {
             var explanations = document.querySelectorAll(".explanation");
@@ -244,9 +267,7 @@
                         anime.timeline({ loop: false })
                             .add({
                                 targets: '.ml10 .letter',
-                                translateX: [100, 0],
-                                translateX: [-100, 0],
-                                scaleY: [0.5, 1],
+                                translateY: [-20, 0],
                                 opacity: [0, 1],
                                 duration: 500,
                                 easing: 'easeInOutSine',
@@ -288,13 +309,13 @@
             const img = allCards[i].getElementsByClassName('swiperImg')[0];
             const txt = allCards[i].getElementsByClassName('swiperText')[0];
             const txtShown = [[], [], [], [], [], []]
+            let horizontal = false
             // txt.getElementsByClassName('letter')[0].style.opacity = '1'
             const swiper = new Swiper(img, {
                 // Optional parameters
                 direction: 'horizontal',
                 // loop: true,
                 effect: 'coverflow',
-                parallax: true,
                 mousewheelControl: true,
                 mousewheel: true,
                 keyboardControl: true,
@@ -324,36 +345,38 @@
                             video.pause();
                         });
                     },
+                    transitionEnd: function () {
+                        var activeIndex = this.activeIndex;
+                        var activeSlide = img.getElementsByClassName('swiper-slide')[activeIndex];
+                        var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
+                        if (activeSlideVideo != null) {
+                            activeSlideVideo.play();
+                        }
+                    },
 
                     slideChange: function () {
                         var activeIndex = this.activeIndex;
                         var activeSlide = img.getElementsByClassName('swiper-slide')[activeIndex];
                         var activeText = txt.getElementsByClassName('pContainer')[activeIndex];
-                        var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
-                        if (activeSlideVideo != null) {
-                            activeSlideVideo.play();
-                        }
                         var activeTxts = activeText.getElementsByClassName('txt');
                         for (var i = 0; i < activeTxts.length; i++) {
                             // https://tobiasahlin.com/moving-letters/#10
-                            console.log(txtShown[activeIndex][i] == undefined)
+
                             if (txtShown[activeIndex][i] == undefined && activeIndex != 0) {
                                 anime.timeline({ loop: false })
                                     .add({
                                         targets: (txt.getElementsByClassName('ml10'), txt.getElementsByClassName('letter')),
-                                        translateY: [10, 0],
+                                        translateX: [0, 0],
                                         opacity: [0, 1],
-                                        duration: 500,
+                                        duration: 1000,
                                         easing: 'easeInOutSine',
-                                        delay: (el, i) => 4 * i
+                                        delay: (el, i) => 80 * i
                                     })
                                 txtShown[activeIndex][i] += 1
-                                console.log(txtShown[activeIndex][i])
 
                             }
                             if (txtShown[activeIndex][i] == undefined) {
                                 txtShown[activeIndex][i] = 0
-                                console.log(txtShown[activeIndex][i])
                             }
 
                         }
@@ -362,6 +385,7 @@
 
                 }
             });
+
             const swiperText = new Swiper(txt, {
                 // Optional parameters
                 direction: 'horizontal',
@@ -387,6 +411,57 @@
             swiper.controller.control = swiperText;
 
         }
+        screens = document.getElementsByClassName('verticalScrollScreen')
+
+
+        // show obstruction screen when scrolling in horizontal direction
+        document.addEventListener('wheel', e => {
+            // When scrolling direction is horizontal, hide screens so that controls can be used
+
+            // When scrolling is vertical, show screens
+            if (Math.abs(e.deltaY) > (Math.abs(e.deltaX) * 0.5)) {
+                for (var i = 0; i < screens.length; i++) {
+                    screens[i].style.opacity = "1";
+                    screens[i].style.display = "block";
+                    screens[i].style.pointerEvents = "auto";
+
+                }
+            }
+            else {
+                for (var i = 0; i < screens.length; i++) {
+                    screens[i].style.opacity = "0";
+                    screens[i].style.display = "none";
+                    screens[i].style.pointerEvents = "none";
+                }
+            }
+        })
+        // Hide obstruction on click events
+        document.addEventListener('click', e => {
+            for (var i = 0; i < screens.length; i++) {
+                screens[i].style.opacity = "0";
+                screens[i].style.display = "none";
+                screens[i].style.pointerEvents = "none";
+            }
+            // Re-do the click event
+            // document.elementFromPoint(e.x, e.y).click();
+        })
+        document.addEventListener('touchmove', e => {
+
+            for (var i = 0; i < screens.length; i++) {
+                screens[i].style.opacity = "0";
+                screens[i].style.display = "none";
+                screens[i].style.pointerEvents = "none";
+            }
+        })
+        document.addEventListener('mousemove', e => {
+
+            for (var i = 0; i < screens.length; i++) {
+                screens[i].style.opacity = "0";
+                screens[i].style.display = "none";
+                screens[i].style.pointerEvents = "none";
+            }
+        })
+
     })
 
 
