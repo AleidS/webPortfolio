@@ -54,20 +54,62 @@
     font-size: 2rem;
     margin: auto;
     z-index: 290;
-    border-radius: 10px;
+    border-radius: 1vw;
     text-decoration-thickness: 2%;
-    border: 1px solid rgba(255, 255, 255, 0.202);
-    /* background-color: rgba(0, 0, 0, 0.163); */
-    /* background-image: url("../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darker.jpg"); */
-    background: rgb(7, 8, 9);
     opacity: 1;
-    backdrop-filter: brightness(90%);
-    max-width: 800px !important;
+    /* max-width: 800px !important; */
     margin-bottom: 40px;
     width: calc(min(100%, 600px));
-
-
+    border: none;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
 }
+
+/* NEW */
+.sectionText,
+.sectionTitle {
+    background: rgba(188, 121, 192, 0.113) !important;
+    padding-left: 10px;
+    border-top: 1px solid white !important;
+    border-bottom: 1px solid white !important;
+    -webkit-box-shadow: 0px 0px 100px 10px rgba(65, 28, 53, 0.256);
+    box-shadow: 0px 0px 100px 10px rgba(65, 28, 53, 0.256);
+    padding: 30px;
+    -webkit-backdrop-filter: blur(10px)brightness(80%);
+    backdrop-filter: blur(80px)brightness(190%)hue-rotate(0deg)contrast(100%);
+}
+
+.sectionText {
+    backdrop-filter: blur(20px);
+    box-shadow: none;
+    border: 1px solid rgba(216, 112, 147, 0.177);
+    border-top: 2px solid rgba(255, 255, 255, 0.535);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.554);
+}
+
+.projectsSectionTitle {
+    background: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    font-size: clamp(20pt, 10rem, 18vw);
+    text-align: right !important;
+    width: 100%;
+    font-family: 'roboto mono';
+    text-transform: uppercase;
+    letter-spacing: -0.2rem;
+    font-weight: 300 !important;
+    margin-bottom: 300px;
+    transform: scaleY(1.2);
+}
+
+.ml10 .letter {
+    opacity: 0;
+    display: inline-block;
+    line-height: 1em;
+    transform-origin: 0 0;
+}
+
 
 /* Section title of projects */
 .transparentArrowContainer {
@@ -121,11 +163,6 @@
     border: none;
 }
 
-.projectsTitle {
-    margin-top: 300px;
-    position: relative;
-
-}
 
 .smallTitle {
     font-size: 1rem;

@@ -1,17 +1,10 @@
 #menuContainer {
-    /* background: linear-gradient(110deg, rgb(45, 8, 29), rgb(14, 26, 37), rgb(15, 32, 39));
-    margin-bottom: 0px !important;
-    background: linear-gradient(45deg,
-            rgb(70, 23, 50),
-            rgb(16, 71, 94)) border-box;
-    max-width: 100vw;
-    border: 0px !Important; */
     box-shadow: none;
     border: none !important;
 }
 
 #menu {
-    border: 0px solid rgba(67, 80, 83, 0.184) !important;
+    /* border: 0px solid rgba(67, 80, 83, 0.184) !important; */
     box-shadow: none !important;
 }
 
@@ -19,120 +12,18 @@
     max-width: 100vw;
 }
 
-.sectionTitle:not(.projects, .smallTitle) {
-    border: none !important;
-}
 
 .project {
     max-width: 900px !important;
 }
 
-
-/* Then re-apply the filter */
-.sectionContainer,
-.section,
-.projectsContainer,
-.projectTitle,
-.sectionText,
-.project,
-.video {
-    border: none;
-}
-
-
 .imgAndText {
     border: none;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.094);
+    border-radius: 3vw !important;
     /* background: rgb(7, 10, 16) !important; */
     /* background: rgb(14, 17, 22); */
     /* background: linear-gradient(45deg, rgb(23, 3, 14), rgb(16, 29, 34)); */
-}
-
-.sectionText,
-.sectionTitle
-
-/* :not(.projectsSectionTitle)  */
-    {
-    /* background: rgb(7, 10, 16) !important; */
-    background: rgba(188, 121, 192, 0.113) !important;
-    padding-left: 10px;
-    border-radius: 20px;
-    -webkit-box-shadow: 0px 0px 100px 10px rgba(65, 28, 53, 0.256);
-    box-shadow: 0px 0px 100px 10px rgba(65, 28, 53, 0.256);
-    padding: 30px;
-    -webkit-backdrop-filter: blur(10px)brightness(80%);
-    backdrop-filter: blur(80px)brightness(190%)hue-rotate(0deg)contrast(100%);
-}
-
-.sectionText {
-    backdrop-filter: blur(20px);
-    box-shadow: none;
-    border: 1px solid rgba(216, 112, 147, 0.177);
-    border-top: 2px solid rgba(255, 255, 255, 0.535);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.554);
-}
-
-.sectionText {
-    /* box-shadow: 0px 0px 30px 00px rgba(14, 26, 33, 0.38); */
-}
-
-.projectTitle {
-    border-radius: 0px;
-}
-
-
-.imgAndText {
-    border-radius: 50px;
-}
-
-.imgAndText::after,
-.workflowtext h4::after,
-.sectionTitle:not(.smallTitle)::before {
-    /* content: "";
-    position: absolute;
-    inset: 0px;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    border: 1px solid transparent; */
-    /* background: linear-gradient(80deg,
-            rgb(133, 53, 85),
-            rgb(44, 143, 161)) border-box; */
-    /* background: rgba(218, 187, 224, 0.571); */
-    /* -webkit-mask:
-        linear-gradient(#fff 0 0) padding-box,
-        linear-gradient(#fff 0 0); */
-    /* -webkit-mask-composite: xor; */
-    /* -webkit-mask-composite: source-out;
-    mask-composite: exclude;
-    pointer-events: none; */
-}
-
-@media screen and (max-aspect-ratio:5/8) {
-
-    .sectionTitle:not(.smallTitle)::before,
-    .imgAndText::after {
-        border-radius: 1px !important;
-        border-left: none !important;
-        border-right: none !important;
-    }
-
-    .imgAndText::after {
-        border-width: 10px;
-        border-radius: 20px !important;
-    }
-}
-
-.workflowtext h4 {
-    /* background: rgba(0, 0, 0, 0.543); */
-}
-
-.workflowtext h4::after {
-    border-left: 0px;
-    border-right: 0px;
-    border-radius: 0px;
-}
-
-.imgAndText::after {
-    border-radius: 50px;
 }

@@ -9,8 +9,22 @@
     crossorigin="anonymous"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="script/script.js">
-
 </script>
+
+<!-- TYPING EFFECTS -> TEXTILLATE -->
+<!-- https://github.com/jschr/textillate (MIT) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"
+    integrity="sha512-0bHMhYsdpiur1bT84kDH4D7cpxFQ9O7uA5yxVAqWC87h552Xt0swX4M+ZlXMKE8oPVRIJ5lAwXWO2UWeDwJJOw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Dependencies textillate; 
+    1. lettering.js (WTFPL licence) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js"
+    integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Anime library for text effects  https://tobiasahlin.com/moving-letters/#10-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
 <!-- Swiper image gallery -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -20,8 +34,43 @@
 <!-- Lazy image loading  -->
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"></script>
 
-
+<!-- Fit text to width -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"
+    integrity="sha512-e2WVdoOGqKU97DHH6tYamn+eAwLDpyHKqPy4uSv0aGlwDXZKGwyS27sfiIUT8gpZ88/Lr4UZpbRt93QkGRgpug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+
+    // Textillate
+    // $(function () {
+    //     $('.tlt').textillate({
+    //         // in animation settings
+    //         in: {
+    //             // set the effect name
+    //             effect: 'fadeInLeft',
+
+    //             // set the delay factor applied to each consecutive character
+    //             delayScale: 1.0,
+
+    //             // set the delay between each character
+    //             delay: 100,
+
+    //             // set to true to animate all the characters at the same time
+    //             sync: false,
+
+    //             // randomize the character sequence
+    //             // (note that shuffle doesn't make sense with sync = true)
+    //             shuffle: false,
+
+    //             // reverse the character sequence
+    //             // (note that reverse doesn't make sense with sync = true)
+    //             reverse: false,
+
+    //             // callback that executes once the animation has finished
+    //             callback: function () { }
+    //         },
+    //     });
+    // })
+
     $(".navbar-collapse a").click(function () {
         $("#navbarCollapse").collapse("hide");
     });
@@ -124,8 +173,16 @@
     // increase opacity/size of explanations when scrolling (mobile view)
     // https://alvarotrigo.com/blog/css-animations-scroll/
     window.addEventListener('load', function () {
+
+
+        let tltshown = []
+        var txts = document.getElementsByClassName('txt');
+        for (var i = 0; i < txts.length; i++) {
+            txts[i].innerHTML = txts[i].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        }
         function reveal() {
             var explanations = document.querySelectorAll(".explanation");
+            var tlts = document.querySelectorAll(".tlt");
             var projectCards = document.querySelectorAll(".projectCard");
             var projectTools = document.querySelectorAll(".projectCard li");
             var windowHeight = window.innerHeight;
@@ -157,24 +214,6 @@
                 }
             }
 
-
-            // for (var i = 0; i < projectCards.length; i++) {
-            //     var elementTop = projectCards[i].getBoundingClientRect().top;
-            //     var elementVisible = 150;
-            //     var percentage = Math.min(((windowHeight - elementTop) / (windowHeight * 0.7)), 1)
-            //     // if (elementTop < windowHeight - elementVisible) {
-            //     //     explanations[i].classList.add("active");
-            //     // } else {
-            //     //     explanations[i].classList.remove("active");
-            //     // }
-            //     projectCards[i].style.transformOrigin = '0% 50%';
-            //     projectCards[i].style.transform = `rotateY(${(90 - (percentage * 90))}deg)`;
-            //     console.log(percentage)
-
-            //     // projectCards[i].style.transform = `scaleY(calc(min(${percentage},1)))rotateX(${percentage * 90}deg)`;
-            //     // projectCards[i].style.scale = `${Math.cos((elementTop * 1.4 - 300) / 500)}`;
-            // }
-
             for (var i = 0; i < explanations.length; i++) {
                 var elementTop = explanations[i].getBoundingClientRect().top;
                 var elementVisible = 150;
@@ -192,6 +231,35 @@
                     explanations[i].style.opacity = `${1}`;
                     explanations[i].style.scale = `${1}`;
                 }
+            }
+            for (var i = 0; i < tlts.length; i++) {
+                var elementTop = tlts[i].getBoundingClientRect().top;
+                var elementVisible = 30;
+                tlts[i].setAttribute("id", `tlt${i}`);
+                // var elementID = tlts[i].id
+                if (elementTop < windowHeight - elementVisible) {
+                    if (tltshown[i] != true) {
+                        // https://tobiasahlin.com/moving-letters/#10
+                        tlts[i].innerHTML = tlts[i].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                        anime.timeline({ loop: false })
+                            .add({
+                                targets: '.ml10 .letter',
+                                translateX: [100, 0],
+                                translateX: [-100, 0],
+                                scaleY: [0.5, 1],
+                                opacity: [0, 1],
+                                duration: 500,
+                                easing: 'easeInOutSine',
+                                delay: (el, i) => 20 * i
+                            })
+
+                        // Textilate messed up alignment of text
+                        // $(`#tlt${i}`).textillate('start');
+                        tltshown[i] = true
+                    }
+                    // console.log(`yay ${ i }`)
+                }
+
             }
 
         }
@@ -213,147 +281,113 @@
         reveal();
         // <!-- Initialize swiper -->
 
-        const swiper = new Swiper('.swiperImg', {
-            // Optional parameters
-            direction: 'horizontal',
-            // loop: true,
-            effect: 'coverflow',
-            parallax: true,
 
-            delay: 5000,
+        allCards = document.getElementsByClassName('projectCard')
 
-
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-            },
-
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
-            // And if we need scrollbar
-            scrollbar: {
-                el: '.swiper-scrollbar',
-            },
-
-            on: {
-                init: function () {
-                    var activeSlide = document.getElementsByClassName('swiper-slide')[0];
-                    var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
-                    activeSlideVideo.play();
-                },
-                transitionStart: function () {
-
-                    var videos = document.querySelectorAll('video');
-
-                    Array.prototype.forEach.call(videos, function (video) {
-                        video.pause();
-                    });
+        for (var i = 0; i < allCards.length; i++) {
+            const img = allCards[i].getElementsByClassName('swiperImg')[0];
+            const txt = allCards[i].getElementsByClassName('swiperText')[0];
+            const txtShown = [[], [], [], [], [], []]
+            // txt.getElementsByClassName('letter')[0].style.opacity = '1'
+            const swiper = new Swiper(img, {
+                // Optional parameters
+                direction: 'horizontal',
+                // loop: true,
+                effect: 'coverflow',
+                parallax: true,
+                mousewheelControl: true,
+                mousewheel: true,
+                keyboardControl: true,
+                delay: 5000,
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
                 },
 
-                transitionEnd: function () {
-
-                    var activeIndex = this.activeIndex;
-                    var activeSlide = document.getElementsByClassName('swiper-slide')[activeIndex];
-                    var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
-                    activeSlideVideo.play();
-
+                // Navigation arrows
+                navigation: {
+                    nextEl: img.getElementsByClassName('swiper-button-next')[0],
+                    prevEl: img.getElementsByClassName('swiper-button-prev')[0],
                 },
 
-            }
-        });
-        const swiper2 = new Swiper('.swiperText', {
-            // Optional parameters
-            direction: 'horizontal',
-            // loop: true,
-            effect: 'slide',
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
 
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-            },
+                on: {
+                    transitionStart: function () {
 
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+                        var videos = img.querySelectorAll('video');
 
-            // And if we need scrollbar
-            scrollbar: {
-                el: '.swiper-scrollbar',
-            }
-        });
-        var cardTexts = document.querySelectorAll(".pCard");
+                        Array.prototype.forEach.call(videos, function (video) {
+                            video.pause();
+                        });
+                    },
 
-        // Original texts stored 
-        var cardContents = []
-        var strings = []
-        var typing = []
-        var typed = []
-        var newTimeout = []
+                    slideChange: function () {
+                        var activeIndex = this.activeIndex;
+                        var activeSlide = img.getElementsByClassName('swiper-slide')[activeIndex];
+                        var activeText = txt.getElementsByClassName('pContainer')[activeIndex];
+                        var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
+                        if (activeSlideVideo != null) {
+                            activeSlideVideo.play();
+                        }
+                        var activeTxts = activeText.getElementsByClassName('txt');
+                        for (var i = 0; i < activeTxts.length; i++) {
+                            // https://tobiasahlin.com/moving-letters/#10
+                            console.log(txtShown[activeIndex][i] == undefined)
+                            if (txtShown[activeIndex][i] == undefined && activeIndex != 0) {
+                                anime.timeline({ loop: false })
+                                    .add({
+                                        targets: (txt.getElementsByClassName('ml10'), txt.getElementsByClassName('letter')),
+                                        translateY: [10, 0],
+                                        opacity: [0, 1],
+                                        duration: 500,
+                                        easing: 'easeInOutSine',
+                                        delay: (el, i) => 4 * i
+                                    })
+                                txtShown[activeIndex][i] += 1
+                                console.log(txtShown[activeIndex][i])
 
+                            }
+                            if (txtShown[activeIndex][i] == undefined) {
+                                txtShown[activeIndex][i] = 0
+                                console.log(txtShown[activeIndex][i])
+                            }
 
-        // Typing effect projectCard
-        // function frameLooper3() {
-        //     console.log(swiper.activeIndex)
-        //     let active = swiper.activeIndex
-        //     // Store original inner html once
-        //     if (cardContents[active] == undefined) {
-        //         cardContents[active] = cardTexts[active].textContent
-        //     }
-        //     // Previous typing should have finished
-        //     if (cardTexts[active].textContent.length == cardContents[active].length && typed[active] != true) {
-        //         // Original 
-        //         if (newTimeout[active]) {
-        //             // If there's an existing timeout, clear it
-        //             clearTimeout(newTimeout[active]);
-        //         }
-        //         let string3 = cardContents[active]
-        //         let array3 = string3.split("");
-        //         cardTexts[active].textContent = ''
-        //         function inner(card, j) {
-        //             if (array3.length > 0) {
-        //                 card.textContent += array3.shift();
-        //                 console.log('.')
-        //                 newTimeout[j] = setTimeout(inner, 20, card, j);
-        //                 console.log(newTimeout[j])
-        //             }
-        //             else {
-        //                 clearTimeout(newTimeout[j])
-        //                 typed[j] = true
-        //             }
-        //         }
-        //         inner(cardTexts[active], active);
-        //     }
-        // }
+                        }
+
+                    },
+
+                }
+            });
+            const swiperText = new Swiper(txt, {
+                // Optional parameters
+                direction: 'horizontal',
+                // loop: true,
+                effect: 'slide',
+                mousewheelControl: true,
+                keyboardControl: true,
+
+                // If we need pagination
+                pagination: {
+                    el: img.getElementsByClassName('.swiper-pagination')[0],
+                },
 
 
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
 
-        // document.getElementById("nextButton").onclick = frameLooper3;
-        // document.getElementById("backButton").onclick = frameLooper3;
+            });
+            // Syncs also the touch moves!
+            swiperText.controller.control = swiper;
+            swiper.controller.control = swiperText;
 
-
+        }
     })
 
-</script>
 
-<!-- for (var i = 0; i < cardTexts.length; i++) { // Previous typing should have finished // Store original inner html once
-    if (cardContents[i]==undefined) { // alert('yay') cardContents[i]=cardTexts[i].innerHTML } if
-    (cardTexts[i].innerHTML.length==cardContents[i].length) { // Original let string3=cardContents[i] let
-    array3=string3.split(""); cardTexts[i].innerHTML='' console.log(array3) if (typing[i]=='ongoing' ) {
-    card.innerHTML='' } function inner(card, j) { if (array3.length> 0) {
-    card.innerHTML += array3.shift();
-    typing[j] == 'ongoing'
-    setTimeout(inner, 30, card, j);
-    }
-    else {
-    // alert('done')
-    typing[j] = 'finished'
-    // console.log(typing)
-    }
-    }
-    inner(cardTexts[i], i); -->
+</script>

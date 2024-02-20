@@ -113,19 +113,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
-Array.prototype.forEach.call(document.getElementsByTagName('video'), function (videoInstance) {
+Array.prototype.forEach.call(document.getElementsByClassName('scrollVideo'), function (videoInstance) {
     videoInstance.pause();
 })
 
 // Disable the autoplay immediately again (tag needs to be present for IOS)
 // videos must autoplay on IOS to work, but immediately pause them for the play on scroll effect
 window.addEventListener('scroll', () => {
-    Array.prototype.forEach.call(document.getElementsByTagName('video'), function (videoInstance) {
+    Array.prototype.forEach.call(document.getElementsByClassName('scrollVideo'), function (videoInstance) {
         videoInstance.pause();
     })
 });
 window.addEventListener('touchmove', () => {
-    Array.prototype.forEach.call(document.getElementsByTagName('video'), function (videoInstance) {
+    Array.prototype.forEach.call(document.getElementsByClassName('scrollVideo'), function (videoInstance) {
         videoInstance.pause();
     })
 });

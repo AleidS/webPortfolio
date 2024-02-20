@@ -81,60 +81,6 @@
     }
 }
 
-
-.projectsSectionTitle {
-    position: -webkit-sticky;
-    position: sticky;
-    display: block;
-    z-index: 99999 !important;
-    top: 59px;
-    width: 100%;
-    -ms-flex-preferred-size: 1;
-    flex-basis: 1;
-    -webkit-box-ordinal-group: -1;
-    -ms-flex-order: -2;
-    order: -2;
-    /* background-color:rgb(148, 180, 148); */
-    margin-top: 0px;
-    padding: 20px;
-    text-align: center;
-    /* border-bottom:1px solid white; */
-    font-family: 'roboto mono';
-    font-size: 1.6rem;
-    font-weight: 300;
-    /* background-color:rgba(209, 157, 187, 0.577); */
-    text-decoration-thickness: 2%;
-    -webkit-box-shadow: 0px 0px 10px 4px rgba(255, 208, 240, 0.858);
-    box-shadow: 0px 0px 10px 4px rgba(255, 208, 240, 0.858);
-    z-index: 260;
-    max-width: 100%;
-    min-height: 12vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: space-evenly;
-    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darker.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: auto;
-    border: none;
-    margin-bottom: 0px;
-    /* background-image: url("../Images/backgrounds/windTurbines-darker.jpg"); */
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    /* background-position: center; */
-    -webkit-text-emphasis-color: white;
-    text-emphasis-color: white;
-    border-radius: 20px;
-    margin-bottom: 300px;
-    min-height: 100px !important;
-}
-
 .projectTitle a {
     color: white !important;
 }

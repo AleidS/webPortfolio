@@ -3,7 +3,10 @@
 <div id=<?php echo ($projectID . "-card") ?> class="projectCard">
 
     <h2>
-        <i class="fa-solid fa-globe"></i> &nbsp;<a href='<?php echo ($projectLink) ?>'><?php echo ($projectName) ?></a>
+        <i class="fa-solid fa-<?php echo ($icon) ?>"></i>
+        &nbsp;
+        <a href='<?php echo ($projectLink) ?>'><?php echo ($projectName) ?></a>
+        <span> &nbsp; <?php echo ($year) ?></span>
     </h2>
     <div class="contents">
         <div class='ulContainer'>
@@ -16,15 +19,18 @@
                     $tool = json_decode(json_encode($toolsObj[$key]));
                     // echo ($slide->imgName2); 
                 ?>
-                    <li>
-                        <?php echo ($tool->name) ?>
-                        <span class='o'>
-                            &nbsp;◆
-                            <!-- ▶• -->
-                        </span>
-                        <hr>
-                        </hr>
-                    </li>
+                <li>
+                    <?php if (property_exists($tool, 'logo')) : ?>
+                    <img src=<?php echo ("Images/logos/" . $tool->logo) ?> loading="lazy" class="listIcon" />
+                    <?php endif ?>
+                    <?php echo ($tool->name) ?>
+                    <span class='o'>
+                        &nbsp;◆
+                        <!-- ▶• -->
+                    </span>
+                    <hr>
+                    </hr>
+                </li>
 
                 <?php
                 } ?>
@@ -42,18 +48,18 @@
                     $slide = json_decode(json_encode($slideObj[$key]));
                     // echo ($slide->imgName2); 
                 ?>
-                    <div class="swiper-slide imgContainerInner">
-                        <?php if (property_exists($slide, 'vidName')) : ?>
-                            <video muted autoplay controls>
-                                <source src=<?php echo ("Images/screenshots/" . $slide->vidName) ?> type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        <?php else : ?>
-                            <img src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading="lazy" />
-                        <?php endif ?>
+                <div class="swiper-slide imgContainerInner">
+                    <?php if (property_exists($slide, 'vidName')) : ?>
+                    <video preload="false" autoplay muted id='videotest'>
+                        <source src=<?php echo ("Images/screenshots/" . $slide->vidName) ?> type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <?php else : ?>
+                    <img src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading="lazy" />
+                    <?php endif ?>
 
 
-                    </div>
+                </div>
                 <?php
                     // echo (implode(" ", $slideObj[$key]));
                 } ?>
@@ -73,28 +79,42 @@
                 foreach ($slideObj as $key => $val) {
                     $slide = json_decode(json_encode($slideObj[$key]));
                 ?>
-                    <div class="swiper-slide textContainerInner">
-                        <img class="textBgImg" src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading=" lazy" />
-                        <div class="pContainer">
-                            <p class='pCard'><?php echo ($slide->text) ?></p>
-                        </div>
+                <div class="swiper-slide textContainerInner">
+                    <img class="textBgImg" src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading="lazy" />
+                    <div class="pContainer">
+                        <p class='pCard' data-in-effect="rollIn">
+                            <span class="ml10 text-wrapper txt">
+                                <span class="letters">
+                                    <?php echo ($slide->text) ?>
+                                </span>
+                            </span>
 
-
+                        </p>
                     </div>
+
+
+                </div>
                 <?php
                 } ?>
             </div>
         </div>
-        <div class="cardFooter">
-            <a href="link" class="sourceCode">
-                <i class="fa-brands fa-github"></i> source code
-            </a>
-            <div class="learnmore">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                Learn More
-            </div>
+
+
+
+    </div>
+    <div class="cardFooter">
+        <a class="sourceCode" href='<?php echo ($projectLink) ?>'>
+            <i class="fa-solid fa-globe"></i>
+            &nbsp;Visit
+        </a>
+        <?php if (isset($githubLink)) : ?>
+        <a href="<?php echo ($githubLink) ?>" class="sourceCode">
+            <i class="fa-brands fa-github"></i> source code
+        </a>
+        <?php endif ?>
+        <div class="learnmore">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Learn More
         </div>
-
-
     </div>
 </div>

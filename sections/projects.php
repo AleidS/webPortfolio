@@ -9,7 +9,9 @@
     </div>
 
     <div class="sectionTitle projectsSectionTitle">
-        Projects
+        <span class="ml10 text-wrapper tlt">
+            <span class="letters">Projects</span>
+        </span>
     </div>
 
     <!-- <div class="sectionContainer">
@@ -23,27 +25,36 @@
 
 
 <?php
-$projectName = "Saving Aid ";
+$projectName = "Saving Aid";
+$year = '2023';
+$icon = 'seedling';
 $projectID = "savingAidCard";
 $projectLink = "https://www.besparingshulp.nl/";
+$githubLink = null;
 $toolsObj = array(
     array(
         'name' => 'HTML/CSS',
+        'logo' => 'HTML5_logo_wikipedia.png',
     ),
     array(
         'name' => 'JavaScript',
+        'logo' => 'JavaScript-Logo.png'
     ),
     array(
         'name' => 'React',
+        'logo' => 'React-icon.png'
     ),
     array(
         'name' => 'PHP/SQL',
+        'logo' => 'phpsql.png'
     ),
     array(
         'name' => 'Framer Motion',
+        'logo' => 'framer-motion-logo.png'
     ),
 
 );
+
 $slideObj = array(
     array(
         'vidName' => "saving_aid_1.mp4",
@@ -52,29 +63,40 @@ $slideObj = array(
     ),
     array(
         'imgName' => "savingAid2.png",
-        'text' => 'abcdefg',
+        'text' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Accusantium voluptatem quas, eligendi repellendus quis harum maxime officia, 
+        totam cum neque sed veniam consectetur. Modi totam quae a neque, libero rem.
+',
     ),
     array(
         'imgName' => "savingAid3.png",
-        'text' => 'abcdefg',
+        'text' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Accusantium voluptatem quas, eligendi repellendus quis harum maxime officia, 
+        totam cum neque sed veniam consectetur. Modi totam quae a neque, libero rem.',
     )
 );
 include("projects/projectCardTemplate.php");
 
 
 
-$projectName = "Recipe Website ";
+$projectName = "Recipes";
 $projectID = "recipeCard";
+$year = '2022';
+$icon = 'utensils';
 $projectLink = "https://www.aleidsuzan.com/recipes/";
+$githubLink = 'https://github.com/AleidS/recipes_react_public';
 $toolsObj = array(
     array(
         'name' => 'HTML/CSS',
+        'logo' => 'HTML5_logo_wikipedia.png',
     ),
     array(
         'name' => 'JavaScript',
+        'logo' => 'JavaScript-Logo.png'
     ),
     array(
         'name' => 'React',
+        'logo' => 'React-icon.png'
     ),
 );
 $slideObj = array(
@@ -100,14 +122,22 @@ include("projects/projectCardTemplate.php");
 
 $projectName = "Drawing App";
 $projectID = "drawingAppCard";
+$icon = 'pencil';
 $projectLink = "https://www.aleidsuzan.com/canvas/";
 $toolsObj = array(
     array(
         'name' => 'HTML/CSS',
+        'logo' => 'HTML5_logo_wikipedia.png',
+    ),
+    array(
+        'name' => 'HTML Canvas',
+        'logo' => 'Html5_canvas_logo.png'
     ),
     array(
         'name' => 'JavaScript',
-    )
+        'logo' => 'JavaScript-Logo.png'
+    ),
+
 );
 $slideObj = array(
     array(
