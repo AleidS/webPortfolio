@@ -16,7 +16,7 @@
 
 /* Because users will otherwise scroll right past it */
 #edu {
-    margin-top: 90vh;
+    margin-top: 20vh;
 }
 
 .test {
@@ -87,7 +87,7 @@
     border-bottom: 2px solid rgba(255, 255, 255, 0.554);
 }
 
-.projectsSectionTitle {
+.sectionTitle {
     background: none !important;
     box-shadow: none !important;
     backdrop-filter: none !important;
@@ -99,7 +99,8 @@
     /* text-transform: uppercase; */
     letter-spacing: -0.2rem;
     font-weight: 200 !important;
-    margin-bottom: 200px;
+    margin-top: 150px;
+    margin-bottom: 100px;
 }
 
 .ml10 .letter {

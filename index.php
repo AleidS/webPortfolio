@@ -43,6 +43,7 @@
 
         <link href="CSS/projects/projects.css" rel="stylesheet">
         <link href="CSS/projects/projectCard.css" rel="stylesheet">
+        <link href="CSS/projects/switch.css" rel="stylesheet">
 
 
         <link href="CSS/projects/explanations.css" rel="stylesheet">
@@ -76,29 +77,29 @@
     <body>
 
         <?php
-        include "sections/menu.html"
-        ?>
+    include "sections/menu.html"
+    ?>
         <div class="mainArea">
 
             <div id="home"></div>
 
 
             <?php
-            include "sections/welcome.html";
-            include "sections/dottedLine.html";
-            include "sections/projects.php";
-            include "sections/education.html";
-            include "sections/tools.html";
-            include "sections/contact.html";
-            include "sections/workflow.html";
-            include "sections/info.html";
-            include "sections/coursesTaken.html";
+        include "sections/welcome.html";
+        include "sections/dottedLine.html";
+        include "sections/projects.php";
+        include "sections/education.html";
+        include "sections/tools.html";
+        include "sections/contact.html";
+        include "sections/workflow.html";
+        include "sections/info.html";
+        include "sections/coursesTaken.html";
 
-            ?>
+        ?>
         </div>
         <?php
-        include "sections/inlineScript.html";
-        ?>
+    include "sections/inlineScript.html";
+    ?>
 
     </body>
 

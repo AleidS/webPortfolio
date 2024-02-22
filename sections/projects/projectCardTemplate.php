@@ -1,6 +1,7 @@
 <!-- Saving aid -->
 <!-- Play on scroll - https://codepen.io/Maltsbier/pen/dyYmGGq -->
-<div id=<?php echo ($projectID . "-card") ?> class="projectCard">
+<div class='scrollAnchor'></div>
+<div id=<?php echo ($projectID) ?> class="projectCard projectsContainer">
 
     <h2>
         <!-- <i class="fa-solid fa-<?php echo ($icon) ?>"></i> -->
@@ -11,7 +12,6 @@
         <div class="ulAndImg">
 
             <ul>
-
                 <?php
                 // $slideArray = json_decode(json_encode($slideObj));
 
@@ -107,6 +107,8 @@
             </div>
         </div>
     </div>
+
+
     <div class="cardFooter">
         <a class="sourceCode" href='<?php echo ($projectLink) ?>'>
             <i class="fa-solid fa-globe"></i>
@@ -118,9 +120,20 @@
             </a>
         <?php endif ?>
 
+        <div class="learnmore">
+            <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+            Learn More / 3D
+            <!-- Rounded switch -->
+            <label class="switch">
+                <input type="checkbox" class="3dCheckbox" onClick="show3D('<?php echo ($projectID) ?>')">
+                <span class="slider round"></span>
+            </label>
+        </div>
     </div>
-</div>
-<div class="learnmore" onClick="show3D('<?php echo ($projectID) ?>')">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    Learn More
+    <?php
+    $prev = "#projects";
+    $next = "#recipeApp";
+    include("projectTemplate.php");
+    ?>
+
 </div>

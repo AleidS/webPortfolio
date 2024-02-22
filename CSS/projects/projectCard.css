@@ -13,32 +13,30 @@
     padding: 0px;
     align-items: stretch;
     justify-content: center;
-    overflow: hidden;
     max-width: calc(min(860px, 100%)) !important;
     margin: auto;
     margin-bottom: 100px;
-    overflow: hidden;
-    backdrop-filter: blur(40px)brightness(160%) !important;
-    min-height: fit-content;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
     transition-duration: 2s;
 
-
     .contents {
+        border-top: 1px solid white;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: stretch;
         flex-wrap: wrap;
-        margin-top: 20px;
         margin-bottom: 0px;
         min-height: fit-content;
         padding: 0px;
+        padding-top: 20px;
         max-width: 90vw;
         padding-right: 5px;
+        backdrop-filter: blur(40px)brightness(160%) !important;
+
     }
 
     .letters {
@@ -65,7 +63,12 @@
         /* border: 1px solid rgba(255, 255, 255, 0.438); */
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        border-bottom: 1px solid white;
+        margin: 0px;
+        /* When switching to 3d, uses a background image */
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: auto;
+
 
         a {
             color: white;
@@ -346,9 +349,15 @@
         justify-content: space-evenly;
         color: white;
         padding: 10px;
-        margin-top: 10px;
         min-height: fit-content;
         position: relative;
+        position: sticky;
+        top: 90vh;
+        z-index: 20;
+        /* When switching to 3d, uses a background image */
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: auto;
 
         a {
             color: white;
@@ -479,11 +488,10 @@
 }
 
 .learnmore {
-    margin: auto;
-    font-size: 3rem;
-    font-family: 'roboto mono';
-    width: fit-content;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* 

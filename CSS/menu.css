@@ -99,14 +99,16 @@
 /* dropdownmenu with inline style because of bootstrap issues */
 #expandMenu {
     flex-direction: column;
-    background-image: url(Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg2.png);
+    background-image: url("../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
     background-attachment: fixed;
     background-size: cover;
     padding: 10px;
     transition-duration: 1s;
     margin-top: -1px;
+    position: absolute;
+    width: 100%;
+    border-radius: 0px;
 }
-
 
 .dropdown-item {
     width: 100% !important;

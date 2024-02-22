@@ -4,22 +4,6 @@
 * Autoprefixer: v10.4.7
 * Browsers: last 4 version
 */
-
-.semiCircle {
-
-    background-color: #80c5a000;
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    border-radius: 50% / 100%;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    z-index: 2000;
-    border-top: 10px solid rgba(255, 183, 215, 0.228);
-    opacity: 0;
-
-}
-
 #projectsContainer {
     /* Create a parallax effect */
     background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
@@ -29,7 +13,6 @@
     width: 100%;
     z-index: 300;
     margin: auto;
-    margin-top: 200px;
     overflow-wrap: normal;
     overflow-y: visible;
     animation-duration: 7s;
@@ -37,6 +20,41 @@
     border: none;
     transition-duration: 3s;
 }
+
+.projectTitle {
+    width: 100%;
+    top: 70px;
+    position: -webkit-sticky;
+    position: sticky;
+    display: block;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    font-family: 'roboto mono';
+    font-weight: 100;
+    min-height: -webkit-fit-content;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+    width: 100%;
+    width: 100vw;
+    left: 0px !important;
+    margin: 0px !important;
+    -ms-flex-preferred-size: 1;
+    flex-basis: 1;
+    padding: 10px;
+    opacity: 1;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png");
+    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: auto;
+    z-index: 2000;
+    border-radius: 0px;
+}
+
 
 /* Video and explanations container, video time depends on position within this container (script/script.js) */
 
@@ -50,7 +68,7 @@
     z-index: 1;
     position: relative;
     -webkit-box-sizing: border-box;
-    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
+    /* background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png"); */
     background-size: cover;
     background-attachment: fixed;
     background-position: auto;
@@ -176,6 +194,22 @@
 }
 
 #savingAid-bound {
-    height: 0px;
     opacity: 0;
+    pointer-events: none;
+    display: none;
+    transition-duration: 2s;
+}
+
+#recipeApp-bound {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+    transition-duration: 2s;
+}
+
+#drawingApp-bound {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+    transition-duration: 2s;
 }
