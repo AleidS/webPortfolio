@@ -20,6 +20,14 @@
     border: none;
     transition-duration: 3s;
     overflow-x: visible;
+    margin-bottom: 0px;
+}
+
+.scrollMargin {
+    scroll-margin-top: 100px !important;
+    display: block;
+    height: 1px;
+
 }
 
 .projectTitle {

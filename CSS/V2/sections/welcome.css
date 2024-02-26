@@ -191,6 +191,7 @@
     /* background: linear-gradient(45deg, rgb(23, 3, 14), rgb(16, 29, 34)); */
 }
 
+
 .imgAndText {
     border: none;
     border-top: 1px solid white;
@@ -224,6 +225,13 @@
     font-family: 'roboto';
     font-weight: 300;
     line-height: 1.8rem;
+}
+
+@media screen and (max-width:400px) {
+    #welcomeText p {
+        /* text-align: left; */
+        font-size: 1rem;
+    }
 }
 
 #portraitHolder {

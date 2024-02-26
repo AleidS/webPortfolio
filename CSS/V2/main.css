@@ -37,6 +37,7 @@ body {
     background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
     background-attachment: fixed;
     background-size: cover;
+    font-family: 'roboto', sans-serif;
     /* position:absolute; */
 }
 
@@ -98,4 +99,8 @@ p {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #ffecec;
+}
+
+#drawingApp {
+    scroll-margin-top: -200px !important;
 }

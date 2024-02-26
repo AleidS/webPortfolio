@@ -15,9 +15,7 @@
 }
 
 /* Because users will otherwise scroll right past it */
-#edu {
-    margin-top: 20vh;
-}
+
 
 .test {
     backdrop-filter: brightness(80%);
@@ -65,26 +63,51 @@
     border-top: 1px solid white;
 }
 
-/* NEW */
-.sectionText,
-.sectionTitle {
-    background: rgba(188, 121, 192, 0.113) !important;
+.sectionText {
+    position: relative;
+    margin-top: 0px;
+
+    /* background-image:url("..Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png"); */
+    background-position: auto;
+    background-attachment: fixed;
+    background-size: cover;
+    width: calc(min(100%, 600px));
+    margin: auto;
+    border: 1px solid rgba(255, 255, 255, 0.216);
+    border-radius: 10px;
+    padding: calc(min(30px, 5vw));
+    padding-bottom: 70px;
+    padding-top: 40px;
+    text-align: justify;
+    font-size: 1.1rem;
+    color: rgba(245, 245, 245, 0.799);
+    font-family: 'roboto';
+    font-weight: 300;
     padding-left: 10px;
     border-top: 1px solid white !important;
     border-bottom: 1px solid white !important;
     -webkit-box-shadow: 0px 0px 100px 10px rgba(65, 28, 53, 0.256);
     box-shadow: 0px 0px 100px 10px rgba(65, 28, 53, 0.256);
+    background: rgba(211, 218, 219, 0.025);
+    padding-left: 10px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 100px 10px rgba(65, 28, 53, 0.256);
+    box-shadow: 0px 0px 100px 10px rgba(65, 28, 53, 0.256);
     padding: 30px;
-    -webkit-backdrop-filter: blur(10px)brightness(80%);
-    backdrop-filter: blur(80px)brightness(190%)hue-rotate(0deg)contrast(100%);
+    -webkit-backdrop-filter: blur(40px)brightness(190%);
+    backdrop-filter: blur(100px)brightness(160%)hue-rotate(0deg)contrast(100%);
+
+
 }
 
-.sectionText {
-    backdrop-filter: blur(20px);
-    box-shadow: none;
-    border: 1px solid rgba(216, 112, 147, 0.177);
-    border-top: 2px solid rgba(255, 255, 255, 0.535);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.554);
+.sectionText strong {
+    font-weight: 500;
+}
+
+@media screen and (max-aspect-ratio:5/8) {
+    .sectionText {
+        border-radius: 0px;
+    }
 }
 
 .sectionTitle {
@@ -198,78 +221,23 @@
 
 #edu,
 #tools,
-#contact {
+#contact,
+.scrollMargin {
     scroll-margin-top: 50px !important;
 }
 
 .section {
 
-    /* border:20px solid rgb(252, 202, 202); */
-    margin-top: 100px;
-    z-index: 1;
-    /* somehow ensures that dashes are not visible */
-    -webkit-backdrop-filter: blur(0px);
-    backdrop-filter: blur(0px);
-    padding: 0px;
     word-wrap: break-word;
-
 }
 
 
-.section:first-child() {
-    margin-top: 0px;
-}
 
 .section:last-child {
     margin-bottom: 200px !important;
 }
 
 a {
-    color: rgb(253, 125, 159);
-    text-decoration: none;
-}
-
-.sectionText {
-    position: relative;
-    margin-top: 0px;
-    background-image: url("../../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png");
-    background-position: auto;
-    background-attachment: fixed;
-    background-size: cover;
-    /* background-image:url("..Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png"); */
-    background-position: auto;
-    background-attachment: fixed;
-    background-size: cover;
-    -webkit-backdrop-filter: brightness(100%);
-    backdrop-filter: brightness(80%);
-    background-color: rgba(0, 0, 0, 0.317);
-    width: calc(min(100%, 600px));
-    margin: auto;
-    border: 1px solid rgba(255, 255, 255, 0.216);
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-
-    -webkit-box-shadow: 0px 0px 40px 10px rgba(48, 14, 35, 0.398);
-    box-shadow: 0px 0px 40px 10px rgba(48, 14, 35, 0.398);
-    border-radius: 10px;
-    padding: calc(min(30px, 5vw));
-    padding-bottom: 70px;
-    padding-top: 40px;
-    text-align: justify;
-    font-size: 1.1rem;
-    color: rgba(245, 245, 245, 0.799);
-    font-family: 'roboto';
-    font-weight: 300;
-    /* line-height: 1.3rem; */
-
-}
-
-.sectionText strong {
-    font-weight: 500;
-}
-
-@media screen and (max-aspect-ratio:5/8) {
-    .sectionText {
-        border-radius: 0px;
-    }
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
 }

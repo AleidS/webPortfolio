@@ -110,6 +110,15 @@
     flex-grow: 0.9;
 }
 
+.otherSkills {
+    width: 100%;
+}
+
+.otherSkills .tool {
+    font-size: 1rem !important;
+    width: calc(min(50%, 200px));
+}
+
 .tool {
     width: calc(min(30%, 200px));
     /* min-width: fit-content; */
@@ -152,4 +161,8 @@
     margin-top: 10px;
     width: auto;
     height: 100%;
+}
+
+.hidden {
+    display: none;
 }

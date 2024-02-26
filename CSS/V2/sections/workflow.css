@@ -62,7 +62,9 @@ h4 {
     text-align: center;
     margin-bottom: 20px;
     background-color: rgba(83, 112, 124, 0.513);
-    background: linear-gradient(90deg, rgba(57, 135, 161, 0.686), rgba(117, 56, 87, 0.749));
+    background: linear-gradient(45deg,
+            rgb(133, 53, 99),
+            rgb(44, 128, 161)) border-box !important;
     /* border-bottom: 1px solid rgba(255, 255, 255, 0.407); */
     /* border-top: 1px solid rgba(255, 255, 255, 0.531); */
     padding: 10px;

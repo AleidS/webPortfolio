@@ -176,13 +176,7 @@
         )
     );
     include("projects/projectCardTemplate.php");
-
-
     // include("projects/wipe.php");
-
-
-
-
     // $projectName = "Recipe app";
     // $projectID = "recipeApp";
     // $videoName = "recipeAppVideo";
