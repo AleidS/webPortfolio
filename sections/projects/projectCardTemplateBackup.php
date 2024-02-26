@@ -11,6 +11,7 @@
     </h2>
     <div class="contents">
         <div class="ulAndImg">
+
             <ul class='cardUl'>
                 <?php
                 // $slideArray = json_decode(json_encode($slideObj));
@@ -19,20 +20,20 @@
                     $tool = json_decode(json_encode($toolsObj[$key]));
                     // echo ($slide->imgName2); 
                 ?>
-                    <li>
-                        <?php if (property_exists($tool, 'logo')) : ?>
-                            <img src=<?php echo ("Images/logos/" . $tool->logo) ?> loading="lazy" class="listIcon" />
-                        <?php endif ?>
-                        <div>
-                            <?php echo ($tool->name) ?>
-                        </div>
-                        <div class='o'>
-                            ◆
-                            <!-- ▶• -->
-                        </div>
-                        <hr>
-                        </hr>
-                    </li>
+                <li>
+                    <?php if (property_exists($tool, 'logo')) : ?>
+                    <img src=<?php echo ("Images/logos/" . $tool->logo) ?> loading="lazy" class="listIcon" />
+                    <?php endif ?>
+                    <div>
+                        <?php echo ($tool->name) ?>
+                    </div>
+                    <div class='o'>
+                        ◆
+                        <!-- ▶• -->
+                    </div>
+                    <hr>
+                    </hr>
+                </li>
 
                 <?php
                 } ?>
@@ -53,18 +54,18 @@
                         $slide = json_decode(json_encode($slideObj[$key]));
                         // echo ($slide->imgName2); 
                     ?>
-                        <div class="swiper-slide imgContainerInner">
-                            <?php if (property_exists($slide, 'vidName')) : ?>
-                                <video width='100%' height='100%' preload="false" autoplay muted playsinline>
-                                    <source src=<?php echo ("Images/screenshots/" . $slide->vidName) ?> type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            <?php else : ?>
-                                <img src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading="lazy" />
-                            <?php endif ?>
+                    <div class="swiper-slide imgContainerInner">
+                        <?php if (property_exists($slide, 'vidName')) : ?>
+                        <video preload="false" autoplay muted id='videotest'>
+                            <source src=<?php echo ("Images/screenshots/" . $slide->vidName) ?> type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <?php else : ?>
+                        <img src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading="lazy" />
+                        <?php endif ?>
 
 
-                        </div>
+                    </div>
                     <?php
                         // echo (implode(" ", $slideObj[$key]));
                     } ?>
@@ -87,21 +88,21 @@
                 foreach ($slideObj as $key => $val) {
                     $slide = json_decode(json_encode($slideObj[$key]));
                 ?>
-                    <div class="swiper-slide textContainerInner">
-                        <img class="textBgImg" src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading="lazy" />
-                        <div class="pContainer">
-                            <p class='pCard' data-in-effect="rollIn">
-                                <span class="ml10 text-wrapper txt">
-                                    <span class="letters">
-                                        <?php echo ($slide->text) ?>
-                                    </span>
+                <div class="swiper-slide textContainerInner">
+                    <img class="textBgImg" src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading="lazy" />
+                    <div class="pContainer">
+                        <p class='pCard' data-in-effect="rollIn">
+                            <span class="ml10 text-wrapper txt">
+                                <span class="letters">
+                                    <?php echo ($slide->text) ?>
                                 </span>
+                            </span>
 
-                            </p>
-                        </div>
-
-
+                        </p>
                     </div>
+
+
+                </div>
                 <?php
                 } ?>
             </div>
@@ -117,9 +118,9 @@
             &nbsp;Visit
         </a>
         <?php if (isset($githubLink)) : ?>
-            <a href="<?php echo ($githubLink) ?>" class="sourceCode">
-                <i class="fa-brands fa-github"></i> code
-            </a>
+        <a href="<?php echo ($githubLink) ?>" class="sourceCode">
+            <i class="fa-brands fa-github"></i> code
+        </a>
         <?php endif ?>
 
         <div class="learnmore">
@@ -136,9 +137,9 @@
     <!-- <div
         style="flex-basis:1; flex-grow:1; width:100%; margin:auto; overflow:visible; display:flex; justify-content:center;"> -->
     <?php
-    $prev = "#projects";
-    $next = "#recipeApp";
-    include("projectTemplate.php");
+    // $prev = "#projects";
+    // $next = "#recipeApp";
+    // include("projectTemplate.php");
     ?>
     <!-- </div> -->
 

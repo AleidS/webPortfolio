@@ -1,12 +1,109 @@
 /* Make safari all black as mp4 will have black background (webm with transparency does not work on IOS) */
 @supports (-webkit-touch-callout: none) {
-    .cardbg {
-        display: none !important;
+
+    body {
+        font-family: sans-serif;
+        max-width: 100vw !important;
+        overflow-x: hidden;
     }
 
-    .projectCard .cardFooter,
+    .mainArea {
+        max-width: 100vw !important;
+    }
+
+    .projectCard .pCard {
+        padding: 10px !important;
+    }
+
     .projectCard h2 {
-        position: -webkit-sticky !important;
+        margin-bottom: 0px;
+    }
+
+
+    .swiper-slide {
+        align-items: center !important;
+        justify-content: center !important;
+        display: flex !important;
+    }
+
+    .swiper-interface {
+        color: white !important;
+    }
+
+    .swiper-interface {
+        color: white;
+        z-index: 20;
+        text-shadow: 0px 0px 10px rgb(149, 149, 149);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        pointer-events: all !important;
+        /* background: red; */
+        z-index: 20 !important;
+        position: absolute;
+        cursor: pointer;
+        /* background: blue; */
+        top: 50%;
+        width: 5%;
+        height: 20%;
+        margin-left: 5px;
+        margin-right: 5px;
+
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        content: '' !important;
+        background-image: url("../../../Images/icons/arrowRight.png");
+        background-size: 100% 100%;
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        pointer-events: none;
+        z-index: 2;
+        opacity: 1;
+        -webkit-filter: invert(0)brightness(100%)drop-shadow(1px 1px 4px rgb(158, 158, 158));
+        filter: invert(0)brightness(100%)drop-shadow(1px 1px 4px rgb(158, 158, 158));
+        /* filter: invert(0)brightness(890%)drop-shadow(1px 1px 10px rgb(203, 203, 203)); */
+    }
+
+    .swiper-button-prev:after {
+        background-image: url("../../../Images/icons/arrowleft.png");
+    }
+
+    /* .swiper-pagination {
+        background: rgba(13, 1, 1, 0.545);
+    } */
+    .swiperFooter {
+        height: 30px;
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        background: rgba(88, 88, 88, 0.434);
+        -webkit-backdrop-filter: blur(5px)brightness(80%);
+        backdrop-filter: blur(5px)brightness(80%);
+        z-index: 1 !important;
+        pointer-events: none;
+    }
+
+
+
+    .swiper-pagination {
+        height: 20px;
+    }
+
+    .swiper-pagination-bullet-active {
+        color: white !important;
+        background-color: white !important;
+        -webkit-box-shadow: 0px 0px 10px rgb(159, 159, 159);
+        box-shadow: 0px 0px 10px rgb(159, 159, 159);
+    }
+
+    .swiper-scroll {
+        background: white;
     }
 
     #menuContainer,
@@ -15,8 +112,8 @@
         /* background: linear-gradient(110deg, rgb(45, 8, 29), rgb(14, 26, 37), rgb(15, 32, 39)) !important; */
 
         background: linear-gradient(45deg,
-                rgb(75, 34, 57),
-                rgb(29, 83, 104)) border-box !important;
+                rgb(133, 53, 99),
+                rgb(44, 128, 161)) border-box;
         max-width: 100vw;
     }
 
@@ -25,8 +122,26 @@
         background: linear-gradient(90deg,
                 rgb(133, 53, 99),
                 rgb(44, 128, 161)) border-box;
+        width: 100%;
+        display: -webkit-flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-family: 'roboto mono', 'sans-serif';
+        height: fit-content;
+        padding: 5px;
+        font-weight: 400;
+        color: white !important;
+
+
     }
 
+    .projectCard .cardFooter {
+        top: 90vh !important;
+    }
+
+    .sourceCode {
+        color: white !important;
+    }
 
     /* Then re-apply the filter */
     .sectionContainer,
@@ -191,9 +306,4 @@ and with black video bg, dark gre looks better */
         width: calc(min(100vw, 600px)) !important;
         margin: auto;
     }
-
-    .sectionTitle {
-        max-width: calc(min(100vw, 850px));
-    }
-
 }

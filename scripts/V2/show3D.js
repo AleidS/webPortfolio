@@ -63,13 +63,14 @@ function show3D(id) {
 
             // cardHeader.style.backgroundImage = 'url(../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png)';
 
-            cardHeader.style.position = 'sticky'
-            cardHeader.style.top = '70px'
-            cardHeader.style.zIndex = '20'
+
+            cardHeader.style.top = '70px';
+            cardHeader.style.zIndex = '20';
+            cardFooter.style.zIndex = '20';
             // card.style.borderTop = 'none'
 
             // Using cssText overrides all styles, not just the ones listed
-            cardFooter.style.position = 'sticky'
+
             cardFooter.style.top = '94vh'
             // cardFooter.style.backgroundImage = 'url(../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png)';
 
