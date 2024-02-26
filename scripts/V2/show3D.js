@@ -41,9 +41,17 @@ function show3D(id) {
                     duration: 500,
                     easing: 'easeInOutSine'
                 })
+            anime.timeline({ loop: false })
+                .add({
+                    targets: card.getElementsByClassName('cardbg'),
+                    opacity: [1, 0],
+                    // translateX: [500, 0],
+                    duration: 500,
+                    easing: 'easeInOutSine'
+                })
         }, 1000)
         setTimeout(function () {
-            card.style.backgroundColor = "none!important";
+            card.style.background = "none!important";
             card.style.backdropFilter = "none";
             card.style.minHeight = "50vh";
             card.style.border = "none";
@@ -54,7 +62,6 @@ function show3D(id) {
             bound.style.display = 'block';
 
             // cardHeader.style.backgroundImage = 'url(../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png)';
-            cardHeader.style.background = 'none';
 
             cardHeader.style.position = 'sticky'
             cardHeader.style.top = '70px'
@@ -64,10 +71,13 @@ function show3D(id) {
             // Using cssText overrides all styles, not just the ones listed
             cardFooter.style.position = 'sticky'
             cardFooter.style.top = '94vh'
-            cardFooter.style.background = 'none';
             // cardFooter.style.backgroundImage = 'url(../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png)';
 
         }, 1000)
+        setTimeout(function () {
+            cardHeader.style.background = 'none';
+            cardFooter.style.background = 'none';
+        }, 2000)
         setTimeout(function () {
             window.scrollBy({
                 top: window.innerHeight / 2,
@@ -99,16 +109,24 @@ function show3D(id) {
                 delay: 500,
                 easing: 'easeInOutSine'
             })
+        anime.timeline({ loop: false })
+            .add({
+                targets: card.getElementsByClassName('cardbg'),
+                opacity: [0, 1],
+                // translateX: [500, 0],
+                duration: 500,
+                easing: 'easeInOutSine'
+            })
 
         setTimeout(function () {
             bound.style.display = 'none';
             contents.style.display = "flex"
             contents.style.height = "auto"
             card.style.maxWidth = 'calc(min(860px, 100%))'
-            card.getElementsByTagName('h2')[0].style.position = 'static'
+            card.getElementsByTagName('h2')[0].style.position = 'sticky'
             card.getElementsByTagName('h2')[0].style.top = 'auto'
             card.getElementsByTagName('h2')[0].style.zIndex = 'auto'
-            card.getElementsByClassName('cardFooter')[0].style.position = 'static'
+            card.getElementsByClassName('cardFooter')[0].style.position = 'sticky'
             card.getElementsByClassName('cardFooter')[0].style.bottom = 'none'
             card.getElementsByTagName('h2')[0].style.background = previousHeaderBg.id;
             card.getElementsByClassName('cardFooter')[0].style.background = previousFooterBg.id;

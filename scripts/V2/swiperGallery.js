@@ -56,27 +56,27 @@ window.addEventListener('load', function () {
                     var activeSlide = img.getElementsByClassName('swiper-slide')[activeIndex];
                     var activeText = txt.getElementsByClassName('pContainer')[activeIndex];
                     var activeTxts = activeText.getElementsByClassName('txt');
-                    for (var i = 0; i < activeTxts.length; i++) {
-                        // https://tobiasahlin.com/moving-letters/#10
+                    // for (var i = 0; i < activeTxts.length; i++) {
+                    // https://tobiasahlin.com/moving-letters/#10
 
-                        if (txtShown[activeIndex][i] == undefined && activeIndex != 0) {
-                            anime.timeline({ loop: false })
-                                .add({
-                                    targets: (txt.getElementsByClassName('ml10'), txt.getElementsByClassName('letter')),
-                                    translateX: [0, 0],
-                                    opacity: [0, 1],
-                                    duration: 500,
-                                    easing: 'easeInOutSine',
-                                    delay: (el, i) => 80 * i
-                                })
-                            txtShown[activeIndex][i] += 1
+                    //     if (txtShown[activeIndex][i] == undefined && activeIndex != 0) {
+                    //         anime.timeline({ loop: false })
+                    //             .add({
+                    //                 targets: (txt.getElementsByClassName('ml10'), txt.getElementsByClassName('letter')),
+                    //                 translateX: [0, 0],
+                    //                 opacity: [0, 1],
+                    //                 duration: 500,
+                    //                 easing: 'easeInOutSine',
+                    //                 delay: (el, i) => 80 * i
+                    //             })
+                    //         txtShown[activeIndex][i] += 1
 
-                        }
-                        if (txtShown[activeIndex][i] == undefined) {
-                            txtShown[activeIndex][i] = 0
-                        }
+                    //     }
+                    //     if (txtShown[activeIndex][i] == undefined) {
+                    //         txtShown[activeIndex][i] = 0
+                    //     }
 
-                    }
+                    // }
 
                 },
 

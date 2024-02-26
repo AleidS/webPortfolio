@@ -44,10 +44,10 @@ for (var i = 0; i < sectionTitles.length; i++) {
 }
 
 // Split up text-to-be-animated into words with spans
-for (var i = 0; i < txts.length; i++) {
-    // Wraps each word, rather than each character (otherwise get stange word-breaks)
-    txts[i].innerHTML = txts[i].textContent.replace(/\S+/g, "<span class='letter'>$&</span>");
-}
+// for (var i = 0; i < txts.length; i++) {
+//     // Wraps each word, rather than each character (otherwise get stange word-breaks)
+//     txts[i].innerHTML = txts[i].textContent.replace(/\S+/g, "<span class='letter'>$&</span>");
+// }
 
 
 // Keep track of shown texts so they don't get rendered again on scroll
@@ -75,8 +75,8 @@ window.addEventListener('load', function () {
         // Each item in the list has increasing delay (so top one first, bottom last)
         for (var i = 0; i < projectCards.length; i++) {
             var projectTool = projectCards[i].querySelectorAll("li");
-            for (var i = 0; i < projectTool.length; i++) {
-                projectTool[i].style.transitionDelay = (`${(i / 3)}s`);
+            for (var j = 0; j < projectTool.length; j++) {
+                projectTool[j].style.transitionDelay = (`${(j / 3)}s`);
             }
         }
 
@@ -99,6 +99,15 @@ window.addEventListener('load', function () {
                 explanations[i].style.scale = `${1}`;
             }
         }
+    }
+    // Not working
+    function explanationOnResize() {
+        var explanations = document.querySelectorAll(".explanation");
+        for (var i = 0; i < explanations.length; i++) {
+            explanations[i].style.opacity = 0;
+            explanations[i].style.scale = `${1}`;
+        }
+
     }
     function revealSectionTitles() {
 
@@ -134,9 +143,10 @@ window.addEventListener('load', function () {
         revealTools()
     });
     window.addEventListener("resize", () => {
-        revealExplanations()
+        explanationOnResize()
         revealSectionTitles()
         revealTools()
+
     });;
     let loaded = 0;
     let smallestSize = false

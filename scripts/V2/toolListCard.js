@@ -11,8 +11,11 @@ window.addEventListener('load', function () {
             for (var i = 0; i < lists.length; i++) {
                 const listItems = lists[i].getElementsByTagName('li')
                 for (var j = 0; j < listItems.length; j++) {
-                    listItems[j].style.transform = `translateX(-${(j / listItems.length) * 150 + (2 * (3 - listItems.length) * j)}%)`
-
+                    listItems[j].style.transform = `translateX(-${(j / listItems.length) * 180 + (2 * (3 - listItems.length) * j)}%)`
+                }
+                const listItemsActive = lists[i].getElementsByClassName('active')
+                for (var j = 0; j < listItemsActive.length; j++) {
+                    listItemsActive[j].style.transform = `translateX(-${(j / listItemsActive.length) * 150 + (2 * (3 - listItemsActive.length) * j)}%)`
                 }
             }
         }
@@ -20,8 +23,12 @@ window.addEventListener('load', function () {
             for (var i = 0; i < lists.length; i++) {
                 const listItems = lists[i].getElementsByTagName('li')
                 for (var j = 0; j < listItems.length; j++) {
-                    listItems[j].style.transform = `translateX(0%)`
+                    listItems[j].style.transform = `translateX(-20%)`
 
+                }
+                const listItemsActive = lists[i].getElementsByClassName('active')
+                for (var j = 0; j < listItemsActive.length; j++) {
+                    listItemsActive[j].style.transform = `translateX(0%)`
                 }
             }
 
@@ -30,6 +37,9 @@ window.addEventListener('load', function () {
     cardListItems()
     // On resize check if still small screen
     window.addEventListener('resize', function () {
+        cardListItems()
+    })
+    window.addEventListener('scroll', function () {
         cardListItems()
     })
 })

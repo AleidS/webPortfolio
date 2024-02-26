@@ -60,20 +60,18 @@
         array(
             'vidName' => "saving_aid_1.mp4",
             'imgName' => "saving_aid.png",
-            'text' => 'Energy saving recommender system, in which study participants could obtain personalized saving advice',
+            'text' => 'Energy saving recommender system, 
+            in which study participants could obtain personalized saving advice.
+            Master thesis graduation project, under supervision of Martijn Willemsen and Alain Starke.',
         ),
         array(
             'imgName' => "savingAid2.png",
-            'text' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-Accusantium voluptatem quas, eligendi repellendus quis harum maxime officia,
-totam cum neque sed veniam consectetur. Modi totam quae a neque, libero rem.
-',
+            'text' => 'I made an experiment version with questionnaires and user tracking via PHP/SQL, 
+            and an app version as pictured above, that you can still visit.',
         ),
         array(
             'imgName' => "savingAid3.png",
-            'text' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-Accusantium voluptatem quas, eligendi repellendus quis harum maxime officia,
-totam cum neque sed veniam consectetur. Modi totam quae a neque, libero rem.',
+            'text' => 'Recommendations were based on the number of items someone already performed.',
         )
     );
     $videoObj = array(
@@ -130,11 +128,11 @@ totam cum neque sed veniam consectetur. Modi totam quae a neque, libero rem.',
         ),
         array(
             'imgName' => "recipes_3.png",
-            'text' => 'Menu automatically generated based on recipe quantities',
+            'text' => 'Filter option for vegan recipes',
         ),
         array(
             'imgName' => "recipes_4.png",
-            'text' => 'abcdefg',
+            'text' => '<strong>Menu</strong> automatically generated based on recipe categories',
         )
     );
     include("projects/projectCardTemplate.php");

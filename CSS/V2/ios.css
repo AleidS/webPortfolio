@@ -1,5 +1,13 @@
 /* Make safari all black as mp4 will have black background (webm with transparency does not work on IOS) */
 @supports (-webkit-touch-callout: none) {
+    .cardbg {
+        display: none !important;
+    }
+
+    .projectCard .cardFooter,
+    .projectCard h2 {
+        position: -webkit-sticky !important;
+    }
 
     #menuContainer,
     #expandMenu,
