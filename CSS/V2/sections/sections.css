@@ -93,14 +93,19 @@
     backdrop-filter: none !important;
     border: none !important;
     font-size: clamp(20pt, 5rem, 10vw);
-    text-align: right !important;
     width: 100%;
     font-family: 'roboto mono';
     /* text-transform: uppercase; */
     letter-spacing: -0.2rem;
     font-weight: 200 !important;
     margin-top: 150px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+
+}
+
+.letters {
+    opacity: 0;
 }
 
 .ml10 .letter {
@@ -127,7 +132,7 @@
 
 .transparentArrow,
 .arrowBackground {
-    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darkest2.jpg");
+    background-image: url("../../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darkest2.jpg");
     background-attachment: fixed;
     background-size: cover;
     height: 15vh;
@@ -179,7 +184,7 @@
     background: rgb(14, 17, 19) !important;
     text-decoration: underline;
     position: relative;
-    /* background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-semtransparent-min.png"); */
+    /* background-image: url("../../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-semtransparent-min.png"); */
 }
 
 .smallTitle:hover {
@@ -227,7 +232,7 @@ a {
 .sectionText {
     position: relative;
     margin-top: 0px;
-    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png");
+    background-image: url("../../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png");
     background-position: auto;
     background-attachment: fixed;
     background-size: cover;

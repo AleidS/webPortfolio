@@ -12,6 +12,7 @@
     align-items: center;
     justify-content: flex-end;
     height: 80vh !important;
+    /* scale: 1.4; */
 
 }
 
@@ -27,12 +28,14 @@ video {
 
 
 
+
+
 @media (max-device-aspect-ratio: 5/8) {
     .videoContainer {
         display: block;
         top: 30vh !important;
         z-index: 9999 !important;
-        /* background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png"); */
+        /* background-image: url("../../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png"); */
         background-size: cover;
         background-attachment: fixed;
         background-position: auto;
@@ -41,6 +44,8 @@ video {
         justify-content: flex-end;
         overflow: hidden;
         height: 80vh !important;
+        margin: auto;
+
         /* background: white; */
     }
 

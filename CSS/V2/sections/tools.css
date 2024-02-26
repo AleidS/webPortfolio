@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+#allTools {
+    display: none;
+}
+
 .tools .sectionTitle {
     width: 1200px !important;
     max-width: calc(min(100%, 1000px)) !important;
