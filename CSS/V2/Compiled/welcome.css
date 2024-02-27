@@ -1,0 +1,248 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+#title {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 60px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 100px;
+  font-size: clamp(20pt, 15.8vw, 80pt);
+}
+
+/* https: //codepen.io/Lucas-Dombrowski/pen/wvRoWzL */
+/*Setup the blinking sidebar*/
+.title > h1:after {
+  content: "|";
+  /*The width is the actual sidebar thickness.*/
+  width: 0px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  /*Position the sidebar at the right of the text*/
+  left: min(1vw, -14px);
+  top: min(10vh, -6px);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  position: relative;
+  will-change: opacity;
+  /*Apply the blinkking animation looping in 2 steps: visible -> hidden.*/
+  -webkit-animation: blink 1s infinite steps(2, start);
+          animation: blink 1s infinite steps(2, start);
+}
+
+/*Create the blinking animation by simply hide the element.*/
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+#subtitle {
+  font-family: "roboto mono";
+  font-weight: 100;
+  font-size: 1.4rem;
+}
+
+.welcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 800px;
+  max-width: 100%;
+  margin: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 30vh;
+  position: static;
+}
+
+@-webkit-keyframes example {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+  }
+}
+@keyframes example {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+  }
+}
+#arrowContainer {
+  width: 100%;
+  margin-top: 10vh;
+}
+
+#arrow {
+  width: 100%;
+  font-size: 300pt;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-direction: forwards;
+          animation-direction: forwards;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+  will-change: opacity;
+  background-color: #ffffff !important;
+  -webkit-clip-path: polygon(0% 0, 50% 100%, 100% 0%);
+          clip-path: polygon(0% 0, 50% 100%, 100% 0%);
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.imgAndText {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 60vh;
+  /* border-top: 1px solid white; */
+  /* border-bottom: 1px solid white; */
+  background: rgba(49, 206, 220, 0.025);
+  padding-left: 10px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 100px 10px rgba(65, 28, 53, 0.256);
+          box-shadow: 0px 0px 100px 10px rgba(65, 28, 53, 0.256);
+  padding: 30px;
+  -webkit-backdrop-filter: blur(40px) brightness(190%) hue-rotate(0deg) contrast(100%);
+          backdrop-filter: blur(40px) brightness(190%) hue-rotate(0deg) contrast(100%);
+  /* background: rgb(16, 16, 16); */
+  /* background: linear-gradient(45deg, rgb(23, 3, 14), rgb(16, 29, 34)); */
+}
+
+.imgAndText {
+  border: none;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  -webkit-box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.094);
+          box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.094);
+  border-radius: 3vw !important;
+}
+
+#hello {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#welcomeText {
+  width: 70%;
+  min-width: min(200px, 100vw);
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#welcomeText p {
+  font-size: min(1rem, 30pt);
+  font-size: clamp(10pt, 1rem, 30pt);
+  text-align: justify;
+  margin: auto;
+  font-size: 1.2rem;
+  color: whitesmoke;
+  font-family: "roboto";
+  font-weight: 300;
+  line-height: 1.8rem;
+}
+
+@media screen and (max-width: 400px) {
+  #welcomeText p {
+    /* text-align: left; */
+    font-size: 1rem;
+  }
+}
+#portraitHolder {
+  float: left;
+  margin-top: 0px;
+  /* background-color: white; */
+  width: max(30%, 200px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 3vw;
+  /* clip-path:circle(43% at 49% 50%); */
+}
+
+#portrait {
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  -webkit-clip-path: circle(43% at 49% 50%);
+          clip-path: circle(43% at 49% 50%);
+  border: 2px solid white;
+}/*# sourceMappingURL=welcome.css.map */

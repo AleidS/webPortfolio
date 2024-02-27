@@ -2,6 +2,10 @@
 <!-- Play on scroll - https://codepen.io/Maltsbier/pen/dyYmGGq -->
 <div id=<?php echo ($projectID . "-bound") ?> class="project">
 
+    <div style="text-align:center;font-size:3rem;position:relative; width:100%;">
+        Scroll down!<br /><br />
+        <i class="fa-solid fa-arrow-down"></i>
+    </div>
     <!-- <h2 class="projectTitle">
 
         <?php if (isset($prev)) : ?>

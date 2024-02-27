@@ -1,10 +1,7 @@
 /* Make safari all black as mp4 will have black background (webm with transparency does not work on IOS) */
 @supports (-webkit-touch-callout: none) {
 
-    body {
-        font-family: sans-serif;
-    }
-
+    body {}
 
     .projectCard .pCard {
         padding: 10px !important;
@@ -12,6 +9,11 @@
 
     .projectCard h2 {
         margin-bottom: 0px;
+        position: -webkit-sticky !important;
+    }
+
+    .projectCard .cardFooter {
+        position: -webkit-sticky !important;
     }
 
     .cardbg {

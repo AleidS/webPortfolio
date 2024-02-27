@@ -29,8 +29,9 @@
     $projectID = "savingAid";
     $showElement = "savingAid";
     $prev = '#welcome';
-    $next = "#drawingApp";
+    $next = "#recipeApp-scroll";
     $projectLink = "https://www.besparingshulp.nl/";
+    $thesis = "https://research.tue.nl/nl/studentTheses/sustainable-goals";
     $githubLink = null;
     $toolsObj = array(
         array(
@@ -58,6 +59,7 @@
 
     $slideObj = array(
         array(
+            'title' => 'Graduation project',
             'vidName' => "saving_aid_1.mp4",
             'imgName' => "saving_aid.png",
             'text' => 'Energy saving recommender system, 
@@ -65,44 +67,35 @@
             Master thesis graduation project, under supervision of Martijn Willemsen and Alain Starke.',
         ),
         array(
+            'title' => 'SQL database',
             'imgName' => "savingAid2.png",
-            'text' => 'I made an experiment version with questionnaires and user tracking via PHP/SQL, 
-            and an app version as pictured above, that you can still visit.',
+            'text' => 'We had an SQL database with over 130 energy saving measures, of which participants got 20 personalized recommendations.',
         ),
         array(
-            'imgName' => "savingAid3.png",
-            'text' => 'Recommendations were based on the number of items someone already performed.',
+            'title' => 'Rasch Scale',
+            'imgName' => "currentActions.png",
+            'text' => 'Recommendations were based on the number of items someone already performed, following the psychometric Rasch model.',
+        ),
+        array(
+            'title' => 'User Experience',
+            'imgName' => "saving_aid.png",
+            'vidName' => "questionnaires2.mp4",
+            'text' => 'During the experiment, users got various questions about their personal values and user experiences. 
+            User actions and answers to questions were saved using a simple CRUD API (php), connected to the database.',
         )
-    );
-    $videoObj = array(
-        'projectName' => "Saving Aid",
-        'projectID' => "savingAid",
-        'videoName' => "savingAidVideo",
-        'link' => "https://www.besparingshulp.nl/",
-        'prev' => "#projects",
-        'next' => "#recipeApp",
     );
 
     include("projects/projectCardTemplate.php");
 
-
-    // $projectName = "Saving Aid ";
-    // $projectID = "savingAid";
-    // $videoName = "savingAidVideo";
-    // $link = "https://www.besparingshulp.nl/";
-    // $prev = "#projects";
-    // $next = "#recipeApp";
-    // include("projects/projectTemplate.php");
-    // include("projects/wipe.php");
-
-
-
     $projectName = "Recipes";
     $projectID = "recipeApp";
+    $prev = '#savingAid-scroll';
+    $next = "#drawingApp-scroll";
     $year = '2022';
     $icon = 'utensils';
     $projectLink = "https://www.aleidsuzan.com/recipes/";
     $githubLink = 'https://github.com/AleidS/recipes_react_public';
+    $thesis = null;
     $toolsObj = array(
         array(
             'name' => 'HTML/CSS',
@@ -141,8 +134,8 @@
     $projectName = "Drawing App";
     $projectID = "drawingApp";
     $year = '2021';
-    $prev = '#recipeApp';
-    $next = "#edu";
+    $prev = '#recipeApp-scroll';
+    $next = "#artPortfolio-scroll";
     $icon = 'pencil';
     $projectLink = "https://www.aleidsuzan.com/canvas/";
     $githubLink = 'https://github.com/AleidS/drawingApp';
@@ -176,33 +169,102 @@
         )
     );
     include("projects/projectCardTemplate.php");
-    // include("projects/wipe.php");
-    // $projectName = "Recipe app";
-    // $projectID = "recipeApp";
-    // $videoName = "recipeAppVideo";
-    // $link = "https://www.aleidsuzan.com/recipes";
-    // $prev = '#savingAid';
-    // $next = "#drawingApp";
-    // include("projects/projectTemplate.php");
-    // include("projects/wipe.php");
 
-    // $projectName = "Drawing App";
-    // $projectID = "drawingApp";
-    // $videoName = "drawingAppVideo";
-    // $link = "https://www.aleidsuzan.com/canvas";
-    // $prev = '#recipeApp';
-    // $next = "#artPortfolio";
-    // include("projects/projectTemplate.php");
-    // include("projects/wipe.php");
+    $projectName = "Art portfolio";
+    $projectID = "artPortfolio";
+    $year = '2022';
+    $prev = '#drawingApp-scroll';
+    $next = "#portfolioOld-scroll";
+    $icon = 'pencil';
+    $projectLink = "https://www.aleidsuzan.com/artPortfolio/";
+    $githubLink = 'https://github.com/AleidS/artPortfolio';
+    $toolsObj = array(
+        array(
+            'name' => 'HTML/CSS',
+            'logo' => 'HTML5_logo_wikipedia.png',
+        ),
+        array(
+            'name' => 'JavaScript',
+            'logo' => 'JavaScript-Logo.png'
+        ),
+        array(
+            'name' => 'React',
+            'logo' => 'React-icon.png'
+        ),
+        array(
+            'name' => 'FramerMotion',
+            'logo' => 'framer-motion-logo.png'
+        ),
 
-    // $projectName = "Art portfolio";
-    // $projectID = "artPortfolio";
-    // $videoName = "artPortfolioVideo";
-    // $link = "https://www.aleidsuzan.com/artportfolio";
-    // $prev = '#drawingApp';
-    // $next = "#edu";
+    );
+    $slideObj = array(
+        array(
+            'title' => 'Art portfolio',
+            'imgName' => "artPortfolio.png",
+            'vidName' => "artPortfolio1.mp4",
+            'text' => 'Art portfolio made with React.js and the Framer Motion library.',
+        ),
+        array(
+            'title' => 'Filtering',
+            'imgName' => "artPortfolio.png",
+            'vidName' => "artPortfolioFilter.mp4",
+            'text' => 'Items can be filtered based on category, e.g. photos or pen&paper',
+        ),
+        array(
+            'imgName' => "artPortfolio.png",
+            'vidName' => "artPortfolioThumbnail.mp4",
+            'text' => 'Full images are loaded upon thumbnail click',
+        )
+    );
+    include("projects/projectCardTemplate.php");
 
-    // include("projects/projectTemplate.php");
-    // include("projects/wipe.php");
+    $projectName = "Web Portfolio";
+    $year = '2023-2024';
+    $projectID = "portfolioOld";
+    $showElement = "portfolio3D";
+    $prev = '#artPortfolio-scroll';
+    $next = "#edu";
+    $projectLink = "https://www.aleidsuzan.com/portfolioOld/";
+    $githubLink = 'https://www.github.com/AleidS/webPortfolio';
+    $toolsObj = array(
+        array(
+            'name' => 'CSS+SCSS',
+            'logo' => 'Sass_logo.png',
+        ),
+        array(
+            'name' => 'Bootstrap',
+            'logo' => 'Bootstrap_logo.svg.png',
+        ),
+        array(
+            'name' => 'JavaScript',
+            'logo' => 'JavaScript-Logo.png'
+        ),
+        array(
+            'name' => 'PHP',
+            'logo' => 'PHP-logo.svg.png'
+        ),
+        array(
+            'name' => 'Blender',
+            'logo' => 'Blender_logo_no_text.svg.png'
+        ),
+        array(
+            'name' => 'Anime.js',
+            'logo' => 'anime2.png'
+        ),
+
+    );
+
+    $slideObj = array(
+        array(
+            'title' => '3D portfolio',
+            'imgName' => "portfolio3D.gif",
+            'text' => 'First version of this portfolio with 3D animations. 
+            You can activate these animations with the "show more" switches in the other projects, 
+            or use the link below to view all projects in 3D.',
+        ),
+    );
+
+    include("projects/projectCardTemplate.php");
     ?>
+
 </div>

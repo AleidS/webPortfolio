@@ -64,7 +64,7 @@ h4 {
     background-color: rgba(83, 112, 124, 0.513);
     background: linear-gradient(45deg,
             rgb(133, 53, 99),
-            rgb(44, 128, 161)) border-box !important;
+            rgb(44, 128, 161)) border-box;
     /* border-bottom: 1px solid rgba(255, 255, 255, 0.407); */
     /* border-top: 1px solid rgba(255, 255, 255, 0.531); */
     padding: 10px;

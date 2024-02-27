@@ -1,0 +1,20 @@
+.education .imageContainer {
+    display: flex;
+    width: 100%;
+    max-height: calc(min(200px, 30vw));
+    position: inline-block;
+    overflow: hidden;
+    align-items: center !important;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.644);
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+
+.education img {
+    max-width: 50%;
+    min-height: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+}

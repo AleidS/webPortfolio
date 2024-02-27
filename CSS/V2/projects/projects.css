@@ -6,10 +6,10 @@
 */
 #projectsContainer {
     /* Create a parallax effect */
-    background-image: url("../../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
+    /* background-image: url("../../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
     background-attachment: fixed;
     background-position: auto;
-    background-size: cover;
+    background-size: cover; */
     width: 100%;
     z-index: 300;
     margin: auto;
@@ -111,11 +111,11 @@
     color: white !important;
 }
 
-.skipButton {
+/* .skipButton {
     color: white !important;
     opacity: 0.5;
     font-size: 1.2rem;
-}
+} */
 
 
 /* With the website link */
@@ -179,20 +179,9 @@
     display: none;
 }
 
-#savingAid-bound {
-    opacity: 0;
-    pointer-events: none;
-    display: none;
-    transition-duration: 2s;
-}
-
-#recipeApp-bound {
-    opacity: 0;
-    pointer-events: none;
-    display: none;
-    transition-duration: 2s;
-}
-
+#savingAid-bound,
+#artPortfolio-bound,
+#recipeApp-bound,
 #drawingApp-bound {
     opacity: 0;
     pointer-events: none;

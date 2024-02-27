@@ -89,9 +89,9 @@ window.addEventListener('load', function () {
         for (var i = 0; i < explanations.length; i++) {
             var elementTop = explanations[i].getBoundingClientRect().top;
             var elementVisible = 150;
-            if ((windowWidth / windowHeight) < (5 / 8)) {
+            if ((window.innerWidth / window.innerHeight) < (5 / 8)) {
                 explanations[i].style.opacity = `${1 - ((elementTop - 200) / (windowHeight - 500))}`;
-                explanations[i].style.scale = `${Math.cos((elementTop * 1.4 - 300) / 500)}`;
+                // explanations[i].style.scale = `${Math.cos((elementTop * 1.4 - 300) / 500)}`;
             }
             // If someone is resizing window from narrow->large, reset (otherwise they're all invisible)
             else {

@@ -7,19 +7,26 @@
     <h2>
         <div class="cardbg"></div>
         <!-- <i class="fa-solid fa-<?php echo ($icon) ?>"></i> -->
-        <?php if (isset($prev)) : ?>
-        <a class="skipButton" href=<?php echo $prev ?>>
-            <i class="fas fa-fast-backward"></i>
-        </a>
-        <?php endif ?>
-        <span class=' name'><?php echo ($projectName) ?></span>
-        <a class="skipButton" href=<?php echo $next ?>>
-            <i class="fas fa-fast-forward"></i>
-        </a>
+
+        <span class='name'>
+            <?php if (isset($prev)) : ?>
+            <a class="skipButton" href=<?php echo $prev ?>>
+                <i class="fas fa-fast-backward"></i>
+            </a>
+            <?php endif ?>
+            <?php echo ($projectName) ?>
+            <?php if (isset($next)) : ?>
+            <a class=" skipButton" href=<?php echo $next ?>>
+                <i class="fas fa-fast-forward"></i>
+            </a>
+            <?php endif ?>
+        </span>
+
         <span class='year'> &nbsp; <?php echo ($year) ?></span>
     </h2>
     <div class="contents">
         <div class="ulAndImg">
+
             <ul class='cardUl'>
                 <?php
                 // $slideArray = json_decode(json_encode($slideObj));
@@ -46,6 +53,7 @@
                 <?php
                 } ?>
             </ul>
+
 
             <!-- Slider main container -->
 
@@ -98,8 +106,13 @@
                 ?>
                 <div class="swiper-slide textContainerInner">
                     <img class="textBgImg" src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading="lazy" />
+
                     <div class="pContainer">
+
                         <p class='pCard' data-in-effect="rollIn">
+                            <?php if (property_exists($slide, 'title')) : ?>
+                            <span class='title'> <?php echo ($slide->title) ?> </span>
+                            <?php endif ?>
                             <span class="ml10 text-wrapper txt">
                                 <span class="letters">
                                     <?php echo ($slide->text) ?>
@@ -121,16 +134,24 @@
 
     <div class="cardFooter">
         <div class="cardFooterBackground cardbg"></div>
-        <a class="sourceCode" href='<?php echo ($projectLink) ?>'>
+        <a class="sourceCode" target="_blank" href='<?php echo ($projectLink) ?>'>
             <i class="fa-solid fa-globe"></i>
             &nbsp;Visit
         </a>
         <?php if (isset($githubLink)) : ?>
-        <a href="<?php echo ($githubLink) ?>" class="sourceCode">
+        <a href="<?php echo ($githubLink) ?>" target="_blank" class="sourceCode">
             <i class="fa-brands fa-github"></i> code
         </a>
         <?php endif ?>
 
+        <?php if (isset($thesis)) : ?>
+        <a href="<?php echo ($thesis) ?>" target="_blank" class="sourceCode">
+            <i class="fa-solid fa-graduation-cap"></i> thesis
+        </a>
+        <?php endif ?>
+
+        <?php
+        if ($projectID != 'portfolioOld') : ?>
         <div class="learnmore">
             <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
             Show More
@@ -140,12 +161,16 @@
                 <span class="slider round"></span>
             </label>
         </div>
+        <?php endif ?>
 
     </div>
     <!-- <div
+    
         style="flex-basis:1; flex-grow:1; width:100%; margin:auto; overflow:visible; display:flex; justify-content:center;"> -->
     <?php
-    include("projectTemplate.php");
+    if ($projectID != 'portfolioOld') {
+        include("projectTemplate.php");
+    }
     ?>
     <!-- </div> -->
 

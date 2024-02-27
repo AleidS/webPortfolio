@@ -1,13 +1,3 @@
-#menuContainer {
-    box-shadow: none;
-    border: none !important;
-}
-
-#menu {
-    /* border: 0px solid rgba(67, 80, 83, 0.184) !important; */
-    box-shadow: none !important;
-}
-
 #mainArea {
     max-width: 100vw;
 }
@@ -26,8 +16,7 @@
 }
 
 .imgAndText::after,
-.sectionText::after,
-.projectCard::after {
+.sectionText::after {
     content: "";
     position: absolute;
     top: 0;
@@ -61,4 +50,12 @@
     border-bottom-right-radius: 1vw;
     border-top-left-radius: 2vw;
     border-top-right-radius: 2vw;
+}
+
+.projectCard h2 .cardbg {
+    border-top: 1px solid white !important;
+}
+
+.projectCard .cardFooter .cardbg {
+    border-bottom: 1px solid white !important;
 }

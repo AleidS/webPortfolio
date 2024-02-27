@@ -100,7 +100,7 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
     border-radius: 20px;
-    border: 2px solid rgba(255, 224, 224, 0.517);
+    border: 1px solid rgba(255, 224, 224, 0.517);
     overflow: hidden;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -108,6 +108,7 @@
     -webkit-box-flex: 0.9;
     -ms-flex-positive: 0.9;
     flex-grow: 0.9;
+    background: rgba(0, 0, 0, 0.317);
 }
 
 .otherSkills {
@@ -140,7 +141,7 @@
     flex-grow: 1;
     height: auto;
     min-height: fit-content;
-    border: 1px solid rgba(131, 131, 131, 0.559);
+    border: 1px solid rgba(126, 126, 126, 0.158);
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -156,12 +157,17 @@
     opacity: 0.9;
 }
 
-.logo {
+.tool .logo {
     max-height: 1.2rem;
     margin-top: 10px;
-    width: auto;
-    height: 100%;
 }
+
+/* @media screen and (max-width:400px) {
+    .tool .logo {
+        max-height: 10px !important;
+        max-width: 10px;
+    }
+} */
 
 .hidden {
     display: none;

@@ -67,19 +67,19 @@ document.addEventListener("DOMContentLoaded", function () {
             recipeAppVideoShown = true;
         }
 
-        // if (isInViewport(document.getElementById('artPortfolioVideo')) && artPortfolioVideoShown == false) {
-        //     if ($(window).width() < 500) {
-        //         document.getElementById('artPortfolioVideo').innerHTML =
-        //             '<source src="videos/artPortfolio2_shorter_Mobile_keyframe1_step6.webm" type="video/webm"> \
-        //             <source src="videos/artPortfolio2_shorter_mobile_keyframe1_step6.mp4" type="video/mp4">'
-        //     }
-        //     else {
-        //         document.getElementById('artPortfolioVideo').innerHTML =
-        //             '<source src="videos/artPortfolio2_shorter_desktop_keyframe1_step6.webm" type="video/webm"> \
-        //             <source src="videos/artPortfolio2_shorter_desktop_keyframe1_step6.mp4" type="video/mp4">'
-        //     }
-        //     artPortfolioVideoShown = true;
-        // }
+        if (isInViewport(document.getElementById('artPortfolioVideo')) && artPortfolioVideoShown == false) {
+            if ($(window).width() < 500) {
+                document.getElementById('artPortfolioVideo').innerHTML =
+                    '<source src="videos/artPortfolio2_shorter_Mobile_keyframe1_step6.webm" type="video/webm"> \
+                    <source src="videos/artPortfolio2_shorter_mobile_keyframe1_step6.mp4" type="video/mp4">'
+            }
+            else {
+                document.getElementById('artPortfolioVideo').innerHTML =
+                    '<source src="videos/artPortfolio2_shorter_desktop_keyframe1_step6.webm" type="video/webm"> \
+                    <source src="videos/artPortfolio2_shorter_desktop_keyframe1_step6.mp4" type="video/mp4">'
+            }
+            artPortfolioVideoShown = true;
+        }
     });
 
 

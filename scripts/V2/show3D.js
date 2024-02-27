@@ -13,6 +13,7 @@ function show3D(id) {
     const cardFooter = card.getElementsByClassName('cardFooter')[0]
     const cardHeader = card.getElementsByTagName('h2')[0]
     const contents = document.getElementById(`${id}`).getElementsByClassName('contents')[0]
+    const skipButtons = card.getElementsByClassName('fas')
 
     // because IOS has a different background color, save initial background-colors here before removing it, and re-appy on closing 3D view
     if (previousHeaderBg.id == undefined) {
@@ -47,6 +48,14 @@ function show3D(id) {
                     opacity: [1, 0],
                     // translateX: [500, 0],
                     duration: 500,
+                    easing: 'easeInOutSine'
+                })
+            anime.timeline({ loop: false })
+                .add({
+                    targets: skipButtons,
+                    // translateX: [0, -200],
+                    opacity: [0, 1],
+                    duration: 1000,
                     easing: 'easeInOutSine'
                 })
         }, 1000)
@@ -98,8 +107,16 @@ function show3D(id) {
                 duration: 500,
                 easing: 'easeInOutSine'
             })
+        anime.timeline({ loop: false })
+            .add({
+                targets: skipButtons,
+                // translateX: [0, -200],
+                opacity: [1, 0],
+                duration: 1000,
+                easing: 'easeInOutSine'
+            })
         scrollAnchor = card.getElementsByClassName('scrollAnchor')[0];
-        card.scrollIntoView();
+        document.getElementById(`${id}-scroll`).scrollIntoView();
         contents.style.display = "flex"
         anime.timeline({ loop: false })
             .add({

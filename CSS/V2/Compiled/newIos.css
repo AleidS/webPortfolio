@@ -1,0 +1,12 @@
+@supports (-webkit-touch-callout: none) {
+  .cardbg {
+    max-height: 100%;
+    position: absolute;
+    display: block;
+    max-height: 100%;
+  }
+  .projectCard .cardFooter {
+    top: 90vh !important;
+    /* On IOS hard to click bottom of screen */
+  }
+}/*# sourceMappingURL=newIos.css.map */

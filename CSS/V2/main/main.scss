@@ -1,14 +1,4 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
-/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Itim&family=Julius+Sans+One&family=Karla:wght@100;300;400&family=Nothing+You+Could+Do&family=Overlock:ital@0;1&family=Roboto+Mono:wght@100;400;700&display=swap'); */
-
 * {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: wrap !important;
     text-wrap: wrap !important;
@@ -18,8 +8,6 @@ html {
     font-size: 2;
     /* overflow-x: hidden; */
     scroll-behavior: smooth;
-    -webkit-transition-duration: 4s;
-    -o-transition-duration: 4s;
     transition-duration: 4s;
     word-wrap: break-word;
 }
@@ -34,11 +22,27 @@ body {
     max-width: 100%;
     padding: 0px;
     overflow-x: hidden;
-    background-image: url("../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
-    background-attachment: fixed;
-    background-size: cover;
     font-family: 'roboto', sans-serif;
     /* position:absolute; */
+}
+
+/* Fixed bg doesn't work on IOS */
+
+.backgroundImage {
+    width: 100%;
+    height: 120vh;
+    z-index: -1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-image: url("../../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png");
+    background-attachment: absolute;
+    background-size: cover;
+}
+
+.menuBackground {
+    height: 100%;
+    position: absolute;
 }
 
 
@@ -103,4 +107,38 @@ p {
 
 #drawingApp {
     scroll-margin-top: -200px !important;
+}
+
+.mainArea {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    margin: auto;
+    top: 0px;
+}
+
+.menuOverlay {
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    margin-top: 0px;
+    padding-top: 200px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.menuOverlay,
+.overlay {
+    background: rgba(17, 17, 17, 0.158);
+    // backdrop-filter: blur(10px);
 }

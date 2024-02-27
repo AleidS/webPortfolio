@@ -30,14 +30,24 @@
   margin-bottom: 100px;
   border-top-right-radius: 4vw;
   border-top-left-radius: 4vw;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
   -webkit-transition-duration: 2s;
   transition-duration: 2s;
   scroll-margin-top: 120px;
   /* .swiper-pagination {
       background: rgba(13, 1, 1, 0.545);
   } */
+}
+.projectCard h2 a {
+  text-decoration: none;
+}
+.projectCard .fas {
+  display: none;
+  color: white !important;
+  opacity: 0;
+  font-size: 1.4rem;
+  margin: 10px;
+  -webkit-transform: scaleY(1.5) translateY(10%);
+          transform: scaleY(1.5) translateY(10%);
 }
 .projectCard .contents {
   border-top: 1px solid white;
@@ -46,13 +56,13 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 0px;
   min-height: -webkit-fit-content;
   min-height: -moz-fit-content;
@@ -61,8 +71,8 @@
   padding-top: 20px;
   padding-bottom: 10px;
   padding-right: 5px;
-  -webkit-backdrop-filter: blur(40px) brightness(160%) !important;
-  backdrop-filter: blur(40px) brightness(160%) !important;
+  -webkit-backdrop-filter: blur(40px) brightness(200%) !important;
+          backdrop-filter: blur(40px) brightness(200%) !important;
 }
 .projectCard .letters {
   opacity: 1;
@@ -77,22 +87,18 @@
   display: -ms-flexbox !important;
   display: flex !important;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: -webkit-sticky;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   text-align: center;
-  font-weight: 300;
-  font-size: 20pt;
-  font-size: clamp(10pt, 2.5rem, 7vw);
   font-family: "roboto mono";
   /* background-color: rgba(38, 82, 80, 0.361); */
   padding: 0;
   padding-left: 5vw;
   padding-right: 5vw;
-  background-color: rgba(194, 152, 193, 0.102);
-  background: rgba(180, 133, 167, 0.178);
   /* border: 1px solid rgba(255, 255, 255, 0.438); */
   border-top-left-radius: 2vw;
   border-top-right-radius: 2vw;
@@ -104,15 +110,13 @@
   transition-duration: 2s;
   background-position: auto;
   bottom: 100px;
+  font-size: clamp(12pt, 2.4rem, 7vw);
+  font-weight: 400;
 }
 .projectCard h2 a {
   color: white;
 }
-.projectCard h2 i {
-  display: none;
-}
 .projectCard h2 .name {
-  padding: 10px;
   margin: 0px;
   height: 100%;
   display: -webkit-box;
@@ -124,7 +128,6 @@
   align-items: center;
 }
 .projectCard h2 .year {
-  font-size: clamp(10pt, 2rem, 5vw);
   /* background: rgba(144, 144, 150, 0.175); */
   padding: 10px;
   border-left: 0px solid rgba(255, 255, 255, 0.375);
@@ -137,6 +140,13 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+.projectCard .cardbg {
+  -webkit-backdrop-filter: blur(20px) brightness(300%);
+          backdrop-filter: blur(20px) brightness(300%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.419) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.45) !important;
+  height: 100%;
 }
 @media screen and (max-width: 430px) {
   .projectCard {
@@ -157,6 +167,7 @@
   font-weight: 300;
   font-family: "roboto";
   padding: 0px;
+  padding-top: 0px;
   margin: 0px;
   color: white;
   height: -webkit-fit-content;
@@ -167,22 +178,19 @@
 .projectCard .textContainer {
   margin-top: 10px;
   /* backdrop-filter: blur(10px); */
-  width: 15%;
-  min-width: 190px;
+  width: 25%;
+  min-width: 200px;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
   height: auto;
   margin-bottom: 10px;
   margin-right: 20px;
-  /* background: linear-gradient(to right, rgba(255, 255, 255, 0.095), rgba(211, 211, 211, 0.068)); */
-  /* background: rgba(131, 131, 131, 0.289); */
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.287);
-  border-right: 1px solid rgba(255, 255, 255, 0.45);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.455);
-  background: rgba(170, 140, 162, 0.178);
+  background: rgba(213, 187, 206, 0.06);
+  -webkit-backdrop-filter: blur(20px) brightness(200%);
+          backdrop-filter: blur(20px) brightness(200%);
   /* border: 1px solid rgba(255, 255, 255, 0.461); */
   /* background: rgba(255, 255, 255, 0.249); */
 }
@@ -191,25 +199,43 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  /* background: linear-gradient(to right, rgba(255, 255, 255, 0.095), rgba(211, 211, 211, 0.068));
-  background: rgba(131, 131, 131, 0.289); */
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0px;
   margin: auto;
   overflow: hidden;
 }
 .projectCard .pContainer {
-  /* background: rgba(190, 129, 184, 0.193); */
   height: 100%;
   width: 100%;
   padding: 10px;
+  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.projectCard .pCard {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 100%;
+}
+.projectCard .title {
+  display: block;
+  font-size: clamp(10pt, 1.6rem, 5vw);
+  font-weight: 400;
+  line-height: clamp(10pt, 1.6rem, 5vw) !important;
+  text-transform: capitalize;
+  padding: 0px;
+  margin-bottom: 9px;
+}
+.projectCard .textContainer {
+  min-width: 100px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 .projectCard .textBgImg {
   display: none;
@@ -240,9 +266,10 @@
 }
 .projectCard .imgContainer {
   max-width: 400px !important;
-  max-height: 300px;
+  width: 100%;
   width: min(89vw - 100px, 450px) !important;
   height: auto;
+  max-height: min(300px, 60vw);
   border-radius: 5px;
   overflow: hidden;
   position: relative;
@@ -271,6 +298,8 @@
 }
 .projectCard .imgContainer img {
   width: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
   margin: auto;
   position: relative;
   right: 0px;
@@ -290,14 +319,19 @@
   width: 100%;
 }
 .projectCard .imgContainer video {
-  width: 70%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: 120% !important;
+  max-height: 120% !important;
   margin: auto;
-  position: relative;
+  position: absolute;
   right: 0px;
   top: 0px;
+  background: blue;
   -webkit-box-shadow: inset 0px 0px 10px 10px black;
-  box-shadow: inset 0px 0px 10px 10px black;
+          box-shadow: inset 0px 0px 10px 10px black;
 }
 .projectCard .swiper-container {
   width: 100%;
@@ -376,25 +410,25 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: rgba(255, 255, 255, 0.102);
   background: rgba(170, 140, 162, 0.178);
   -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   color: white;
   padding: 10px;
   min-height: -webkit-fit-content;
   min-height: -moz-fit-content;
   min-height: fit-content;
-  position: sticky;
+  position: -webkit-sticky;
   top: 90vh;
   z-index: 20;
   background-attachment: fixed;
   background-size: cover;
   -webkit-transition-duration: 2s;
-  transition-duration: 2s;
+          transition-duration: 2s;
   background-position: auto;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -462,6 +496,7 @@
   overflow: visible;
   -webkit-transform: translateX(5px);
   transform: translateX(5px);
+  z-index: -10;
 }
 .projectCard li {
   position: relative;
@@ -515,37 +550,27 @@
   max-width: -moz-fit-content !important;
   max-width: fit-content !important;
 }
-.projectCard .hrline {
-  display: none;
-  width: 20px;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  position: relative;
-  background: white;
-  height: 3px;
-  top: -1px;
-  left: -5px;
-  margin: auto;
-  margin-left: 0px;
-}
 .projectCard hr {
   display: inline;
   min-width: 10px;
   -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  background-color: rgb(54, 227, 233);
-  background: rgb(255, 255, 255);
-  height: 1px;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background: rgba(255, 255, 255, 0.506);
+  height: 5px;
   padding: 0px;
   border-radius: 4px;
   margin-left: 0px;
   margin-right: 0px !important;
-  -webkit-transform: translateX(-5px);
-  transform: translateX(-5px);
+  -webkit-transform: translateX(-5px) translateY(-1px);
+          transform: translateX(-5px) translateY(-1px);
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.045);
-  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.045);
+          box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.045);
+}
+.projectCard .o {
+  color: white;
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
 }
 @media screen and (max-width: 430px) {
   .projectCard .ulAndImg {
@@ -566,8 +591,8 @@
     width: 100% !important;
   }
   .projectCard p {
-    font-size: 0.9rem !important;
-    line-height: 0.9rem !important;
+    font-size: 1rem !important;
+    line-height: 1.2rem !important;
   }
   .projectCard ul {
     height: 20vw;
@@ -576,21 +601,16 @@
     margin: auto;
     max-width: 100%;
     -ms-flex-preferred-size: 1;
-    flex-basis: 1;
+        flex-basis: 1;
     -webkit-transform-origin: 100, 0%;
-    transform-origin: 100, 0%;
-    -webkit-transform: rotateZ(25deg) translateX(110%) translateY(-40%) !important;
-    transform: rotateZ(25deg) translateX(110%) translateY(-40%) !important;
+            transform-origin: 100, 0%;
+    -webkit-transform: rotateZ(25deg) translateX(125%) translateY(-40%) !important;
+            transform: rotateZ(25deg) translateX(125%) translateY(-40%) !important;
   }
   .projectCard li {
-    font-size: 0.7rem !important;
+    font-size: 1rem !important;
+    line-height: 0.8rem !important;
   }
-}
-.projectCard .o {
-  color: rgb(54, 227, 233);
-  color: white;
-  -webkit-transform: translateY(-1px);
-  transform: translateY(-1px);
 }
 
 .learnmore {
@@ -627,8 +647,6 @@
   z-index: -1;
   margin: 0px;
   z-index: -1;
-  background: -webkit-gradient(linear, left top, right top, from(rgb(133, 53, 99)), to(rgb(44, 128, 161))) border-box;
-  background: linear-gradient(90deg, rgb(133, 53, 99), rgb(44, 128, 161)) border-box;
 }
 
 h2 .cardbg {

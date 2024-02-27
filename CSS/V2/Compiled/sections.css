@@ -1,0 +1,244 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+.sectionContainer {
+  z-index: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* max-height: fit-content;
+  overflow: hidden; */
+}
+
+/* Because users will otherwise scroll right past it */
+.test {
+  -webkit-backdrop-filter: brightness(80%);
+          backdrop-filter: brightness(80%);
+}
+
+.sectionTitle {
+  font-family: "roboto mono";
+  position: relative;
+  font-weight: 500 !important;
+  /* background-color:rgba(10, 1, 10, 0.467); */
+  padding: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /* min-height: 100px; */
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  height: min(-webkit-fit-content, 100px);
+  height: min(-moz-fit-content, 100px);
+  height: min(fit-content, 100px);
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-weight: 300;
+  font-size: 20pt;
+  margin: auto;
+  z-index: 290;
+  border-radius: 1vw;
+  text-decoration-thickness: 2%;
+  opacity: 1;
+  /* max-width: 800px !important; */
+  margin-bottom: 40px;
+  width: min(100%, 600px);
+  border: none;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+}
+
+.sectionText {
+  position: relative;
+  margin-top: 0px;
+  /* background-image:url("..Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min.png"); */
+  background-position: auto;
+  background-attachment: fixed;
+  background-size: cover;
+  width: min(100%, 600px);
+  margin: auto;
+  border: 1px solid rgba(255, 255, 255, 0.216);
+  border-radius: 10px;
+  padding: min(30px, 5vw);
+  padding-bottom: 70px;
+  padding-top: 40px;
+  text-align: justify;
+  font-size: 1.1rem;
+  color: rgba(245, 245, 245, 0.799);
+  font-family: "roboto";
+  font-weight: 300;
+  padding-left: 10px;
+  border-top: 1px solid white !important;
+  border-bottom: 1px solid white !important;
+  background: rgba(211, 218, 219, 0.025);
+  padding-left: 10px;
+  border-radius: 20px;
+  padding: 30px;
+  -webkit-backdrop-filter: blur(40px) brightness(190%);
+  backdrop-filter: blur(100px) brightness(160%) hue-rotate(0deg) contrast(100%);
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.sectionText strong {
+  font-weight: 500;
+}
+
+@media screen and (max-aspect-ratio: 5/8) {
+  .sectionText {
+    border-radius: 0px;
+  }
+}
+.sectionTitle {
+  background: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  -webkit-backdrop-filter: none !important;
+          backdrop-filter: none !important;
+  border: none !important;
+  font-size: 50pt !important;
+  font-size: clamp(25pt, 5rem, 14vw);
+  width: 100%;
+  font-family: "roboto mono";
+  /* text-transform: uppercase; */
+  letter-spacing: -0.2rem;
+  font-weight: 200 !important;
+  margin-top: 150px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.letters {
+  opacity: 0;
+}
+
+.ml10 .letter {
+  opacity: 0;
+  display: inline-block;
+  line-height: 1em;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+/* Section title of projects */
+.transparentArrowContainer {
+  position: relative;
+  margin: auto;
+  margin-bottom: 200px;
+  margin-top: 200px;
+  width: 100vw !important;
+  max-width: 400px !important;
+  height: 80vw !important;
+  max-height: 300px;
+  display: none;
+}
+
+.transparentArrow,
+.arrowBackground {
+  background-image: url("../../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-darkest2.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 15vh;
+  border: none;
+  /* border-top: 1px solid rgba(186, 97, 167, 0.169); */
+  /* border-bottom: 1px solid rgba(186, 97, 167, 0.169); */
+  border-radius: 0px;
+  -webkit-box-shadow: 0px 0px 10px 10px rgba(52, 4, 26, 0.096);
+          box-shadow: 0px 0px 10px 10px rgba(52, 4, 26, 0.096);
+  color: rgba(224, 224, 224, 0.897);
+  font-weight: 300 !important;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  z-index: 400;
+  display: block;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+.arrowBackground {
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.749);
+  background: -webkit-gradient(linear, left top, right top, from(rgb(49, 12, 31)), color-stop(rgba(190, 141, 177, 0.748)), color-stop(rgb(49, 12, 31)), color-stop(rgba(190, 141, 177, 0.748)), color-stop(rgb(49, 12, 31)), to(rgba(190, 141, 177, 0.748)));
+  background: linear-gradient(90deg, rgb(49, 12, 31), rgba(190, 141, 177, 0.748), rgb(49, 12, 31), rgba(190, 141, 177, 0.748), rgb(49, 12, 31), rgba(190, 141, 177, 0.748));
+  /* background: rgba(237, 219, 237, 0.515); */
+  scale: 1.01;
+  top: 0.5px;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  border-style: dashed;
+  border: none;
+}
+
+.smallTitle {
+  font-size: 1rem;
+  min-height: 0px;
+  margin-top: 100px;
+  height: -webkit-fit-content !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  padding: 6px;
+  margin-bottom: 200px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 300 !important;
+  font-family: roboto;
+  color: rgba(255, 255, 255, 0.862);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  background: rgb(14, 17, 19) !important;
+  text-decoration: underline;
+  position: relative;
+  /* background-image: url("../../../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-semtransparent-min.png"); */
+}
+
+.smallTitle:hover {
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(158, 128, 136, 0.248) !important;
+          box-shadow: 0px 0px 20px 5px rgba(158, 128, 136, 0.248) !important;
+  color: white;
+}
+
+.smallTitle a {
+  color: white;
+}
+
+#edu,
+#tools,
+#contact,
+.scrollMargin {
+  scroll-margin-top: 50px !important;
+}
+
+.section {
+  word-wrap: break-word;
+}
+
+.section:last-child {
+  margin-bottom: 200px !important;
+}
+
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}/*# sourceMappingURL=sections.css.map */
