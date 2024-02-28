@@ -17,21 +17,18 @@
 }
 
 @media screen and (max-aspect-ratio:8/6) {
-    .videoContainer {
+    .project .videoContainer {
         overflow: hidden;
     }
 }
 
-video {
+.scrollVideo {
     scale: 1.4;
 }
 
 
-
-
-
 @media (max-device-aspect-ratio: 5/8) {
-    .videoContainer {
+    .project .videoContainer {
         display: block;
         top: 30vh !important;
         z-index: 9999 !important;
@@ -45,15 +42,25 @@ video {
         overflow: hidden;
         height: 80vh !important;
         margin: auto;
+        position: sticky;
+        top: 200px;
 
         /* background: white; */
     }
 
-    video {
+    .scrollVideo {
         /* If you make the scale too large it stops working on smaller screens, no idea why */
         scale: 1.5;
-        position: absolute;
         top: 200px;
+        left: 0px;
+        transform: translateY(-180px);
 
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .scrollVideo {
+        /* If you make the scale too large it stops working on smaller screens, no idea why */
+        scale: 1.0;
     }
 }

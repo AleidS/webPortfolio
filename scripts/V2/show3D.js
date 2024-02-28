@@ -25,6 +25,12 @@ function show3D(id) {
     // document.getElementById(`${id}-card`).getElementsByClassName('contents')[0].style.height = '0px';
     if (card.getElementsByClassName('3dCheckbox')[0].checked == true) {
 
+        registerVideo(`#${id}-bound`, `#${id}Video`, true);
+        // registerVideo("#recipeApp-bound", "#recipeAppVideo", true);
+        // // registerVideo("#drawingApp-bound", "#drawingAppVideo");
+        // registerVideo("#artPortfolio-bound", "#artPortfolioVideo");
+
+
         anime.timeline({ loop: false })
             .add({
                 targets: contents,
@@ -73,7 +79,7 @@ function show3D(id) {
             // cardHeader.style.backgroundImage = 'url(../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png)';
 
 
-            cardHeader.style.top = '70px';
+            cardHeader.style.top = '0px';
             cardHeader.style.zIndex = '20';
             cardFooter.style.zIndex = '20';
             // card.style.borderTop = 'none'
@@ -97,6 +103,8 @@ function show3D(id) {
         }, 3000)
     }
     else {
+
+        registerVideo(`#${id}-bound`, `#${id}Video`, false);
 
         anime.timeline({ loop: false })
             .add({

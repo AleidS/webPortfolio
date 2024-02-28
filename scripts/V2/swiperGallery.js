@@ -13,9 +13,15 @@ window.addEventListener('load', function () {
             direction: 'horizontal',
             // loop: true,
             effect: 'coverflow',
-            mousewheelControl: true,
-            mousewheel: true,
-            keyboardControl: true,
+            // mousewheelControl: true,
+            // mousewheel: true,
+            // keyboardControl: true,
+
+            // Otherwise scrolling issues IOS
+            // allowTouchMove: false,
+            allowSlideNext: true,
+            allowSlidePrev: true,
+            mousewheel: false,
             delay: 5000,
             // If we need pagination
             pagination: {
@@ -88,7 +94,7 @@ window.addEventListener('load', function () {
             direction: 'horizontal',
             // loop: true,
             effect: 'slide',
-            mousewheelControl: true,
+            // mousewheelControl: true,
             keyboardControl: true,
 
             // If we need pagination

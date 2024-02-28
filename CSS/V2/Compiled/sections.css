@@ -119,10 +119,12 @@
   margin-top: 150px;
   margin-bottom: 50px;
   text-align: center;
+  will-change: opacity;
 }
 
 .letters {
   opacity: 0;
+  will-change: opacity;
 }
 
 .ml10 .letter {
@@ -131,6 +133,7 @@
   line-height: 1em;
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
+  will-change: opacity;
 }
 
 /* Section title of projects */

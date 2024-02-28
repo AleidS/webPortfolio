@@ -27,7 +27,6 @@ $version = 'V2'
     <!-- Own stylesheets -->
     <link href="CSS/<?php echo ($version) ?>/Compiled/main.css" rel="stylesheet">
     <link href="CSS/<?php echo ($version) ?>/Compiled/menu.css" rel="stylesheet">
-    <link href="CSS/<?php echo ($version) ?>/dottedLine.css" rel="stylesheet">
 
 
     <link href="CSS/<?php echo ($version) ?>/projects/video.css" rel="stylesheet">
@@ -40,12 +39,12 @@ $version = 'V2'
 
     <link href="CSS/<?php echo ($version) ?>/sections/contact.css" rel="stylesheet">
     <link href="CSS/<?php echo ($version) ?>/sections/education.css" rel="stylesheet">
-    <link href="CSS/<?php echo ($version) ?>/projects/projects.css" rel="stylesheet">
+    <link href="CSS/<?php echo ($version) ?>/Compiled/projects.css" rel="stylesheet">
     <link href="CSS/<?php echo ($version) ?>/Compiled/projectCard.css" rel="stylesheet">
     <link href="CSS/<?php echo ($version) ?>/projects/switch.css" rel="stylesheet">
 
 
-    <link href="CSS/<?php echo ($version) ?>/projects/explanations.css" rel="stylesheet">
+    <link href="CSS/<?php echo ($version) ?>/Compiled/explanations.css" rel="stylesheet">
     <link href="CSS/<?php echo ($version) ?>/projects/explanationsText.css" rel="stylesheet">
     <link href="CSS/<?php echo ($version) ?>/projects/explanationsImg.css" rel="stylesheet">
     <link href="CSS/<?php echo ($version) ?>/projects/explanationsLogo.css" rel="stylesheet">
@@ -53,6 +52,7 @@ $version = 'V2'
 
     <link href="CSS/<?php echo ($version) ?>/Compiled/newIos.css" rel="stylesheet">
     <link href="CSS/<?php echo ($version) ?>/newTheme.css" rel="stylesheet">
+    <!-- <link href="CSS/<?php echo ($version) ?>/ios.css" rel="stylesheet"> -->
     <!-- <link href="CSS/othercolors.css" rel="stylesheet"> -->
     <!-- Favicons (broser tab icon for example) -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -67,7 +67,9 @@ $version = 'V2'
     <meta charset="UTF-8">
     <!-- Motion library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 
@@ -85,10 +87,8 @@ $version = 'V2'
 
         <div id="home"></div>
 
-
         <?php
         include "sections/welcome.html";
-        include "sections/dottedLine.html";
         include "sections/projects.php";
         include "sections/education.html";
         include "sections/tools.html";

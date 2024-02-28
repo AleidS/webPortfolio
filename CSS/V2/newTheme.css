@@ -7,6 +7,14 @@
     max-width: 900px !important;
 }
 
+.projectCard h2 .cardbg {
+    border-top: 1px solid white !important;
+}
+
+.projectCard .cardFooter .cardbg {
+    border-bottom: 1px solid white !important;
+}
+
 .imgAndText,
 .sectionText {
     border-top: 0px !important;
@@ -52,10 +60,6 @@
     border-top-right-radius: 2vw;
 }
 
-.projectCard h2 .cardbg {
-    border-top: 1px solid white !important;
-}
-
-.projectCard .cardFooter .cardbg {
-    border-bottom: 1px solid white !important;
+.fas {
+    will-change: opacity;
 }

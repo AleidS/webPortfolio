@@ -2,7 +2,7 @@
 <!-- Play on scroll - https://codepen.io/Maltsbier/pen/dyYmGGq -->
 <div id=<?php echo ($projectID . "-bound") ?> class="project">
 
-    <div style="text-align:center;font-size:3rem;position:relative; width:100%;">
+    <div style="text-align:center;font-size:3rem;position:relative; font-weight:200; font-family:'roboto mono'; width:100%;">
         Scroll down!<br /><br />
         <i class="fa-solid fa-arrow-down"></i>
     </div>

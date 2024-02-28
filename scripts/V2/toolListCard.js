@@ -15,7 +15,7 @@ window.addEventListener('load', function () {
                 }
                 const listItemsActive = lists[i].getElementsByClassName('active')
                 for (var j = 0; j < listItemsActive.length; j++) {
-                    listItemsActive[j].style.transform = `translateX(-${(j / listItemsActive.length) * 150 + (2 * (3 - listItemsActive.length) * j)}%)`
+                    listItemsActive[j].style.transform = `translateX(-${(j / listItemsActive.length) * 170 + (2 * (3 - listItemsActive.length) * j)}%)`
                     // listItemsActive[j].style.webkitTransform = `translateX(-${(j / listItemsActive.length) * 100 + (2 * (3 - listItemsActive.length) * j)}%)`
                 }
             }

@@ -54,11 +54,11 @@
                 } ?>
             </ul>
 
-
             <!-- Slider main container -->
 
             <div class="verticalScrollScreen"></div>
             <div class="swiperImg swiper imgContainer ">
+
 
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
@@ -72,12 +72,12 @@
                     ?>
                     <div class="swiper-slide imgContainerInner">
                         <?php if (property_exists($slide, 'vidName')) : ?>
-                        <video width='100%' height='100%' preload="false" autoplay muted playsinline>
+                        <video class="lazy" width='100' height='100' preload="none" muted playsinline>
                             <source src=<?php echo ("Images/screenshots/" . $slide->vidName) ?> type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <?php else : ?>
-                        <img src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading="lazy" />
+                        <img src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading="lazy" class="lazy" />
                         <?php endif ?>
 
 
@@ -88,13 +88,18 @@
                 </div>
 
 
+                <?php if (count(array_keys((array)$slideObj)) > 1) : ?>
                 <div class="swiperFooter">
                     <div class="swiper-pagination swiper-interface"></div>
                 </div>
+
                 <div class="swiper-button-prev swiper-interface" id="backButton"></div>
                 <div class="swiper-button-next swiper-interface" id="nextButton"></div>
+                <?php endif ?>
             </div>
+
         </div>
+
 
         <!-- Synced with the slides, but new div :) -->
         <div class="swiperText swiper textContainer ">

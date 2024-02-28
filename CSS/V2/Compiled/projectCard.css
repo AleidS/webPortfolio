@@ -11,7 +11,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
   border-radius: 0px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -44,6 +43,7 @@
   display: none;
   color: white !important;
   opacity: 0;
+  will-change: opacity;
   font-size: 1.4rem;
   margin: 10px;
   -webkit-transform: scaleY(1.5) translateY(10%);
@@ -71,15 +71,18 @@
   padding-top: 20px;
   padding-bottom: 10px;
   padding-right: 5px;
-  -webkit-backdrop-filter: blur(40px) brightness(200%) !important;
-          backdrop-filter: blur(40px) brightness(200%) !important;
+  -webkit-backdrop-filter: blur(30px) brightness(200%) !important;
+          backdrop-filter: blur(30px) brightness(200%) !important;
+  will-change: opacity;
 }
 .projectCard .letters {
   opacity: 1;
   word-break: none;
+  will-change: opacity;
 }
 .projectCard .letter {
   opacity: 1;
+  will-change: opacity;
 }
 .projectCard h2 {
   width: 100%;
@@ -147,6 +150,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.419) !important;
   border-top: 1px solid rgba(255, 255, 255, 0.45) !important;
   height: 100%;
+  will-change: opacity;
 }
 @media screen and (max-width: 430px) {
   .projectCard {
@@ -245,7 +249,7 @@
   min-width: 100%;
   min-height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   scale: 1.2;
   margin: auto;
   -webkit-filter: blur(5px) brightness(50%);
@@ -254,7 +258,7 @@
   opacity: 1;
 }
 .projectCard .verticalScrollScreen {
-  background: rgba(255, 0, 0, 0.0001);
+  background: rgba(190, 99, 99, 0.001);
   width: 100%;
   height: 100%;
   top: 0;
@@ -262,6 +266,7 @@
   position: absolute;
   z-index: 10;
   opacity: 0;
+  will-change: opacity;
   pointer-events: none;
 }
 .projectCard .imgContainer {
@@ -272,13 +277,6 @@
   max-height: min(300px, 60vw);
   border-radius: 5px;
   overflow: hidden;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   padding: 0px;
   margin: 0;
   -webkit-filter: brightness(100%);
@@ -286,6 +284,7 @@
 }
 .projectCard .imgContainer .imgContainerInner {
   width: 100%;
+  top: 0px;
   /* max-height: 200px !important; */
   overflow: hidden;
   aspect-ratio: 14/9;
@@ -295,6 +294,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-backdrop-filter: blur(40px) brightness(80%);
+          backdrop-filter: blur(40px) brightness(80%);
 }
 .projectCard .imgContainer img {
   width: 100% !important;
@@ -303,6 +304,7 @@
   margin: auto;
   position: relative;
   right: 0px;
+  top: 0px;
   -webkit-box-shadow: inset 0px 0px 10px 10px black;
   box-shadow: inset 0px 0px 10px 10px black;
   /* -webkit-mask-image: -webkit-gradient(linear, right bottom, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 1))); */
@@ -325,11 +327,6 @@
   min-height: 100% !important;
   max-width: 120% !important;
   max-height: 120% !important;
-  margin: auto;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  background: blue;
   -webkit-box-shadow: inset 0px 0px 10px 10px black;
           box-shadow: inset 0px 0px 10px 10px black;
 }
@@ -378,7 +375,7 @@
   /* filter: invert(0)brightness(890%)drop-shadow(1px 1px 10px rgb(203, 203, 203)); */
 }
 .projectCard .swiper-button-prev:after {
-  background-image: url("../../../Images/icons/arrowleft.png");
+  background-image: url("../../../Images/icons/arrowLeft.png");
 }
 .projectCard .swiperFooter {
   height: 30px;
@@ -462,6 +459,7 @@
   max-width: 60vw !important;
 }
 .projectCard ul {
+  margin-top: -40px;
   list-style: none;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -484,26 +482,27 @@
   max-height: 60vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: space-between;
-  -ms-flex-align: space-between;
-  align-items: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
   margin: auto;
   overflow: visible;
   -webkit-transform: translateX(5px);
-  transform: translateX(5px);
+          transform: translateX(5px);
   z-index: -10;
 }
 .projectCard li {
   position: relative;
   font-family: "roboto mono";
   -webkit-transform: translateX(0px);
-  transform: translateX(0px);
+          transform: translateX(0px);
   opacity: 0;
+  will-change: opacity;
   -webkit-transition: 1s all ease;
   transition: 1s all ease;
   font-size: 1rem !important;
@@ -520,6 +519,7 @@
   line-height: 0.8rem !important;
   margin: 0px !important;
   padding: 0px !important;
+  will-change: transform;
 }
 .projectCard li .listIcon {
   max-height: 20px;
@@ -544,6 +544,7 @@
   -webkit-transform: translateX(10px);
   transform: translateX(10px);
   opacity: 1;
+  will-change: opacity;
 }
 .projectCard li div {
   max-width: -webkit-fit-content !important;
@@ -580,8 +581,10 @@
     height: -moz-fit-content;
     height: fit-content;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
   }
   .projectCard .imgContainer {
     width: 100vw !important;
@@ -610,6 +613,7 @@
   .projectCard li {
     font-size: 1rem !important;
     line-height: 0.8rem !important;
+    will-change: opacity;
   }
 }
 

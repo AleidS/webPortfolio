@@ -38,38 +38,25 @@
     integrity="sha512-e2WVdoOGqKU97DHH6tYamn+eAwLDpyHKqPy4uSv0aGlwDXZKGwyS27sfiIUT8gpZ88/Lr4UZpbRt93QkGRgpug=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<!-- lazy loading -->
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.min.js"></script>
 <!-- Own scripts -->
 
 
-<script src="scripts/<?php echo ($version) ?>/onScroll3Dvideos.js">
-</script>
-<script src="scripts/<?php echo ($version) ?>/scrollAndLetterAnimations.js">
-</script>
+<script src="scripts/<?php echo ($version) ?>/onScroll3Dvideos.js"></script>
+<script src="scripts/<?php echo ($version) ?>/scrollAndLetterAnimations.js"></script>
 <script src="scripts/<?php echo ($version) ?>/showElementOnClick.js"></script>
 <script src="scripts/<?php echo ($version) ?>/show3D.js"></script>
-<script src="scripts/<?php echo ($version) ?>/navbarCollapse.js"></script>
 <script src="scripts/<?php echo ($version) ?>/swiperGallery.js"></script>
 <script src="scripts/<?php echo ($version) ?>/toolListCard.js"></script>
 <script src="scripts/<?php echo ($version) ?>/hideMenuScrollDown.js"></script>
+<script src="scripts/<?php echo ($version) ?>/navbarCollapse.js"></script>
 
 <script>
 $('document').ready(function() {
-    $(window).scrollTop(-400);
     AOS.init({
         duration: 800,
     });
 });
-
-let arrayGlobal = []
-
-function typingEffect3(arrayX, card) {
-    if (arrayGlobal.length > 0) {
-        card.innerHTML += arrayGlobal.shift();
-    }
-}
 var lazyLoadInstance = new LazyLoad({});
-
-window.addEventListener('load', function() {
-
-})
 </script>

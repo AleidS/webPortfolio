@@ -120,11 +120,13 @@
     margin-top: 150px;
     margin-bottom: 50px;
     text-align: center;
+    will-change: opacity;
 
 }
 
 .letters {
     opacity: 0;
+    will-change: opacity;
 }
 
 .ml10 .letter {
@@ -132,6 +134,7 @@
     display: inline-block;
     line-height: 1em;
     transform-origin: 0 0;
+    will-change: opacity;
 }
 
 

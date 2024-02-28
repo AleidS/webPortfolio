@@ -168,7 +168,7 @@
             'text' => 'They can also change brush properties and save the image',
         )
     );
-    include("projects/projectCardTemplate.php");
+    // include("projects/projectCardTemplate.php");
 
     $projectName = "Art portfolio";
     $projectID = "artPortfolio";
@@ -257,7 +257,8 @@
     $slideObj = array(
         array(
             'title' => '3D portfolio',
-            'imgName' => "portfolio3D.gif",
+            'imgName' => 'webPortfolio.png',
+            'vidName' => "webPortfolio.mp4",
             'text' => 'First version of this portfolio with 3D animations. 
             You can activate these animations with the "show more" switches in the other projects, 
             or use the link below to view all projects in 3D.',

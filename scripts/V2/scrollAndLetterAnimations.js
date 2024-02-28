@@ -1,4 +1,5 @@
 // project tools and section titles revealed on scroll 
+
 var string = `Portfolio`;
 var array = string.split("");
 var string2 = `Web development by Aleid`;
@@ -8,7 +9,7 @@ var timer2;
 let shownPassword = false;
 
 function frameLooper() {
-    if (array.length > 0) {
+    if (array.length > 0 && document.getElementById("title") != null) {
         document.getElementById("title").innerHTML += array.shift();
     } else {
         clearTimeout(timer);
@@ -19,44 +20,60 @@ function frameLooper() {
 }
 // Subtitle typing effect
 function frameLooper2() {
-    if (array2.length > 0) {
+    if (array2.length > 0 && document.getElementById("subtitle") != null) {
         document.getElementById("subtitle").innerHTML += array2.shift();
     } else {
         clearTimeout(timer2);
     }
     loopTimer = setTimeout('frameLooper2()', 70);
 }
-frameLooper();
-
-
-var sectionTitles = document.querySelectorAll(".animated");
-// console.log(sectionTitles)
-var projectCards = document.querySelectorAll(".projectCard");
-var projectTools = document.querySelectorAll(".projectCard li");
-var windowHeight = window.innerHeight;
-var windowWidth = window.innerWidth;
-var txts = document.getElementsByClassName('txt');
-
-// Split up text-to-be-animated into letters with spans
-for (var i = 0; i < sectionTitles.length; i++) {
-    // Wraps each character
-    sectionTitles[i].innerHTML = sectionTitles[i].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-}
-
-// Split up text-to-be-animated into words with spans
-// for (var i = 0; i < txts.length; i++) {
-//     // Wraps each word, rather than each character (otherwise get stange word-breaks)
-//     txts[i].innerHTML = txts[i].textContent.replace(/\S+/g, "<span class='letter'>$&</span>");
-// }
-
-
-// Keep track of shown texts so they don't get rendered again on scroll
-let sectionTitleShown = []
-
 window.addEventListener('load', function () {
+    frameLooper();
+
+    var sectionTitles = document.querySelectorAll(".animated");
+    // console.log(sectionTitles)
+    var projectCards = document.querySelectorAll(".projectCard");
+    var projectTools = document.querySelectorAll(".projectCard li");
+    var projectSwiperVids = document.querySelectorAll(".contents video");
+    var windowHeight = window.innerHeight;
+    var windowWidth = window.innerWidth;
+    var txts = document.getElementsByClassName('txt');
+
+    // Split up text-to-be-animated into letters with spans
+    for (var i = 0; i < sectionTitles.length; i++) {
+        // Wraps each character
+        sectionTitles[i].innerHTML = sectionTitles[i].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    }
+
+    // Split up text-to-be-animated into words with spans
+    // for (var i = 0; i < txts.length; i++) {
+    //     // Wraps each word, rather than each character (otherwise get stange word-breaks)
+    //     txts[i].innerHTML = txts[i].textContent.replace(/\S+/g, "<span class='letter'>$&</span>");
+    // }
+
+
+    // Keep track of shown texts so they don't get rendered again on scroll
+    let sectionTitleShown = []
+
+
 
     // Portfolio title and subtitle typing effects, top of page (so no intersection oberver needed)
 
+    // Autoload is disabled because it infered with lazyload and increases file size.
+    //  However, when video is visible, do autoplay
+    function playVideos() {
+        for (var i = 0; i < projectSwiperVids.length; i++) {
+            var elementTop = projectSwiperVids[i].getBoundingClientRect().top;
+            var elementVisible = 10;
+            var windowHeight = window.innerHeight;
+            var windowWidth = window.innerWidth;
+            // Only load once
+            if (elementTop < windowHeight - elementVisible && projectSwiperVids[i].autoplay == false) {
+                projectSwiperVids[i].autoplay = true;
+                projectSwiperVids[i].load();
+            }
+        }
+    }
     function revealTools() {
 
         // Makes tools fade in from right
@@ -90,7 +107,7 @@ window.addEventListener('load', function () {
             var elementTop = explanations[i].getBoundingClientRect().top;
             var elementVisible = 150;
             if ((window.innerWidth / window.innerHeight) < (5 / 8)) {
-                explanations[i].style.opacity = `${1 - ((elementTop - 200) / (windowHeight - 500))}`;
+                explanations[i].style.opacity = `${1 - ((elementTop - 200) / (window.innerHeight - 500))}`;
                 // explanations[i].style.scale = `${Math.cos((elementTop * 1.4 - 300) / 500)}`;
             }
             // If someone is resizing window from narrow->large, reset (otherwise they're all invisible)
@@ -141,11 +158,13 @@ window.addEventListener('load', function () {
         revealSectionTitles()
         revealExplanations()
         revealTools()
+        playVideos()
     });
     window.addEventListener("resize", () => {
         explanationOnResize()
         revealSectionTitles()
         revealTools()
+        playVideos()
 
     });;
     let loaded = 0;
