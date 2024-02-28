@@ -13,15 +13,15 @@ window.addEventListener('load', function () {
             direction: 'horizontal',
             // loop: true,
             effect: 'coverflow',
-            // mousewheelControl: true,
-            // mousewheel: true,
+            mousewheelControl: true,
+            mousewheel: true,
             // keyboardControl: true,
 
             // Otherwise scrolling issues IOS
             // allowTouchMove: false,
             allowSlideNext: true,
             allowSlidePrev: true,
-            mousewheel: false,
+            // mousewheel: false,
             delay: 5000,
             // If we need pagination
             pagination: {

@@ -81,8 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
                             '<source src="videos/drawingApp3_desktop.webm" type="video/webm"> \
                     <source src="videos/drawingApp3_desktop.mp4" type="video/mp4">'
                     }
-                    drawingAppVideoShown = true;
+
                 }
+                drawingAppVideoShown = true;
             }
         }
         if (document.getElementById('recipeAppVideo') != null) {

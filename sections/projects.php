@@ -60,8 +60,7 @@
     $slideObj = array(
         array(
             'title' => 'Graduation project',
-            'vidName' => "saving_aid_1.mp4",
-            'imgName' => "saving_aid.png",
+            'imgName' => "saving_aid_first.png",
             'text' => 'Energy saving recommender system, 
             in which study participants could obtain personalized saving advice.
             Master thesis graduation project, under supervision of Martijn Willemsen and Alain Starke.',
@@ -69,17 +68,19 @@
         array(
             'title' => 'SQL database',
             'imgName' => "savingAid2.png",
+            'vidName' => "saving_aid_scroll.mp4",
             'text' => 'We had an SQL database with over 130 energy saving measures, of which participants got 20 personalized recommendations.',
         ),
         array(
             'title' => 'Rasch Scale',
             'imgName' => "currentActions.png",
+            'vidName' => "saving_aid_current_actions.mp4",
             'text' => 'Recommendations were based on the number of items someone already performed, following the psychometric Rasch model.',
         ),
         array(
             'title' => 'User Experience',
             'imgName' => "saving_aid.png",
-            'vidName' => "questionnaires2.mp4",
+            'vidName' => "saving_aid_questionnaires.mp4",
             'text' => 'During the experiment, users got various questions about their personal values and user experiences. 
             User actions and answers to questions were saved using a simple CRUD API (php), connected to the database.',
         )
@@ -168,7 +169,7 @@
             'text' => 'They can also change brush properties and save the image',
         )
     );
-    // include("projects/projectCardTemplate.php");
+    include("projects/projectCardTemplate.php");
 
     $projectName = "Art portfolio";
     $projectID = "artPortfolio";
@@ -176,7 +177,7 @@
     $prev = '#drawingApp-scroll';
     $next = "#portfolioOld-scroll";
     $icon = 'pencil';
-    $projectLink = "https://www.aleidsuzan.com/artPortfolio/";
+    $projectLink = "https://www.aleidsuzan.com/artportfolio/";
     $githubLink = 'https://github.com/AleidS/artPortfolio';
     $toolsObj = array(
         array(
@@ -201,18 +202,18 @@
         array(
             'title' => 'Art portfolio',
             'imgName' => "artPortfolio.png",
-            'vidName' => "artPortfolio1.mp4",
+            'vidName' => "artportfolioNew.mp4",
             'text' => 'Art portfolio made with React.js and the Framer Motion library.',
         ),
         array(
             'title' => 'Filtering',
             'imgName' => "artPortfolio.png",
-            'vidName' => "artPortfolioFilter.mp4",
+            'vidName' => "artPortfolio_filter_new.mp4",
             'text' => 'Items can be filtered based on category, e.g. photos or pen&paper',
         ),
         array(
             'imgName' => "artPortfolio.png",
-            'vidName' => "artPortfolioThumbnail.mp4",
+            'vidName' => "artPortfolio_zoom2.mp4",
             'text' => 'Full images are loaded upon thumbnail click',
         )
     );

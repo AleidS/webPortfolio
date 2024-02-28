@@ -287,6 +287,12 @@
   top: 0px;
   /* max-height: 200px !important; */
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   aspect-ratio: 14/9;
 }
 .projectCard .imgContainer .swiper-slide {

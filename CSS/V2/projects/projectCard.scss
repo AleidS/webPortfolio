@@ -278,7 +278,6 @@
         max-height: calc(min(300px, 60vw));
         border-radius: 5px;
         overflow: hidden;
-
         padding: 0px;
         margin: 0;
         -webkit-filter: brightness(100%);
@@ -290,6 +289,8 @@
             top: 0px;
             /* max-height: 200px !important; */
             overflow: hidden;
+            display: flex;
+            align-items: center;
             aspect-ratio: 14 / 9;
         }
 
