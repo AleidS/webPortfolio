@@ -220,14 +220,14 @@
         ),
         array(
             'title' => 'Filtering',
-            'imgName' => "artPortfolio.png",
-            'vidName' => "artPortfolio_filter_new.mp4",
+            'imgName' => "artortfolio.png",
+            'vidName' => "artportfolio_filter_new.mp4",
             'thumbnailFrame' => 3,
             'text' => 'Items can be filtered based on category, e.g. photos or pen&paper',
         ),
         array(
             'imgName' => "artPortfolio.png",
-            'vidName' => "artPortfolio_zoom2.mp4",
+            'vidName' => "artportfolio_zoom2.mp4",
             'thumbnailFrame' => 2.5,
             'text' => 'Full images are loaded upon thumbnail click',
         )

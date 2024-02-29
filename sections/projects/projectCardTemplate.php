@@ -142,9 +142,8 @@
     </div>
 
 
-
     <div class="cardFooter">
-        <div class="cardFooterBackground cardbg"></div>
+        <div class="cardbg"></div>
         <a class="sourceCode" target="_blank" href='<?php echo ($projectLink) ?>'>
             <i class="fa-solid fa-globe"></i>
             &nbsp;Visit
@@ -184,6 +183,5 @@
     }
     ?>
     <!-- </div> -->
-
 
 </div>

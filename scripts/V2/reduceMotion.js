@@ -15,7 +15,7 @@ function removeAnimations(id) {
         icon.classList.add("fa-video-slash");
         $('#reduceDetected').css('display', 'block');
         $('#reduceSlider').prop("checked", false);
-        $('#reduceText').prop("innerHTML", 'Click here activate motion')
+        $('#reduceText').prop("innerHTML", 'Click here to activate motion')
         $('.cardVideo').each(function () {
             $(this).get(0).pause();
             $(this).get(0).autoplay = false
@@ -56,6 +56,7 @@ function removeAnimations(id) {
             duration: 0,
             disable: true,
         });
+        AOS.refresh()
         document.documentElement.style.scrollBehavior = "auto";
 
     }
@@ -64,7 +65,7 @@ function removeAnimations(id) {
         icon.classList.remove("fa-video-slash");
         icon.classList.add("fa-video");
         $('#reduceSlider').prop("checked", true);
-        $('#reduceText').prop("innerHTML", 'Click here reduce motion')
+        $('#reduceText').prop("innerHTML", 'Click here to reduce motion')
         $('#arrow').css('animation-name', 'example');
         $('#arrow').css('opacity', '0');
         $('#reduceDetected').css('display', 'none');
@@ -73,10 +74,12 @@ function removeAnimations(id) {
             // alert(this.querySelector('.switch3D'))
             this.style.display = 'flex'
         })
+        AOS.refresh();
         AOS.init({
+            disable: false,
             duration: 800,
-
         });
+
         $('.cardTool').each(function () {
 
 

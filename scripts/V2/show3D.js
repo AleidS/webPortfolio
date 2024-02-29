@@ -25,6 +25,7 @@ function show3D(id) {
     }
     // document.getElementById(`${id}-card`).getElementsByClassName('contents')[0].style.height = '0px';
     if (card.getElementsByClassName('3dCheckbox')[0].checked == true) {
+        $('.navbar').addClass("navbar-hide");
         if (reduced & !understand) {
             $('.popUp').css('display', 'flex');
             $('#back').on('click', function () {
@@ -90,10 +91,9 @@ function show3D(id) {
             bound.style.display = 'block';
 
             // cardHeader.style.backgroundImage = 'url(../Images/backgrounds/nazar-synytsia-0ybIsh4UPYk-unsplash-bg-min2.png)';
-
-
             cardHeader.style.top = '0px';
             cardHeader.style.zIndex = '20';
+            cardHeader.style.borderRadius = '0px';
             cardFooter.style.zIndex = '20';
             // card.style.borderTop = 'none'
 
@@ -104,8 +104,8 @@ function show3D(id) {
 
         }, 1000)
         setTimeout(function () {
-            cardHeader.style.background = 'none';
-            cardFooter.style.background = 'none';
+            cardHeader.style.background = 'rgba(0,80,80,1)';
+            cardFooter.style.background = 'rgba(0,100,100,1)';
         }, 2000)
         setTimeout(function () {
             window.scrollBy({
@@ -118,6 +118,11 @@ function show3D(id) {
     else {
 
         registerVideo(`#${id}-bound`, `#${id}Video`, false);
+        cardHeader.style.background = 'none';
+        cardFooter.style.background = 'none';
+        cardHeader.style.backdropFilter = 'none';
+        cardFooter.style.backdropFilter = 'none';
+
 
         anime.timeline({ loop: false })
             .add({
@@ -148,29 +153,27 @@ function show3D(id) {
                 delay: 500,
                 easing: 'easeInOutSine'
             })
-        anime.timeline({ loop: false })
-            .add({
-                targets: card.getElementsByClassName('cardbg'),
-                opacity: [0, 1],
-                // translateX: [500, 0],
-                duration: 500,
-                easing: 'easeInOutSine'
-            })
+
 
         setTimeout(function () {
             bound.style.display = 'none';
             contents.style.display = "flex"
             contents.style.height = "auto"
             card.style.maxWidth = 'calc(min(860px, 100%))'
-            card.getElementsByTagName('h2')[0].style.position = 'sticky'
-            card.getElementsByTagName('h2')[0].style.top = 'auto'
-            card.getElementsByTagName('h2')[0].style.zIndex = 'auto'
-            card.getElementsByClassName('cardFooter')[0].style.position = 'sticky'
-            card.getElementsByClassName('cardFooter')[0].style.bottom = 'none'
-            card.getElementsByTagName('h2')[0].style.background = previousHeaderBg.id;
-            card.getElementsByClassName('cardFooter')[0].style.background = previousFooterBg.id;
+            cardHeader.style.position = 'sticky'
+            cardHeader.style.top = 'auto'
+            cardHeader.style.zIndex = 'auto'
+            cardFooter.style.position = 'sticky'
+            cardFooter.style.bottom = 'none'
         }, 1000);
-
+        anime.timeline({ loop: false })
+            .add({
+                targets: card.getElementsByClassName('cardbg'),
+                opacity: [0, 1],
+                // translateX: [500, 0],
+                duration: 2000,
+                easing: 'easeInOutSine'
+            })
 
     }
 }

@@ -27,6 +27,7 @@
   max-width: min(860px, 100%);
   margin: auto;
   margin-bottom: 100px;
+  margin-top: 50px;
   border-top-right-radius: 4vw;
   border-top-left-radius: 4vw;
   -webkit-transition-duration: 2s;

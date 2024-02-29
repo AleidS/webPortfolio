@@ -1,6 +1,7 @@
 @supports (-webkit-touch-callout: none) {
 
-    .cardbg {
+    .cardbg,
+    .cardbg2 {
         max-height: 100%;
         position: absolute;
         display: block;
@@ -10,6 +11,10 @@
     .projectCard .cardFooter {
         top: 90vh !important;
         /* On IOS hard to click bottom of screen */
+    }
+
+    .videoContainer {
+        scale: 1.4;
     }
 
     .scrollVideo {

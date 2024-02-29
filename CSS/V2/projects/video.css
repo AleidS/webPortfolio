@@ -62,5 +62,16 @@
     .scrollVideo {
         /* If you make the scale too large it stops working on smaller screens, no idea why */
         scale: 1.0;
+        transform: translateY(0px);
     }
+
+    .videoContainer {
+        scale: 1.7;
+    }
+
+    #savingAid .videoContainer {
+        scale: 1.6;
+    }
+
+
 }
