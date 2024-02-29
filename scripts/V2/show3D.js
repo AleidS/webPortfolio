@@ -7,6 +7,7 @@ var previousFooterBg = {}
 
 
 function show3D(id) {
+
     const bound = document.getElementById(`${id}-bound`)
     // document.getElementById(`${id}-bound`).style.display = 'block';
     const card = document.getElementById(`${id}`)
@@ -24,7 +25,19 @@ function show3D(id) {
     }
     // document.getElementById(`${id}-card`).getElementsByClassName('contents')[0].style.height = '0px';
     if (card.getElementsByClassName('3dCheckbox')[0].checked == true) {
-
+        if (reduced & !understand) {
+            $('.popUp').css('display', 'flex');
+            $('#back').on('click', function () {
+                $('.popUp').css('display', 'none')
+                card.getElementsByClassName('3dCheckbox')[0].checked = false
+            })
+            $('#understand').on('click', function () {
+                understand = true
+                $('.popUp').css('display', 'none')
+                show3D(id)
+            })
+            return;
+        }
         registerVideo(`#${id}-bound`, `#${id}Video`, true);
         // registerVideo("#recipeApp-bound", "#recipeAppVideo", true);
         // // registerVideo("#drawingApp-bound", "#drawingAppVideo");

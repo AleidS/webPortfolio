@@ -68,12 +68,14 @@
         array(
             'title' => 'SQL database',
             'imgName' => "savingAid2.png",
+            'thumbnailFrame' => 20,
             'vidName' => "saving_aid_scroll.mp4",
             'text' => 'We had an SQL database with over 130 energy saving measures, of which participants got 20 personalized recommendations.',
         ),
         array(
             'title' => 'Rasch Scale',
             'imgName' => "currentActions.png",
+            'thumbnailFrame' => 10,
             'vidName' => "saving_aid_current_actions.mp4",
             'text' => 'Recommendations were based on the number of items someone already performed, following the psychometric Rasch model.',
         ),
@@ -81,6 +83,7 @@
             'title' => 'User Experience',
             'imgName' => "saving_aid.png",
             'vidName' => "saving_aid_questionnaires.mp4",
+            'thumbnailFrame' => 7,
             'text' => 'During the experiment, users got various questions about their personal values and user experiences. 
             User actions and answers to questions were saved using a simple CRUD API (php), connected to the database.',
         )
@@ -162,10 +165,14 @@
         ),
         array(
             'imgName' => "canvas_3.png",
+            'vidName' => 'drawingApp_effects.mp4',
+            'thumbnailFrame' => 10,
             'text' => 'Users can choose various effects',
         ),
         array(
             'imgName' => "canvas_4.png",
+            'vidName' => 'drawingAppOptions.mp4',
+            'thumbnailFrame' => 2,
             'text' => 'They can also change brush properties and save the image',
         )
     );
@@ -201,19 +208,27 @@
     $slideObj = array(
         array(
             'title' => 'Art portfolio',
+            'imgName' => "art_portfolio_first2.png",
+            'text' => 'Art portfolio made with React.js and the Framer Motion library.',
+        ),
+        array(
+            'title' => 'Framer motion',
             'imgName' => "artPortfolio.png",
             'vidName' => "artportfolioNew.mp4",
-            'text' => 'Art portfolio made with React.js and the Framer Motion library.',
+            'thumbnailFrame' => 7,
+            'text' => 'Framer Motion library.',
         ),
         array(
             'title' => 'Filtering',
             'imgName' => "artPortfolio.png",
             'vidName' => "artPortfolio_filter_new.mp4",
+            'thumbnailFrame' => 3,
             'text' => 'Items can be filtered based on category, e.g. photos or pen&paper',
         ),
         array(
             'imgName' => "artPortfolio.png",
             'vidName' => "artPortfolio_zoom2.mp4",
+            'thumbnailFrame' => 2.5,
             'text' => 'Full images are loaded upon thumbnail click',
         )
     );
@@ -260,6 +275,7 @@
             'title' => '3D portfolio',
             'imgName' => 'webPortfolio.png',
             'vidName' => "webPortfolio.mp4",
+            'thumbnailFrame' => 3,
             'text' => 'First version of this portfolio with 3D animations. 
             You can activate these animations with the "show more" switches in the other projects, 
             or use the link below to view all projects in 3D.',

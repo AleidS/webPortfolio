@@ -47,12 +47,13 @@ window.addEventListener('load', function () {
                     Array.prototype.forEach.call(videos, function (video) {
                         video.pause();
                     });
+                    this.effect = reduced ? 'fade' : 'coverflow'
                 },
                 transitionEnd: function () {
                     var activeIndex = this.activeIndex;
                     var activeSlide = img.getElementsByClassName('swiper-slide')[activeIndex];
                     var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
-                    if (activeSlideVideo != null) {
+                    if (activeSlideVideo != null && reduced != true && manuallyPaused != true) {
                         activeSlideVideo.play();
                     }
                 },
@@ -62,28 +63,6 @@ window.addEventListener('load', function () {
                     var activeSlide = img.getElementsByClassName('swiper-slide')[activeIndex];
                     var activeText = txt.getElementsByClassName('pContainer')[activeIndex];
                     var activeTxts = activeText.getElementsByClassName('txt');
-                    // for (var i = 0; i < activeTxts.length; i++) {
-                    // https://tobiasahlin.com/moving-letters/#10
-
-                    //     if (txtShown[activeIndex][i] == undefined && activeIndex != 0) {
-                    //         anime.timeline({ loop: false })
-                    //             .add({
-                    //                 targets: (txt.getElementsByClassName('ml10'), txt.getElementsByClassName('letter')),
-                    //                 translateX: [0, 0],
-                    //                 opacity: [0, 1],
-                    //                 duration: 500,
-                    //                 easing: 'easeInOutSine',
-                    //                 delay: (el, i) => 80 * i
-                    //             })
-                    //         txtShown[activeIndex][i] += 1
-
-                    //     }
-                    //     if (txtShown[activeIndex][i] == undefined) {
-                    //         txtShown[activeIndex][i] = 0
-                    //     }
-
-                    // }
-
                 },
 
             }

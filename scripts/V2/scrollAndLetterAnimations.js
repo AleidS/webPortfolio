@@ -9,14 +9,21 @@ var timer2;
 let shownPassword = false;
 
 function frameLooper() {
-    if (array.length > 0 && document.getElementById("title") != null) {
-        document.getElementById("title").innerHTML += array.shift();
-    } else {
-        clearTimeout(timer);
-        // When finished, type subtitle
-        frameLooper2();
+    if (!reduced) {
+        if (array.length > 0 && document.getElementById("title") != null) {
+            document.getElementById("title1").innerHTML += array.shift();
+        } else {
+            clearTimeout(timer);
+            // When finished, type subtitle
+            frameLooper2();
+        }
+
+        loopTimer = setTimeout('frameLooper()', 70);
     }
-    loopTimer = setTimeout('frameLooper()', 70);
+    else {
+        document.getElementById("title1").innerHTML = string
+        document.getElementById("subtitle").innerHTML = string2
+    }
 }
 // Subtitle typing effect
 function frameLooper2() {
@@ -40,10 +47,17 @@ window.addEventListener('load', function () {
     var txts = document.getElementsByClassName('txt');
 
     // Split up text-to-be-animated into letters with spans
+
     for (var i = 0; i < sectionTitles.length; i++) {
         // Wraps each character
         sectionTitles[i].innerHTML = sectionTitles[i].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        if (reduced) {
+            $('.letter, .letters, .ml10, .animate').each(function () {
+                this.style.opacity = 1;
+            })
+        }
     }
+
 
     // Split up text-to-be-animated into words with spans
     // for (var i = 0; i < txts.length; i++) {
@@ -68,7 +82,7 @@ window.addEventListener('load', function () {
             var windowHeight = window.innerHeight;
             var windowWidth = window.innerWidth;
             // Only load once
-            if (elementTop < windowHeight - elementVisible && projectSwiperVids[i].autoplay == false) {
+            if (elementTop < windowHeight - elementVisible && projectSwiperVids[i].autoplay == false && reduced == false && manuallyPaused != true) {
                 projectSwiperVids[i].autoplay = true;
                 projectSwiperVids[i].load();
             }
@@ -85,7 +99,9 @@ window.addEventListener('load', function () {
             if (elementTop < windowHeight - elementVisible) {
                 projectTools[i].classList.add("active");
             } else {
-                projectTools[i].classList.remove("active");
+                if (!reduced) {
+                    projectTools[i].classList.remove("active");
+                }
             }
         }
 
@@ -93,7 +109,9 @@ window.addEventListener('load', function () {
         for (var i = 0; i < projectCards.length; i++) {
             var projectTool = projectCards[i].querySelectorAll("li");
             for (var j = 0; j < projectTool.length; j++) {
-                projectTool[j].style.transitionDelay = (`${(j / 3)}s`);
+                if (!reduced) {
+                    projectTool[j].style.transitionDelay = (`${(j / 3)}s`);
+                }
             }
         }
 
@@ -135,7 +153,7 @@ window.addEventListener('load', function () {
             // var elementID = tlts[i].id
             var ml10 = sectionTitles[i].getElementsByClassName('ml10')
             var letter = sectionTitles[i].getElementsByClassName('letter')
-            if (elementTop < windowHeight - elementVisible) {
+            if (elementTop < windowHeight - elementVisible && !reduced) {
                 if (sectionTitleShown[i] != true) {
                     // https://tobiasahlin.com/moving-letters/#10
                     anime.timeline({ loop: false })

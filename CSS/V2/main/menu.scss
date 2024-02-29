@@ -63,7 +63,7 @@
     margin: auto;
     width: fit-content;
     margin: 0px;
-    font-size: 1.5rem;
+    font-size: clamp(12pt, 1.4rem, 5vw);
     text-transform: capitalize;
     font-weight: 100;
     text-decoration: none;
@@ -143,4 +143,23 @@
 
 .navbar-hide {
     top: -60px;
+}
+
+#reduceMotion {
+    background: rgba(234, 201, 249, 0.192) !important;
+    backdrop-filter: blurr(10px)brightness(300%);
+    height: fit-content;
+    line-height: 0.8rem;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 2px;
+    font-size: 0.8rem;
+    cursor: pointer;
+
+    span,
+    i {
+        margin: 4px;
+    }
+
 }

@@ -10,15 +10,15 @@
 
         <span class='name'>
             <?php if (isset($prev)) : ?>
-            <a class="skipButton" href=<?php echo $prev ?>>
-                <i class="fas fa-fast-backward"></i>
-            </a>
+                <a class="skipButton" href=<?php echo $prev ?>>
+                    <i class="fas fa-fast-backward"></i>
+                </a>
             <?php endif ?>
             <?php echo ($projectName) ?>
             <?php if (isset($next)) : ?>
-            <a class=" skipButton" href=<?php echo $next ?>>
-                <i class="fas fa-fast-forward"></i>
-            </a>
+                <a class=" skipButton" href=<?php echo $next ?>>
+                    <i class="fas fa-fast-forward"></i>
+                </a>
             <?php endif ?>
         </span>
 
@@ -35,20 +35,20 @@
                     $tool = json_decode(json_encode($toolsObj[$key]));
                     // echo ($slide->imgName2); 
                 ?>
-                <li>
-                    <?php if (property_exists($tool, 'logo')) : ?>
-                    <img src=<?php echo ("Images/logos/" . $tool->logo) ?> loading="lazy" class="listIcon" />
-                    <?php endif ?>
-                    <div>
-                        <?php echo ($tool->name) ?>
-                    </div>
-                    <div class='o'>
-                        ◆
-                        <!-- ▶• -->
-                    </div>
-                    <hr>
-                    </hr>
-                </li>
+                    <li class='cardTool'>
+                        <?php if (property_exists($tool, 'logo')) : ?>
+                            <img src=<?php echo ("Images/logos/" . $tool->logo) ?> loading="lazy" class="listIcon" />
+                        <?php endif ?>
+                        <div>
+                            <?php echo ($tool->name) ?>
+                        </div>
+                        <div class='o'>
+                            ◆
+                            <!-- ▶• -->
+                        </div>
+                        <hr>
+                        </hr>
+                    </li>
 
                 <?php
                 } ?>
@@ -70,16 +70,24 @@
                         $slide = json_decode(json_encode($slideObj[$key]));
                         // echo ($slide->imgName2); 
                     ?>
-                    <div class="swiper-slide imgContainerInner">
-                        <?php if (property_exists($slide, 'vidName')) : ?>
-                        <video class="lazy" width='100' height='100' preload="none" muted playsinline loop>
-                            <source src=<?php echo ("Images/screenshots/" . $slide->vidName) ?> type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <?php else : ?>
-                        <img src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading="lazy" class="lazy" />
-                        <?php endif ?>
-                    </div>
+                        <div class="swiper-slide imgContainerInner">
+                            <?php
+                            if (property_exists($slide, 'thumbnailFrame')) {
+                                $thumbnail = "#t=" . $slide->thumbnailFrame;
+                            } else {
+                                $thumbnail = '#t=0.1';
+                            }
+                            if (property_exists($slide, 'vidName')) : ?>
+                                <video class="lazy cardVideo" width='100' height='100' preload="none" muted playsinline loop <?php if (property_exists($slide, 'thumbnail')) : ?> poster=<?php echo ("Images/screenshots/" . $slide->thumbnail) ?> <?php endif ?>>
+                                    <source src=<?php echo ("Images/screenshots/videos/" . $slide->vidName . $thumbnail) ?> type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <i role="button" id='<?php echo ($projectID . $key) ?>' onClick='playVideo(this.id)' class='playbutton fa-solid fa-pause'>
+                                </i>
+                            <?php else : ?>
+                                <img src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading="lazy" class="lazy" />
+                            <?php endif ?>
+                        </div>
                     <?php
                         // echo (implode(" ", $slideObj[$key]));
                     } ?>
@@ -107,26 +115,26 @@
                 foreach ($slideObj as $key => $val) {
                     $slide = json_decode(json_encode($slideObj[$key]));
                 ?>
-                <div class="swiper-slide textContainerInner">
-                    <img class="textBgImg" src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading="lazy" />
+                    <div class="swiper-slide textContainerInner">
+                        <img class="textBgImg" src=<?php echo ("Images/screenshots/" . $slide->imgName) ?> loading="lazy" />
 
-                    <div class="pContainer">
+                        <div class="pContainer">
 
-                        <p class='pCard' data-in-effect="rollIn">
-                            <?php if (property_exists($slide, 'title')) : ?>
-                            <span class='title'> <?php echo ($slide->title) ?> </span>
-                            <?php endif ?>
-                            <span class="ml10 text-wrapper txt">
-                                <span class="letters">
-                                    <?php echo ($slide->text) ?>
+                            <p class='pCard' data-in-effect="rollIn">
+                                <?php if (property_exists($slide, 'title')) : ?>
+                                    <span class='title'> <?php echo ($slide->title) ?> </span>
+                                <?php endif ?>
+                                <span class="ml10 text-wrapper txt">
+                                    <span class="letters">
+                                        <?php echo ($slide->text) ?>
+                                    </span>
                                 </span>
-                            </span>
 
-                        </p>
+                            </p>
+                        </div>
+
+
                     </div>
-
-
-                </div>
                 <?php
                 } ?>
             </div>
@@ -142,28 +150,28 @@
             &nbsp;Visit
         </a>
         <?php if (isset($githubLink)) : ?>
-        <a href="<?php echo ($githubLink) ?>" target="_blank" class="sourceCode">
-            <i class="fa-brands fa-github"></i> code
-        </a>
+            <a href="<?php echo ($githubLink) ?>" target="_blank" class="sourceCode">
+                <i class="fa-brands fa-github"></i> code
+            </a>
         <?php endif ?>
 
         <?php if (isset($thesis)) : ?>
-        <a href="<?php echo ($thesis) ?>" target="_blank" class="sourceCode">
-            <i class="fa-solid fa-graduation-cap"></i> thesis
-        </a>
+            <a href="<?php echo ($thesis) ?>" target="_blank" class="sourceCode">
+                <i class="fa-solid fa-graduation-cap"></i> thesis
+            </a>
         <?php endif ?>
 
         <?php
         if ($projectID != 'portfolioOld') : ?>
-        <div class="learnmore">
-            <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
-            Show More
-            <!-- Rounded switch -->
-            <label class="switch">
-                <input type="checkbox" class="3dCheckbox" onClick="show3D('<?php echo ($projectID) ?>')">
-                <span class="slider round"></span>
-            </label>
-        </div>
+            <div class="learnmore">
+                <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                Show More
+                <!-- Rounded switch -->
+                <label class="switch">
+                    <input type="checkbox" class="3dCheckbox switch3D" onClick="show3D('<?php echo ($projectID) ?>')">
+                    <span class="slider round"></span>
+                </label>
+            </div>
         <?php endif ?>
 
     </div>

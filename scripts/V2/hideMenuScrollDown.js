@@ -19,7 +19,7 @@ function touchMove(event) {
     hidemenu(offset.y)
 }
 function hidemenu(deltaY) {
-    if (deltaY > 10) {
+    if (deltaY > 10 && !reduced) {
         $('.navbar').addClass("navbar-hide");
     } if (deltaY < 0) {
         $('.navbar').removeClass("navbar-hide");

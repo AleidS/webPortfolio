@@ -165,9 +165,9 @@
 
     p {
         font-size: 1rem;
-        max-width: -webkit-fit-content;
-        max-width: -moz-fit-content;
-        max-width: fit-content;
+        width: 90%;
+        min-width: fit-content;
+        max-width: 95%;
         line-height: 1.2rem;
         font-weight: 300;
         font-family: 'roboto';
@@ -336,6 +336,50 @@
             max-height: 120% !important;
             box-shadow: (inset 0px 0px 10px 10px black);
         }
+
+        .playbutton {
+            position: absolute;
+            bottom: 40%;
+            left: 45%;
+            font-size: 3rem;
+            opacity: 1;
+            cursor: pointer;
+            z-index: 2;
+            filter: drop-shadow(0px 0px 10px rgba(133, 133, 133, 0.548));
+            transition-duration: 0.2s;
+            will-change: opacity;
+        }
+
+        .fa-pause {
+            opacity: 0;
+            will-change: opacity;
+        }
+
+
+
+        .playbutton:hover {
+            opacity: 1;
+
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 1;
+            }
+
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .fa-pause:hover {
+            opacity: 1;
+            animation: fade 1.5s forwards;
+            animation-delay: 1s;
+        }
+
+
     }
 
     .swiper-container {

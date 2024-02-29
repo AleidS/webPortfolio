@@ -8,10 +8,12 @@ window.addEventListener('load', function () {
         if (window.innerWidth < 430) {
             for (var i = 0; i < lists.length; i++) {
                 const listItems = lists[i].getElementsByTagName('li')
-                for (var j = 0; j < listItems.length; j++) {
-                    listItems[j].style.webkitTransform = `translateX(-${(j / listItems.length) * 180 + (2 * (3 - listItems.length) * j)}%)`
-                    listItems[j].style.transform = `translateX(-${(j / listItems.length) * 180 + (2 * (3 - listItems.length) * j)}%)`
+                if (!reduced) {
+                    for (var j = 0; j < listItems.length; j++) {
+                        listItems[j].style.webkitTransform = `translateX(-${(j / listItems.length) * -180 + (2 * (3 - listItems.length) * j)}%)`
+                        listItems[j].style.transform = `translateX(-${(j / listItems.length) * -180 + (2 * (3 - listItems.length) * j)}%)`
 
+                    }
                 }
                 const listItemsActive = lists[i].getElementsByClassName('active')
                 for (var j = 0; j < listItemsActive.length; j++) {
@@ -24,8 +26,8 @@ window.addEventListener('load', function () {
             for (var i = 0; i < lists.length; i++) {
                 const listItems = lists[i].getElementsByTagName('li')
                 for (var j = 0; j < listItems.length; j++) {
-                    listItems[j].style.webkitTransform = `translateX(-20%)`
-                    listItems[j].style.transform = `translateX(-20%)`
+                    listItems[j].style.webkitTransform = `translateX(20%)`
+                    listItems[j].style.transform = `translateX(20%)`
 
                 }
                 const listItemsActive = lists[i].getElementsByClassName('active')
@@ -46,6 +48,6 @@ window.addEventListener('load', function () {
     })
     window.addEventListener('scroll', function () {
         cardListItems();
-
     })
+
 })

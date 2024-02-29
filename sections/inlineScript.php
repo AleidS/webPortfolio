@@ -42,7 +42,8 @@
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.min.js"></script>
 <!-- Own scripts -->
 
-
+<script src="scripts/<?php echo ($version) ?>/popUp.js"></script>
+<script src="scripts/<?php echo ($version) ?>/reduceMotion.js"></script>
 <script src="scripts/<?php echo ($version) ?>/onScroll3Dvideos.js"></script>
 <script src="scripts/<?php echo ($version) ?>/scrollAndLetterAnimations.js"></script>
 <script src="scripts/<?php echo ($version) ?>/showElementOnClick.js"></script>
@@ -51,6 +52,8 @@
 <script src="scripts/<?php echo ($version) ?>/toolListCard.js"></script>
 <script src="scripts/<?php echo ($version) ?>/hideMenuScrollDown.js"></script>
 <script src="scripts/<?php echo ($version) ?>/navbarCollapse.js"></script>
+<script src="scripts/<?php echo ($version) ?>/playVideo.js"></script>
+
 
 <script>
 $('document').ready(function() {

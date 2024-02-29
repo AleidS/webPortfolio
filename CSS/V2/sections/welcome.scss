@@ -16,13 +16,12 @@
     margin: auto;
     margin-bottom: 100px;
     font-size: clamp(20pt, 15.8vw, 80pt);
-
 }
 
 /* https: //codepen.io/Lucas-Dombrowski/pen/wvRoWzL */
 /*Setup the blinking sidebar*/
-.title>h1:after {
-    content: "|";
+.blinker {
+
     /*The width is the actual sidebar thickness.*/
     width: 0px;
     height: fit-content;
@@ -57,6 +56,26 @@
     font-size: 1.4rem;
 }
 
+#reduceContainer {
+    margin-top: 10px;
+    min-height: 70px;
+    // background: blue;
+    position: block;
+    min-width: 100vw;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#reduceDetected {
+    display: none;
+    font-weight: 300;
+    opacity: 0.8;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    padding: 10px;
+    text-align: center;
+
+}
 
 
 
@@ -108,12 +127,11 @@
 
 #arrowContainer {
     width: 100%;
-    margin-top: 10vh;
+    margin-top: 1vh;
 }
 
 #arrow {
     width: 100%;
-    font-size: 300pt;
     color: white;
     background-color: rgb(0, 0, 0);
     text-align: center;
@@ -214,4 +232,22 @@
     margin-bottom: 10px;
     clip-path: circle(43% at 49% 50%);
     border: 2px solid white;
+}
+
+#reduceMotionSlider {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: 'roboto';
+    background: rgba(255, 255, 255, 0.061);
+    backdrop-filter: blur(10px)brightness(190%);
+    border-radius: 90px;
+    padding: 4px;
+    padding-left: 8px;
+
+    .switch {
+        scale: 0.8;
+    }
 }
