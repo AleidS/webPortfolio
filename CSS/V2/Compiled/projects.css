@@ -81,6 +81,7 @@
   background-position: auto;
   -webkit-transition-duration: 3s;
           transition-duration: 3s;
+  max-width: 900px !important;
 }
 
 @media (max-device-aspect-ratio: 5/8) {

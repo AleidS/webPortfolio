@@ -27,7 +27,7 @@ function hidemenu(deltaY) {
 }
 
 
-window.addEventListener("error", handleError, true);
+// window.addEventListener("error", handleError, true);
 
 // function handleError(evt) {
 //     if (evt.message) { // Chrome sometimes provides this

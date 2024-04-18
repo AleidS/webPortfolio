@@ -2,6 +2,8 @@
     box-sizing: border-box;
     word-wrap: wrap !important;
     text-wrap: wrap !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
 }
 
 html {
@@ -23,7 +25,9 @@ body {
     padding: 0px;
     overflow-x: hidden;
     font-family: 'roboto', sans-serif;
+    max-width: 100vw !important;
     /* position:absolute; */
+    overflow-x: hidden;
 }
 
 /* Fixed bg doesn't work on IOS */
@@ -115,10 +119,7 @@ p {
     width: 100%;
     margin: auto;
     top: 0px;
-}
-
-#mainArea {
-    max-width: 100vw;
+    max-width: 100vw !important;
 }
 
 .menuOverlay {

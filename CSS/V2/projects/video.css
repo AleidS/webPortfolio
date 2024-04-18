@@ -44,34 +44,22 @@
         margin: auto;
         position: sticky;
         top: 200px;
-
         /* background: white; */
     }
 
-    .scrollVideo {
-        /* If you make the scale too large it stops working on smaller screens, no idea why */
-        scale: 1.5;
-        top: 200px;
-        left: 0px;
-        transform: translateY(-180px);
+    .videoContainer {
+        scale: 1.4;
+    }
 
+    #savingAid .videoContainer {
+        scale: 1.4;
     }
 }
 
 @media screen and (max-width: 800px) {
     .scrollVideo {
         /* If you make the scale too large it stops working on smaller screens, no idea why */
-        scale: 1.0;
-        transform: translateY(0px);
+        /* scale: 1.0;
+        transform: translateY(0px); */
     }
-
-    .videoContainer {
-        scale: 1.7;
-    }
-
-    #savingAid .videoContainer {
-        scale: 1.6;
-    }
-
-
 }

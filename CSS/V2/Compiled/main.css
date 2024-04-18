@@ -1,8 +1,10 @@
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   word-wrap: wrap !important;
   text-wrap: wrap !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
 }
 
 html {
@@ -10,7 +12,7 @@ html {
   /* overflow-x: hidden; */
   scroll-behavior: smooth;
   -webkit-transition-duration: 4s;
-          transition-duration: 4s;
+  transition-duration: 4s;
   word-wrap: break-word;
 }
 
@@ -25,7 +27,9 @@ body {
   padding: 0px;
   overflow-x: hidden;
   font-family: "roboto", sans-serif;
+  max-width: 100vw !important;
   /* position:absolute; */
+  overflow-x: hidden;
 }
 
 /* Fixed bg doesn't work on IOS */
@@ -112,6 +116,7 @@ p {
   width: 100%;
   margin: auto;
   top: 0px;
+  max-width: 100vw !important;
 }
 
 .menuOverlay {
@@ -137,4 +142,6 @@ p {
 .menuOverlay,
 .overlay {
   background: rgba(17, 17, 17, 0.158);
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
